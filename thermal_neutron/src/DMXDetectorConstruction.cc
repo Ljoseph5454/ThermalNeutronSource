@@ -95,7 +95,7 @@ using namespace std;
 //Ryan added package
 #include "G4OpticalSurface.hh"
 
-/*
+
 DMXDetectorConstruction::DMXDetectorConstruction()
 {
 
@@ -244,12 +244,12 @@ gedit
 */
 
 
- //   return;
+    return;
 
-//}
+}
 
 
-
+/*
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 DMXDetectorConstruction::DMXDetectorConstruction()
 {
@@ -396,6 +396,6 @@ void DMXDetectorConstruction::ConstructSDandField()
 */
 
 
-   return;
+//   return;
 
-}
+//}
