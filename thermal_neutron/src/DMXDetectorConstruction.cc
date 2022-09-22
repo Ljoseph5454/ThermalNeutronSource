@@ -95,7 +95,7 @@ using namespace std;
 //Ryan added package
 #include "G4OpticalSurface.hh"
 
-
+/*
 DMXDetectorConstruction::DMXDetectorConstruction()
 {
 
@@ -220,7 +220,7 @@ void DMXDetectorConstruction::ConstructSDandField()
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicEnv)
       SetSensitiveDetector(logicEnv,LXeSD.Get());
-
+gedit
 
     /*if (pmtSD.Get() == 0)                                        //Aquí detecto los eventos en el SiPM
     {
@@ -244,12 +244,12 @@ void DMXDetectorConstruction::ConstructSDandField()
 */
 
 
-    return;
+ //   return;
 
-}
+//}
 
 
-/*
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 DMXDetectorConstruction::DMXDetectorConstruction()
 {
@@ -396,6 +396,6 @@ void DMXDetectorConstruction::ConstructSDandField()
 */
 
 
-//    return;
+   return;
 
-//}//
+}

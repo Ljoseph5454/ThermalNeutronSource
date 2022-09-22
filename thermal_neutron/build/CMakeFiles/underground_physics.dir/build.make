@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron
+CMAKE_SOURCE_DIR = /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron/build
+CMAKE_BINARY_DIR = /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron/build
 
 # Utility rule file for underground_physics.
 
@@ -71,6 +71,6 @@ CMakeFiles/underground_physics.dir/clean:
 .PHONY : CMakeFiles/underground_physics.dir/clean
 
 CMakeFiles/underground_physics.dir/depend:
-	cd /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron/build /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron/build /mnt/c/Users/logan/OneDrive/Documents/thermal_neutron/build/CMakeFiles/underground_physics.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron/build /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron/build /mnt/c/Users/logan/OneDrive/Documents/TN/thermal_neutron/build/CMakeFiles/underground_physics.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/underground_physics.dir/depend
 
