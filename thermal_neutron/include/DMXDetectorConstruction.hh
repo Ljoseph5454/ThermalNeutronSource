@@ -100,6 +100,18 @@ private:
 
 #include "DMXDetectorRoom.ihh"
 
+  //Logans Stuff
+  G4LogicalVolume*   logicFrameTop;
+  G4VPhysicalVolume* physFrameTop;
+  G4LogicalVolume*   logicFrameBot;
+  G4VPhysicalVolume* physFrameBot;
+  G4LogicalVolume*   logicFrameRight;
+  G4VPhysicalVolume* physFrameRight;
+  G4LogicalVolume*   logicFrameLeft;
+  G4VPhysicalVolume* physFrameLeft;
+  G4LogicalVolume*   logicWindow;
+  G4VPhysicalVolume* physWindow;
+
   G4LogicalVolume*   Vacuum_vessel_log;
   G4VPhysicalVolume* Vacuum_vessel_phys;
   G4LogicalVolume*   Camera_port_log;
