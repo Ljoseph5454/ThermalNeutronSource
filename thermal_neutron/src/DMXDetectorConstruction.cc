@@ -192,7 +192,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
 
   // Window
   G4Box* solidWindow = new G4Box("solidWindow", F_w, F_w, W_d); 
-  logicWindow = new G4LogicalVolume(solidWindow, glass_mat, "logicWindow");                    
+  logicWindow = new G4LogicalVolume(solidWindow, sapphire_mat, "logicWindow");                    
   physWindow = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicWindow, "physWindow", logicWorld, false, 0);  
 
   //

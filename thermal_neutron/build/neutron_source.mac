@@ -36,12 +36,12 @@
 
 # using GPS for ambe_spectrum:
 
-/gps/pos/type Plane
-/gps/pos/shape Square
-/gps/pos/halfx 0.5 m
-/gps/pos/halfy 0.5 m
+#/gps/pos/type Plane
+#/gps/pos/shape Square
+#/gps/pos/halfx 0.15 m
+#/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0 0 1 m
+/gps/pos/centre 0 0 0.3 m
 
 /gps/direction 0 0 -1
 
@@ -53,8 +53,8 @@
 #/gps/ene/max 0.1 eV
 
 /gps/ene/type Lin
-/gps/ene/min 10 eV
-/gps/ene/max 150 eV
+/gps/ene/min 1 eV
+/gps/ene/max 5 eV
 /gps/ene/intercept 1
 /gps/ene/gradient 0
 
@@ -69,5 +69,5 @@
 
 #/run/beamOn 10000000
 #/run/beamOn 108000
-/run/beamOn 1000
+/run/beamOn 50
 
