@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double env_sizeXY = 20*cm, env_sizeZ = 20*cm;
+  G4double F_w = 20*cm, F_t=5*cm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -149,17 +149,17 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   //     
   // World
   //
-  G4double world_sizeXY = 1.2*env_sizeXY;
-  G4double world_sizeZ  = 1.2*env_sizeZ;
+  G4double world_sizeXY = 1.2*(F_w+2F_t);
+  G4double world_sizeZ  = 1.2*(F_w+2F_t);
   //G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
   
   G4Box* solidWorld =    
     new G4Box("World",                       //its name
-       0.5*world_sizeXY, 0.5*world_sizeXY, 0.5*world_sizeZ);     //its size
+       world_sizeXY, world_sizeXY, world_sizeZ);     //its size
       
   G4LogicalVolume* logicWorld =                         
     new G4LogicalVolume(solidWorld,          //its solid
-                        lab_mat,           //its material
+                        vacuum_mat,           //its material
                         "World");            //its name
                                    
   G4VPhysicalVolume* physWorld = 
@@ -172,28 +172,28 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
                       0,                     //copy number
                       checkOverlaps);        //overlaps checking
                      
-  //     
-  // Envelope
-  //  
-  G4Box* solidEnv =    
-    new G4Box("Envelope",                    //its name
-        0.5*env_sizeXY, 0.5*env_sizeXY, 0.5*env_sizeZ); //its size
-      
-  G4LogicalVolume* logicEnv =                         
-    new G4LogicalVolume(solidEnv,            //its solid
-                        LAr_mat,             //its material
-                        "logicEnv");         //its name
-               
-  G4VPhysicalVolume* physEnv = 
-    new G4PVPlacement(0,                       //no rotation
-                    G4ThreeVector(),         //at (0,0,0)
-                    logicEnv,                //its logical volume
-                    "physEnv",              //its name
-                    logicWorld,              //its mother  volume
-                    false,                   //no boolean operation
-                    0,                       //copy number
-                    checkOverlaps);          //overlaps checking
+    
+  // Top Frame 
+  G4Box* solidFrameTop = new G4Box("solidFrameTop", F_w+2F_t, F_t, F_d); 
+  logicFrameTop = new G4LogicalVolume(solidFrameTop, panel_mat, "logicFrameTop");                    
+  physFrameTop = new G4PVPlacement(0, G4ThreeVector(0.,F_w/2+F_t/2,0.), logicFrameTop, "physFrameTop", logicWorld, false, 0);  
+  // Bottom Frame 
+  G4Box* solidFrameBot = new G4Box("solidFrameBot", F_w+2F_t, F_t, F_d); 
+  logicFrameBot = new G4LogicalVolume(solidFrameBot, panel_mat, "logicFrameBot");                    
+  physFrameBot = new G4PVPlacement(0, G4ThreeVector(0.,-F_w/2-F_t/2,0.), logicFrameBot, "physFrameBot", logicWorld, false, 0);   
+  // Right Frame 
+  G4Box* solidFrameRight = new G4Box("solidFrameRight", F_t, F_w, F_d); 
+  logicFrameRight = new G4LogicalVolume(solidFrameRight, panel_mat, "logicFrameRight");                    
+  physFrameRight = new G4PVPlacement(0, G4ThreeVector(F_w/2+F_t/2,0.,0.), logicFrameRight, "physFrameRight", logicWorld, false, 0);     
+  // Left Frame 
+  G4Box* solidFrameLeft = new G4Box("solidFrameLeft", F_t, F_w, F_d); 
+  logicFrameLeft = new G4LogicalVolume(solidFrameLeft, panel_mat, "logicFrameLeft");                    
+  physFrameLeft = new G4PVPlacement(0, G4ThreeVector(-F_w/2-F_t/2,0.,0.), logicFrameLeft, "physFrameLeft", logicWorld, false, 0);              
 
+  // Window
+  G4Box* solidFrameWindow = new G4Box("solidFrameWindow", F_w, F_w, W_d); 
+  logicFrameWindow = new G4LogicalVolume(solidFrameWindow, glass_mat, "logicFrameWindow");                    
+  physFrameWindow = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicFrameWindow, "physFrameWindow", logicWorld, false, 0);  
 
   //
   //always return the physical World
@@ -218,8 +218,8 @@ void DMXDetectorConstruction::ConstructSDandField()
         LXeSD.Put(aSD);
       }
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
- if(logicEnv)
-      SetSensitiveDetector(logicEnv,LXeSD.Get());
+ if(logicFrameWindow)
+      SetSensitiveDetector(logicFrameWindow,LXeSD.Get());
 gedit
 
     /*if (pmtSD.Get() == 0)                                        //Aquí detecto los eventos en el SiPM
