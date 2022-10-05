@@ -124,9 +124,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
     return false;}*/
 
 
-  if (aStep->GetPreStepPoint()->GetProcessDefinedStep() && aStep->GetPostStepPoint()->GetPhysicalVolume()->GetName() != "Arbox_phys") 
+  /*if (aStep->GetPreStepPoint()->GetProcessDefinedStep() && aStep->GetPostStepPoint()->GetPhysicalVolume()->GetName() != "Arbox_phys") 
   {aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
-    return false;}
+    return false;}*/
   
   G4double edep = aStep->GetTotalEnergyDeposit();
   G4double ek = aStep->GetPreStepPoint()->GetKineticEnergy();

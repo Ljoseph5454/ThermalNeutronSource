@@ -41,7 +41,7 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0 0 0.3 m
+/gps/pos/centre 0 0 0.5 m
 
 /gps/direction 0 0 -1
 
@@ -69,5 +69,5 @@
 
 #/run/beamOn 10000000
 #/run/beamOn 108000
-/run/beamOn 50
+/run/beamOn 10
 

@@ -111,6 +111,10 @@ private:
   G4VPhysicalVolume* physFrameLeft;
   G4LogicalVolume*   logicWindow;
   G4VPhysicalVolume* physWindow;
+  G4LogicalVolume*   logicS;
+  G4VPhysicalVolume* physS;
+  G4LogicalVolume*   logicSD2;
+  G4VPhysicalVolume* physSD2;
 
   G4LogicalVolume*   Vacuum_vessel_log;
   G4VPhysicalVolume* Vacuum_vessel_phys;
