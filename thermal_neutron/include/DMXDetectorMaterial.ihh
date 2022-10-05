@@ -83,6 +83,9 @@
   G4Material*    sapphire_mat;
   G4Material*    brass_mat; 
   G4Material*    nylon_mat;
+  G4Material*    BF3_mat;
+  G4Material*    B4C_mat;
+  G4Material*    HE3Detector_mat;
 
 
 

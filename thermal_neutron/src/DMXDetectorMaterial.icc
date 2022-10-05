@@ -976,13 +976,44 @@ const G4int PTFE_NUMENTRIES = 3;
   Brass->AddElement(Zn, 0.405);
 
 
-   //Nylon
-    G4Material* Nylon = new G4Material
+  //Nylon
+  G4Material* Nylon = new G4Material
     (name="Nylon", density=1.150*g/cm3, ncomponents=4);
-    Nylon->AddElement(C, 12);
-    Nylon->AddElement(H, 22);
-    Nylon->AddElement(N, 2);
-    Nylon->AddElement(O, 2);
+  Nylon->AddElement(C, 12);
+  Nylon->AddElement(H, 22);
+  Nylon->AddElement(N, 2);
+  Nylon->AddElement(O, 2);
+
+//Logan's Materials
+  //Boron
+  G4Element* B = new G4Element
+    (name="Boron"  ,symbol="B" , z= 5., a=10.81*g/mole);
+	
+  //Fluorine
+  //G4Element* F = new G4Element
+    //(name="Fluorine"  ,symbol="F" , z= 9., a=18.998*g/mole);
+
+  //BF3
+  G4Material* BF3 = new G4Material
+    (name="BF3", density=0.00276*g/cm3, ncomponents=2);
+  BF3->AddElement(B, 1);
+  BF3->AddElement(F, 3);
+
+  //B4C
+  G4Material* B4C = new G4Material
+    (name="B4C", density=2.52*g/cm3, ncomponents=2);
+  B4C->AddElement(B, 4);
+  B4C->AddElement(C, 1);
+
+  //HE3
+  G4Isotope* HE3 = new G4Isotope
+    (name="Helium3", iz= 2, in=3, a=3.016*g/mole);
+  G4Element* He = new G4Element
+    (name="Helium", "He", ncomponents=1);
+  U->AddIsotope(HE3, abundance=1);
+  G4Material* HE3Detector = new G4Material
+    (name="HE3Detector", density=0.000165*g/cm3, ncomponents=1);
+  sourceAm->AddElement(He, 1); 
 
 //PEEk by RYan
   G4Material* PEEK = new G4Material
@@ -1043,3 +1074,7 @@ jacketflange_mat = ssteel;
       sapphire_mat = sapphire;
       brass_mat = Brass;
       nylon_mat = Nylon;
+      BF3_mat = BF3;
+      B4C_mat = B4C;
+      HE3Detector_mat = HE3Detector;
+
