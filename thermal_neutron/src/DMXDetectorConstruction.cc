@@ -157,12 +157,12 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
     new G4Box("World",                       //its name
        world_sizeXY, world_sizeXY, world_sizeZ);     //its size
       
-  G4LogicalVolume* logicWorld =                         
+    logicWorld =                         
     new G4LogicalVolume(solidWorld,          //its solid
                         vacuum_mat,           //its material
-                        "World");            //its name
+                        "logicWorld");            //its name
                                    
-  G4VPhysicalVolume* physWorld = 
+    physWorld = 
     new G4PVPlacement(0,                     //no rotation
                       G4ThreeVector(),       //at (0,0,0)
                       logicWorld,            //its logical volume
@@ -213,7 +213,8 @@ void DMXDetectorConstruction::ConstructSDandField()
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicS){
       SetSensitiveDetector(logicS,LXeSD.Get());
-      SetSensitiveDetector(logicSD2,LXeSD.Get());}
+      SetSensitiveDetector(logicSD2,LXeSD.Get());
+      SetSensitiveDetector(logicWorld,LXeSD.Get());}
  //if(logicSD2)
    //   SetSensitiveDetector(logicSD2,LXeSD.Get());
     /*if (pmtSD.Get() == 0)                                        //Aquí detecto los eventos en el SiPM
