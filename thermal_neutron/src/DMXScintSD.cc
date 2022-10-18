@@ -66,6 +66,7 @@
 
 
 int n=1;
+int HasHit=0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -151,8 +152,10 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
  //if (FirstStep == true || LastStep ==true)
 //if (FirstStep == true)
  
+
+
   if(Volume == "physSD2"){
-  hit = true;}
+  HasHit = HasHit+1;}
 
 /*  if(Volume == "physS" && LastStep == true){
   Info << n <<",";}
@@ -165,7 +168,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   Info << '\n' << n <<"," << 1000000*ek <<",";}
   //if(Volume == "physS" && LastStep == true){
   //Info << '\n' << n <<"," << ek;}
-  if(Volume == "physSD2" && FirstStep == true){
+  if(Volume == "physSD2" && HasHit == 1){
   Info << "1" ;}
    
   //if(Volume == "World"){

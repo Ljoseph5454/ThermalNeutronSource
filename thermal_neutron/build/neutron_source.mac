@@ -53,7 +53,7 @@
 #/gps/ene/max 0.1 eV
 
 /gps/ene/type Lin
-/gps/ene/min 0.0001 eV
+/gps/ene/min 0.001 eV
 /gps/ene/max 0.1 eV
 /gps/ene/intercept 1
 /gps/ene/gradient 0

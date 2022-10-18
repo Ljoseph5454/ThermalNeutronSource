@@ -1,3 +1,5 @@
 
 thermal_neutron/thermal_neutron/
 thermal_neutron/TN/
+*.py
+*.py
