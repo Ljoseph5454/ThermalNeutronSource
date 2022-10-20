@@ -106,8 +106,18 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 {
 
   //need to know if this is an optical photon and exclude it:
-  //if(aStep->GetTrack()->GetDefinition()
-  //  == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
+  if(aStep->GetTrack()->GetDefinition()
+    == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
+  if(aStep->GetTrack()->GetDefinition()
+    == G4Electron::ElectronDefinition()) 
+
+    {aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}
+  if(aStep->GetTrack()->GetDefinition()
+    == G4Proton::ProtonDefinition()) 
+
+    {aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
@@ -148,13 +158,13 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   HitID = scintillatorCollection->insert(newHit);
 
- //if(strcmp(particleName,Ar36) == 0 || strcmp(particleName,Ar38) == 0 || strcmp(particleName,Ar40) == 0)
+ //if(strcmp(particleName,"proton") == 0 || strcmp(particleName,"e-") == 0 || strcmp(particleName,Ar40) == 0)
  //if (FirstStep == true || LastStep ==true)
 //if (FirstStep == true)
  
 
 
-  if(Volume == "physSD2"){
+  if(Volume == "physS"){
   HasHit = HasHit+1;}
 
 /*  if(Volume == "physS" && LastStep == true){
@@ -164,11 +174,11 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   if(Volume =="OutOfWorld" && hit == false){
   Info << "0" <<'\n' ;}*/
  
-  if(StepLength == 486.5){
-  Info << '\n' << n <<"," << 1000000*ek <<",";}
+  if(Volume == "physS"){
+  Info << '\n' << n <<"," << 1000000*ek <<","<< HasHit;}
   //if(Volume == "physS" && LastStep == true){
   //Info << '\n' << n <<"," << ek;}
-  if(Volume == "physSD2" && HasHit == 1){
+  if(Volume == "physS" && HasHit == 1){
   Info << "1" ;}
    
   //if(Volume == "World"){

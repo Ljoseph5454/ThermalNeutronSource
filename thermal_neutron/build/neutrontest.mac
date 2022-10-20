@@ -32,11 +32,11 @@
 #9.7 eV is scintillation light
 #
 # gun: isotropic
-#/gps/ang/type iso
+/gps/ang/type iso
 #
 # OR gun: shoot down
 #/gps/ang/type direction 
-/gps/direction -1 0 0
+#/gps/direction -1 0 0
 
 #OR gun: cosine distribution
 #/gps/ang/type cos
@@ -59,5 +59,5 @@
 /dmx/pmtfile gamma_1000_pmt.out
 /dmx/histogramfile gamma_1000
 
-/run/beamOn 5
+/run/beamOn 10
 
