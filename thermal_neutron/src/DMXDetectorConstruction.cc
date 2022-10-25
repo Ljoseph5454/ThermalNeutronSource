@@ -166,7 +166,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
     new G4PVPlacement(0,                     //no rotation
                       G4ThreeVector(),       //at (0,0,0)
                       logicWorld,            //its logical volume
-                      "World",               //its name
+                      "physWorld",               //its name
                       0,                     //its mother  volume
                       false,                 //no boolean operation
                       0,                     //copy number
@@ -188,7 +188,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
   physSD2 = new G4PVPlacement(0, G4ThreeVector(-0.2*S_l,0.,0.), logicSD2, "physSD2", logicWorld, false, 0);   
 
-  // Empty Inside
+  // Sapphire Window
   G4Box* solidWindow = new G4Box("solidWindow", 0.2*S_l, 0.1*S_l, 0.1*S_l); 
   logicWindow = new G4LogicalVolume(solidWindow, sapphire_mat, "logicWindow");                    
   physWindow = new G4PVPlacement(0, G4ThreeVector(-0.3*S_l,0.,0.), logicWindow, "physWindow", logicWorld, false, 0); 
@@ -218,7 +218,8 @@ void DMXDetectorConstruction::ConstructSDandField()
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicS){
       SetSensitiveDetector(logicS,LXeSD.Get());
-      SetSensitiveDetector(logicWindow,LXeSD.Get());}
+      SetSensitiveDetector(logicWindow,LXeSD.Get());
+      SetSensitiveDetector(logicWorld,LXeSD.Get());}
  //if(logicSD2)
    //   SetSensitiveDetector(logicSD2,LXeSD.Get());
     /*if (pmtSD.Get() == 0)                                        //Aquí detecto los eventos en el SiPM

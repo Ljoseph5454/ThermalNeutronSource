@@ -41,9 +41,9 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0 0 0.5 m
-
-/gps/direction 0 0 -1
+/gps/pos/centre 0 0 0 m
+/gps/ang/type iso
+#/gps/direction 0 0 -1
 
 #
 #
@@ -53,8 +53,8 @@
 #/gps/ene/max 0.1 eV
 
 /gps/ene/type Lin
-/gps/ene/min 0.001 eV
-/gps/ene/max 0.1 eV
+/gps/ene/min 1 MeV
+/gps/ene/max 1.001 MeV
 /gps/ene/intercept 1
 /gps/ene/gradient 0
 
