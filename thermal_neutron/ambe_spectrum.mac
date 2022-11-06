@@ -37,7 +37,7 @@
 /gps/pos/type Surface
 /gps/shape Sphere
 /gps/radius 1.0 cm
-/gps/centre 0. 132.0 -302.65 mm
+/gps/centre 0 0 0 m
 /gps/angtype iso
 /gps/surfnorm 1
 /gps/mintheta 0.

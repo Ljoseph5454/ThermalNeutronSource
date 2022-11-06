@@ -9,7 +9,7 @@
 // * include a list of copyright holders.                             *
 // *                                                                  *
 // * Neither the authors of this software system, nor their employing *
-// * institutes,nor the agencies providing financial support for this *
+// * institutesls,nor the agencies providing financial support for this *
 // * work  make  any representation or  warranty, express or implied, *
 // * regarding  this  software system or assume any liability for its *
 // * use.  Please see the license in the file  LICENSE  and URL above *
@@ -80,8 +80,8 @@ DMXScintSD::DMXScintSD(G4String name)
 
   Info.open("Informacion.csv");
   Info1.open("General.csv");
-  Info << "Event,"<<"Energy_Cinetica," << "Particle," << "x,"<<"y,"<<"z,"<<"Volume"<<'\n';
-  Info1 << "Evento," << "Hits_Generados\n";
+  Info << "Event,"<<"Hit";
+  Info1 << "Evento," << "KE," << "px," << "py," << "pz," << "x," << "y," << "z";
 
 
 
@@ -191,17 +191,24 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   if(Volume =="OutOfWorld" && hit == false){
   Info << "0" <<'\n' ;}*/
  
-  if(particleName == "neutron" && HasHit > 0){
+ /* if(particleName == "neutron" && HasHit > 0){
   Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << Position << "," << HasHit <<"," << "1";}
   if(ek == 0 && particleName == "neutron"){
   Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";}
   //if(Volume == "physS" && LastStep == true){
   //Info << '\n' << n <<"," << ek;}
   //if(Volume == "physS" && HasHit == 1){
-  //Info << "1" ;}
+  //Info << "1" ;}*/
    
   //if(Volume == "World"){
   //Info << '\n';//}
+
+  if(particleName == "neutron" && HasHit > 0){
+  Info << '\n' << n <<"," << "1";
+  Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ();}
+  if(ek == 0 && particleName == "neutron"){
+  Info << '\n' << n <<"," << "0"; 
+  /*Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";*/}
 
   step++;
 
@@ -224,7 +231,7 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   if (verboseLevel>=1){
 
     G4cout << "     LXe collection: " <<  nHits << " hits" << G4endl;
-    Info1 << n<<","<<nHits <<"\n";
+    //Info1 << n<<","<<nHits <<"\n";
     n++;
 
   }
