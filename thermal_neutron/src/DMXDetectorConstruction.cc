@@ -2,7 +2,7 @@
 // ********************************************************************
 // * License and Disclaimer                                           *
 // *                                                                  *
-// * The  Geant4 software  is  copyright of the Copyright Holders  of *
+// * The./  Geant4 software  is  copyright of the Copyright Holders  of *
 // * the Geant4 Collaboration.  It is provided  under  the terms  and *
 // * conditions of the Geant4 Software License,  included in the file *
 // * LICENSE and available at  http://cern.ch/geant4/license .  These *
@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double S_l = 20*cm, V_l=0.3*S_l, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = 10*cm, V_l=0.3*S_l, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -188,10 +188,10 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
   physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicSD2, "physSD2", logicWorld, false, 0);   
 
-  // Sapphire Window
+ /* // Sapphire Window
   G4Box* solidWindow = new G4Box("solidWindow", 0.25*(S_l-V_l), 0.5*V_l, 0.5*V_l); 
   logicWindow = new G4LogicalVolume(solidWindow, vacuum_mat, "logicWindow");                    
-  physWindow = new G4PVPlacement(0, G4ThreeVector(-0.25*(S_l+V_l),0.,0.), logicWindow, "physWindow", logicWorld, false, 0); 
+  physWindow = new G4PVPlacement(0, G4ThreeVector(-0.25*(S_l+V_l),0.,0.), logicWindow, "physWindow", logicWorld, false, 0); */
 
   //
   //always return the physical World
@@ -218,7 +218,7 @@ void DMXDetectorConstruction::ConstructSDandField()
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicS){
       SetSensitiveDetector(logicS,LXeSD.Get());
-      SetSensitiveDetector(logicWindow,LXeSD.Get());
+      //SetSensitiveDetector(logicWindow,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());}
  //if(logicSD2)
    //   SetSensitiveDetector(logicSD2,LXeSD.Get());
