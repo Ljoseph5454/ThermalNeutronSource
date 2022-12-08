@@ -205,7 +205,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   if(particleName == "neutron" && HasHit > 0){
   Info << '\n' << n <<"," << "1";
-  Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ();}
+  Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ() << ',';}
   if(ek == 0 && particleName == "neutron"){
   Info << '\n' << n <<"," << "0"; 
   /*Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";*/}
