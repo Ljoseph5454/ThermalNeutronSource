@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double S_l = 1*in, V_l=2*35*cm, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = (1*2.54)*cm, V_l=2*35*cm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -174,7 +174,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
                      
     
   // Filter
-  G4Box* solidS = new G4Box("solidS", 2.5*cm, 2.5*cm, 0.5*S_l); 
+  G4Box* solidS = new G4Box("solidS", 5*cm, 5*cm, 0.5*S_l); 
   logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
   physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,35*cm+0.5*S_l), logicS, "physS", logicWorld, false, 0);  
   
@@ -184,9 +184,9 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   //physSD1 = new G4PVPlacement(0, G4ThreeVector(0.,0.,5*cm), logicSD1, "physSD1", logicWorld, false, 0);   
   
   // Empty Inside
-  G4Box* solidSD2 = new G4Box("solidSD2", 2.5*cm, 2.5*cm, 1*mm; 
+  G4Box* solidSD2 = new G4Box("solidSD2", 5*cm, 5*cm, 1*mm); 
   logicSD2 = new G4LogicalVolume(solidSD2, sapphire_mat, "logicSD2");                    
-  physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,35*cm+S_l+0.5*mm+1*in), logicSD2, "physSD2", logicWorld, false, 0);   
+  physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,35*cm+S_l+0.5*mm), logicSD2, "physSD2", logicWorld, false, 0);   
 
  /* // Sapphire Window
   G4Box* solidWindow = new G4Box("solidWindow", 0.25*(S_l-V_l), 0.5*V_l, 0.5*V_l); 
