@@ -65,89 +65,6 @@ NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /
 NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
 NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/6_nat_Carbon
 DMXPhysicsList::SetCuts:CutLength : 1 um 
-/run/verbose 1
-/tracking/verbose 1
-/hits/verbose 1
-/dmx/draw/drawColours custom
-/dmx/draw/gammaColour green
-/dmx/draw/drawTracks all
-/dmx/draw/drawHits 0
-/dmx/savePmt 0
-/dmx/saveHits 1
-/dmx/KillGammasInConcrete 0
-/grdm/analogueMC 1
-/grdm/verbose 0
-/grdm/allVolumes
-/gps/pos/type Surface
-/gps/pos/shape Sphere
-/gps/pos/radius 1.0 cm
-/gps/pos/centre 0 0 0 m
-/gps/ang/type iso
-/gps/ang/surfnorm 1
-/gps/ang/mintheta 0.
-/gps/ang/maxtheta 0.30
-/gps/ang/minphi 0.
-/gps/ang/maxphi 6.283185
-/gps/ene/type Arb
-/gps/hist/type arb
-/gps/particle neutron
-/gps/hist/point 0.0 10000
-/gps/hist/point 0.2 11000
-/gps/hist/point 0.4 12000
-/gps/hist/point 0.6 13000
-/gps/hist/point 0.8 12000
-/gps/hist/point 1.0 10000
-/gps/hist/point 1.2 9000
-/gps/hist/point 1.4 11000
-/gps/hist/point 1.6 10000
-/gps/hist/point 1.8 11000
-/gps/hist/point 2.0 9000
-/gps/hist/point 2.2 14000
-/gps/hist/point 2.4 11000
-/gps/hist/point 2.6 12000
-/gps/hist/point 2.8 15000
-/gps/hist/point 3.0 17000
-/gps/hist/point 3.2 16000
-/gps/hist/point 3.4 15000
-/gps/hist/point 3.6 16500
-/gps/hist/point 3.8 17000
-/gps/hist/point 4.0 17000
-/gps/hist/point 4.2 14000
-/gps/hist/point 4.4 13500
-/gps/hist/point 4.6 14500
-/gps/hist/point 4.8 14000
-/gps/hist/point 5.0 13500
-/gps/hist/point 5.2 13000
-/gps/hist/point 5.4 12500
-/gps/hist/point 5.6 11000
-/gps/hist/point 5.8 10000
-/gps/hist/point 6.0 9800
-/gps/hist/point 6.2 8000
-/gps/hist/point 6.4 7700
-/gps/hist/point 6.6 7000
-/gps/hist/point 6.8 6800
-/gps/hist/point 7.0 6000
-/gps/hist/point 7.2 5000
-/gps/hist/point 7.4 4000
-/gps/hist/point 7.6 3600
-/gps/hist/point 7.8 3000
-/gps/hist/point 8.0 2000
-/gps/hist/point 8.2 1900
-/gps/hist/point 8.4 1750
-/gps/hist/point 8.6 1800
-/gps/hist/point 8.8 1825
-/gps/hist/point 9.0 1600
-/gps/hist/point 9.2 1400
-/gps/hist/point 9.4 1200
-/gps/hist/point 9.6 1100
-/gps/hist/point 9.8 1000
-/gps/hist/point 10.0 800
-/gps/hist/inter Lin
-/random/setDirectoryName ./seeds
-/random/setSavingFlag
-/dmx/hitsfile ambe_spectrum.out
-/dmx/histogramfile ambe_spectrum.his
-/run/beamOn 10
 
 ### ===  Deexcitation model UAtomDeexcitation is activated for 1 region:
           DefaultRegionForTheWorld  1  1  1
@@ -641,6 +558,13 @@ Index : 1     used in the geometry : Yes
  Region(s) which use this couple : 
     DefaultRegionForTheWorld
 
+Index : 2     used in the geometry : Yes
+ Material : sapphire
+ Range cuts        :  gamma  1 um     e-  1 nm     e+  1 um  proton 1 um 
+ Energy thresholds :  gamma  250 eV     e-  250 eV     e+  2.04263 keV proton 100 eV 
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
 ====================================================================
 
 ### Run 0 starts.
@@ -656,21 +580,19 @@ Index : 1     used in the geometry : Yes
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -6.18    -3.76     6.91       9.1        0        0         0     physSD2 initStep
-    1      310       61     -350       9.1        0      481       481       physS Transportation
+    0    -6.18    -3.76     6.91       9.1        0        0         0   physWorld initStep
+    1      621      125     -700       9.1        0      954       954  OutOfWorld Transportation
 WARNING: G4VisManager::IsValidView(): Attempt to draw when no graphics system
   has been instantiated.  Use "/vis/open" or "/vis/sceneHandler/create".
   Alternatively, to avoid this message, suppress instantiation of vis
   manager (G4VisExecutive), possibly by setting G4VIS_NONE, and ensure
   drawing code is executed only if G4VVisManager::GetConcreteInstance()
   is non-zero.
-    2      333     65.6     -375       9.1        0     34.3       516   physWorld Transportation
-    3 1.77e+03      360   -2e+03       9.1        0 2.19e+03  2.71e+03  OutOfWorld Transportation
-     LXe collection: 2 hits
+     LXe collection: 1 hits
 
 ---> Begin of event: 1
 
-     Primary Energy: 5.769138217377742 MeV
+     Primary Energy: 714.6851218056059 keV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -678,15 +600,13 @@ WARNING: G4VisManager::IsValidView(): Attempt to draw when no graphics system
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     4.14      9.1   -0.234      5.77        0        0         0     physSD2 initStep
-    1     -235     -350    -61.5      5.77        0      436       436       physS Transportation
-    2     -252     -375    -65.9      5.77        0     30.8       466   physWorld Transportation
-    3 -1.33e+03   -2e+03     -343      5.77        0 1.97e+03  2.44e+03  OutOfWorld Transportation
-     LXe collection: 2 hits
+    0    -8.98     4.24     1.15     0.715        0        0         0   physWorld initStep
+    1      700     -352     -281     0.715        0      842       842  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 2
 
-     Primary Energy: 6.063619796585683 MeV
+     Primary Energy: 2.727698808943163 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -694,24 +614,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -9.68   0.0301     -2.5      6.06        0        0         0     physSD2 initStep
-    1      350    -22.8      213      6.06        0      420       420       physS Transportation
-    2      363    -23.7      221         6        0     15.6       435       physS hadElastic
-    3      375    -24.8      229         6        0       15       450   physWorld Transportation
-    4    2e+03     -179 1.44e+03         6        0 2.03e+03  2.48e+03  OutOfWorld Transportation
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 2,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0      363    -23.7      221    0.0628        0        0         0       physS initStep
-    1      363    -23.7      221         0   0.0628 0.000919  0.000919       physS hIoni
-     LXe collection: 3 hits
+    0        4    -8.52     3.39      2.73        0        0         0   physWorld initStep
+    1     -204      700     -335      2.73        0      812       812  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 3
 
-     Primary Energy: 7.774243173598108 MeV
+     Primary Energy: 4.351715141982059 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -719,24 +628,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     1.68      9.2    -3.56      7.77        0        0         0     physSD2 initStep
-    1     -171     -350      138      7.77        0      423       423       physS Transportation
-    2     -178     -365      144      4.48        0     17.2       440       physS hadElastic
-    3     -206     -375      157      4.48        0     32.8       473   physWorld Transportation
-    4   -2e+03 -1.06e+03      961      4.48        0 2.08e+03  2.55e+03  OutOfWorld Transportation
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 2,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -178     -365      144       3.3        0        0         0       physS initStep
-    1     -178     -365      144      3.29  0.00228 0.000318  0.000318       physS hIoni
-     LXe collection: 3 hits
+    0    -9.37    -1.65     3.07      4.35        0        0         0   physWorld initStep
+    1      700      199     -269      4.35        0      786       786  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 4
 
-     Primary Energy: 957.7586253078713 keV
+     Primary Energy: 15.59566150813662 keV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -744,360 +642,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     3.31    -8.75    -3.53     0.958        0        0         0     physSD2 initStep
-    1    -92.3      350      142     0.958        0      399       399       physS Transportation
-    2    -94.2      357      144     0.882        0     7.88       406       physS hadElastic
-    3    -94.9      358      149    0.0567        0     4.64       411       physS hadElastic
-    4     -124      361      152    0.0537        0     29.4       441       physS hadElastic
-    5     -127      359      153    0.0426        0     4.21       445       physS hadElastic
-    6     -130      357      157    0.0162        0     5.08       450       physS hadElastic
-    7     -135      347      159     0.014        0     11.5       461       physS hadElastic
-    8     -138      345      158   0.00282        0      3.4       465       physS hadElastic
-    9     -138      344      155   0.00256        0     3.12       468       physS hadElastic
-   10     -144      344      143  0.000712        0     13.9       482       physS hadElastic
-   11     -143      341      139  0.000633 7.89e-05      4.8       487       physS hadElastic
-   12     -142      340      138   0.00047        0     1.73       488       physS hadElastic
-   13     -139      338      134  0.000342        0     5.59       494       physS hadElastic
-   14     -132      339      130  6.74e-05        0     7.83       502       physS hadElastic
-   15     -131      339      131  4.56e-05 2.19e-05     1.06       503       physS hadElastic
-   16     -129      340      131  4.12e-05 4.42e-06     2.42       505       physS hadElastic
-   17     -123      343      131  4.04e-05 8.51e-07     6.87       512       physS hadElastic
-   18     -120      346      130  3.14e-05 9.03e-06     3.78       516       physS hadElastic
-   19     -120      346      130  1.24e-05  1.9e-05   0.0622       516       physS hadElastic
-   20     -107      350      132  1.02e-05 2.26e-06     14.1       530       physS hadElastic
-   21     -106      350      132  6.57e-07  9.6e-06    0.433       530       physS hadElastic
-   22     -104      348      137  5.07e-08 6.29e-07      5.9       536       physS hadElastic
-   23     -103      348      137  3.09e-08 2.87e-08    0.378       537       physS hadElastic
-   24     -102      348      136  4.95e-09 3.74e-08     1.38       538       physS hadElastic
-   25     -102      348      136  6.83e-09 9.47e-08    0.185       538       physS hadElastic
-   26     -103      351      138  6.49e-08 6.48e-09     3.63       542       physS hadElastic
-   27     -103      355      135  4.48e-08 4.49e-08     5.11       547       physS hadElastic
-   28     -103      355      132  2.05e-08 4.87e-08     3.26       550       physS hadElastic
-   29     -103      354      125  6.18e-08 2.34e-08     6.73       557       physS hadElastic
-   30     -106      347      123  2.87e-08 7.88e-08     7.99       565       physS hadElastic
-   31     -105      347      122  2.54e-08 7.66e-09     2.12       567       physS hadElastic
-   32     -101      349      120  5.22e-08 4.13e-08     3.84       571       physS hadElastic
-   33     -101      349      120  7.75e-08 5.27e-08   0.0533       571       physS hadElastic
-   34     -102      346      126  4.69e-08 5.66e-08     6.79       578       physS hadElastic
-   35     -103      344      127  5.37e-08    6e-08     1.88       580       physS hadElastic
-   36     -103      344      127  5.64e-08 1.97e-08    0.468       580       physS hadElastic
-   37     -105      342      128  7.23e-08  2.1e-08     2.18       582       physS hadElastic
-   38     -105      342      128  1.73e-08 6.24e-08    0.161       583       physS hadElastic
-   39     -105      342      128  1.43e-08 2.25e-08    0.204       583       physS hadElastic
-   40     -107      339      127  3.36e-08 4.58e-09     3.92       587       physS hadElastic
-   41     -107      339      127  1.45e-08 7.69e-08    0.614       587       physS hadElastic
-   42     -103      347      126  8.57e-09 2.38e-08     8.97       596       physS hadElastic
-   43     -103      347      125  9.93e-09 1.44e-08    0.214       596       physS hadElastic
-   44    -94.8      348      132  1.45e-08  3.8e-08     10.3       607       physS hadElastic
-   45    -94.1      345      132  1.18e-08 5.11e-09     3.04       610       physS hadElastic
-   46      -94      344      131  2.06e-08 3.89e-08    0.361       610       physS hadElastic
-   47    -98.2      348      140  1.73e-08 2.42e-08     10.7       621       physS hadElastic
-   48    -98.3      350      142  4.59e-09 2.09e-08     2.71       624       physS hadElastic
-   49    -98.8      350      144  1.45e-08 1.12e-08     1.38       625       physS hadElastic
-   50    -98.6      350      143  2.08e-08 7.26e-08    0.218       625       physS hadElastic
-   51    -97.3      348      144  9.79e-09 3.15e-08     1.96       627       physS hadElastic
-   52    -98.4      351      147  3.35e-08 2.51e-09     4.26       631       physS hadElastic
-   53    -97.6      352      148  1.38e-08 4.49e-08     1.62       633       physS hadElastic
-   54    -97.9      355      149  3.98e-09  4.3e-08     3.83       637       physS hadElastic
-   55    -98.9      357      153  2.13e-08 2.68e-08     4.05       641       physS hadElastic
-   56    -99.1      349      154  1.21e-09 6.24e-08     8.02       649       physS hadElastic
-   57    -99.7      349      155  2.27e-08 7.53e-09    0.838       650       physS hadElastic
-   58     -102      345      156  8.17e-09 1.72e-08     5.01       655       physS hadElastic
-   59     -102      344      156  3.06e-08 1.22e-07    0.632       655       physS hadElastic
-   60     -101      340      156  9.44e-08 2.71e-08     4.57       660       physS hadElastic
-   61     -102      339      157  2.78e-08 8.53e-08     1.55       662       physS hadElastic
-   62     -102      334      159  1.18e-08 4.61e-08     5.87       667       physS hadElastic
-   63     -101      334      159  2.79e-08  3.3e-08    0.202       668       physS hadElastic
-   64     -100      333      160  2.83e-08 2.36e-08     1.73       669       physS hadElastic
-   65    -99.9      330      160   1.1e-07 6.12e-08     2.51       672       physS hadElastic
-   66    -91.3      310      165  7.04e-08 5.29e-08     22.1       694       physS hadElastic
-   67    -91.2      310      164   6.5e-08 4.91e-08        1       695       physS hadElastic
-   68    -92.2      309      165  1.04e-07 8.31e-08     2.01       697       physS hadElastic
-   69    -89.7      313      163  1.09e-07 7.02e-08     5.73       703       physS hadElastic
-   70    -89.6      313      162  1.01e-07 3.77e-08    0.886       704       physS hadElastic
-   71    -89.6      313      162  6.13e-08  4.4e-08    0.456       704       physS hadElastic
-   72    -89.7      312      161  5.58e-08 2.62e-08      1.3       705       physS hadElastic
-   73    -88.6      311      158  5.83e-08  2.1e-08     3.26       709       physS hadElastic
-   74    -84.2      310      155  4.79e-09 5.83e-08      5.5       714       physS hadElastic
-   75    -81.5      303      153  2.78e-08  6.5e-09     7.41       722       physS hadElastic
-   76    -76.4      299      155  3.11e-08  1.7e-08     7.12       729       physS hadElastic
-   77    -67.3      295      156  1.26e-08 5.64e-08     9.97       739       physS hadElastic
-   78    -67.2      292      154  1.99e-08 6.29e-08     3.51       742       physS hadElastic
-   79    -62.7      285      159  4.54e-08 2.26e-08     9.75       752       physS hadElastic
-   80    -64.6      285      154  6.74e-08 9.17e-08     5.23       757       physS hadElastic
-   81      -64      282      154   5.5e-08 2.79e-08     2.68       760       physS hadElastic
-   82    -62.2      284      150  3.83e-08  7.8e-08     4.69       764       physS hadElastic
-   83    -61.9      285      149  2.54e-08 2.77e-08    0.823       765       physS hadElastic
-   84      -59      287      149  2.87e-08 3.34e-08     3.72       769       physS hadElastic
-   85    -58.2      288      149  7.61e-08 6.81e-08     1.35       770       physS hadElastic
-   86      -57      290      149  1.23e-07 2.42e-07     2.86       773       physS hadElastic
-   87      -57      291      149  1.21e-07 8.24e-08     0.23       773       physS hadElastic
-   88    -58.1      291      149  9.29e-08 6.68e-08     1.21       775       physS hadElastic
-   89    -58.5      291      149  7.45e-08 3.38e-08    0.428       775       physS hadElastic
-   90    -62.2      287      150  9.74e-08 4.72e-08     5.46       781       physS hadElastic
-   91      -63      285      148  1.12e-07 8.47e-08     3.24       784       physS hadElastic
-   92      -63      284      148   2.6e-08 1.38e-07    0.954       785       physS hadElastic
-   93    -62.8      281      147  5.64e-08 2.26e-08     2.92       788       physS hadElastic
-   94    -61.9      278      147  1.24e-08  4.9e-08     3.24       791       physS hadElastic
-   95      -61      275      149  1.75e-08 1.46e-08     3.59       794       physS hadElastic
-   96      -61      275      149  9.25e-08 3.68e-08   0.0417       795       physS hadElastic
-   97    -65.4      277      153  7.64e-09 1.05e-07     6.09       801       physS hadElastic
-   98    -65.4      278      152  3.25e-08 3.28e-09    0.435       801       physS hadElastic
-   99    -65.4      278      152  2.21e-08 3.63e-08   0.0646       801       physS hadElastic
-  100    -65.3      278      152  1.06e-08 1.91e-08    0.159       801       physS hadElastic
-  101    -63.1      279      155  1.42e-08 2.05e-08     3.22       804       physS hadElastic
-  102    -66.4      283      156  1.81e-08 9.37e-08     5.89       810       physS hadElastic
-  103    -63.8      283      160  3.85e-08    4e-09     4.22       815       physS hadElastic
-  104    -60.1      293      163  8.48e-09 4.57e-08     11.3       826       physS hadElastic
-  105    -60.1      293      163   1.1e-08 3.84e-08   0.0367       826       physS hadElastic
-  106    -60.2      287      162  1.83e-08 4.12e-08     5.63       832       physS hadElastic
-  107    -60.2      287      162  2.15e-09 2.35e-08    0.553       832       physS hadElastic
-  108    -60.9      287      161  1.77e-08 7.89e-09     1.36       834       physS hadElastic
-  109    -57.7      287      162  1.71e-09 3.45e-08     3.28       837       physS hadElastic
-  110    -57.7      287      162  2.08e-09 4.05e-08   0.0643       837       physS hadElastic
-  111    -58.1      289      157  1.18e-09 1.66e-08      5.2       842       physS hadElastic
-  112    -58.1      289      157  8.65e-08 2.32e-08   0.0561       842       physS hadElastic
-  113    -58.1      288      156   1.5e-08 8.39e-08    0.582       843       physS hadElastic
-  114    -52.9      286      155  4.45e-08 3.13e-08     5.66       848       physS hadElastic
-  115    -52.9      286      155   1.8e-08 4.05e-08   0.0773       848       physS hadElastic
-  116    -52.6      289      155   1.7e-08 4.07e-08     2.75       851       physS hadElastic
-  117    -52.7      290      156  7.56e-09 1.12e-08     1.31       853       physS hadElastic
-  118    -52.7      290      156  7.27e-08 1.64e-08     0.12       853       physS hadElastic
-  119    -54.9      296      153  4.29e-08 4.67e-08     7.27       860       physS hadElastic
-  120      -55      297      153  1.03e-08  4.4e-08    0.362       860       physS hadElastic
-  121    -54.6      298      154   5.5e-08 1.45e-08     1.41       862       physS hadElastic
-  122    -56.7      302      148  7.33e-08 1.22e-08     6.86       869       physS hadElastic
-  123    -56.7      302      148  2.71e-08 1.05e-07  0.00969       869       physS hadElastic
-  124    -59.5      300      144  1.22e-08 3.82e-08     5.22       874       physS hadElastic
-  125    -59.6      301      144  7.47e-09 1.08e-08    0.745       875       physS hadElastic
-  126    -59.9      299      143  2.36e-08 3.51e-08     1.81       876       physS hadElastic
-  127    -58.7      295      150  1.09e-08 2.62e-08        8       884       physS hadElastic
-  128    -58.5      295      150  1.06e-07 3.03e-08    0.544       885       physS hadElastic
-  129    -58.9      295      154  9.48e-08 1.36e-08     3.84       889       physS hadElastic
-  130    -58.8      295      156  8.28e-08 1.94e-08     1.47       890       physS hadElastic
-  131    -56.5      294      166  4.79e-08 6.49e-08     10.5       901       physS hadElastic
-  132      -56      292      167  1.03e-08 1.95e-07     2.06       903       physS hadElastic
-  133    -56.1      292      167  1.86e-08 1.05e-09    0.192       903       physS hadElastic
-  134    -61.2      287      162  4.44e-08 3.88e-08     9.31       912       physS hadElastic
-  135    -82.6      287      170  8.25e-08  6.2e-08     23.1       935       physS hadElastic
-  136    -81.3      288      171  5.45e-08 6.68e-08     1.44       937       physS hadElastic
-  137      -81      287      171  5.08e-08 1.81e-08    0.933       938       physS hadElastic
-  138    -80.4      285      171  4.54e-08 2.65e-08     1.59       939       physS hadElastic
-  139    -79.9      285      168  5.23e-08 9.24e-08     3.44       943       physS hadElastic
-  140    -79.8      285      168  3.72e-08 4.94e-08     0.52       943       physS hadElastic
-  141    -80.4      286      167  5.27e-08 4.54e-08     1.03       944       physS hadElastic
-  142    -81.3      288      157  9.99e-08 8.67e-09     10.4       955       physS hadElastic
-  143    -82.4      287      156  4.46e-08 1.43e-07     2.28       957       physS hadElastic
-  144    -84.8      284      150  2.54e-08 6.41e-08     7.23       964       physS hadElastic
-  145    -86.7      284      151  1.75e-08  1.7e-08     2.17       966       physS hadElastic
-  146    -88.6      283      152  2.33e-08  2.7e-08     2.28       969       physS hadElastic
-  147    -89.7      283      152   2.3e-08 2.68e-08     1.23       970       physS hadElastic
-  148    -94.4      283      154  1.12e-08  2.6e-08     5.06       975       physS hadElastic
-  149    -94.9      283      153  3.66e-08 2.13e-09     1.09       976       physS hadElastic
-  150    -97.7      280      150   5.9e-08 2.57e-08     5.02       981       physS hadElastic
-  151    -98.6      279      152   3.9e-08 4.03e-08     2.18       983       physS hadElastic
-  152     -102      279      152  4.88e-08 3.38e-08     3.14       986       physS hadElastic
-  153     -102      279      152  8.17e-08 6.26e-09    0.625       987       physS hadElastic
-  154     -104      280      152  1.71e-08 1.28e-07     1.73       989       physS hadElastic
-  155     -104      281      151   4.8e-09 1.77e-08     1.29       990       physS hadElastic
-  156     -105      281      151  4.94e-09 9.27e-09     1.14       991       physS hadElastic
-  157     -105      281      151  8.23e-09 2.43e-08  0.00212       991       physS hadElastic
-  158     -103      280      150  1.56e-08 1.09e-08     2.14       993       physS hadElastic
-  159     -102      283      147  1.03e-08 9.73e-09     4.71       998       physS hadElastic
-  160     -102      283      146  3.29e-08  6.4e-09    0.415       998       physS hadElastic
-  161     -106      281      143  1.65e-08 6.07e-08     4.79     1e+03       physS hadElastic
-  162     -106      281      141  2.21e-08 6.99e-08     2.33  1.01e+03       physS hadElastic
-  163     -104      283      143  7.67e-08 5.31e-08     3.43  1.01e+03       physS hadElastic
-  164     -104      286      143  4.18e-08 6.18e-08     3.31  1.01e+03       physS hadElastic
-  165     -106      293      143  3.23e-08 2.26e-08     7.11  1.02e+03       physS hadElastic
-  166     -106      293      143  5.46e-08 1.42e-08    0.894  1.02e+03       physS hadElastic
-  167     -105      298      144  1.63e-08 5.36e-08     5.03  1.03e+03       physS hadElastic
-  168     -104      298      144  1.95e-08 1.95e-08     1.24  1.03e+03       physS hadElastic
-  169     -101      298      146  8.32e-09 7.14e-08     2.75  1.03e+03       physS hadElastic
-  170    -95.7      296      143  1.41e-08 2.77e-08     6.87  1.04e+03       physS hadElastic
-  171    -94.7      295      142  3.73e-09 2.07e-08     2.01  1.04e+03       physS hadElastic
-  172    -93.1      292      142  2.34e-09 5.92e-09     2.86  1.04e+03       physS hadElastic
-  173    -92.8      291      141  2.88e-09 1.52e-08    0.863  1.04e+03       physS hadElastic
-  174    -92.8      291      141  4.64e-08 1.67e-08   0.0318  1.04e+03       physS hadElastic
-  175    -92.9      291      141  8.14e-08 2.96e-09    0.111  1.04e+03       physS hadElastic
-  176     -101      288      145  1.85e-08 1.32e-07     9.17  1.05e+03       physS hadElastic
-  177    -99.3      290      146   1.7e-08 2.88e-08     1.98  1.05e+03       physS hadElastic
-  178    -99.8      290      146  4.42e-08 3.06e-09    0.966  1.05e+03       physS hadElastic
-  179     -100      291      147  3.26e-08 5.44e-08    0.876  1.05e+03       physS hadElastic
-  180     -101      292      148  1.03e-07 7.01e-08     2.11  1.06e+03       physS hadElastic
-  181     -101      293      148  1.75e-07 2.08e-08    0.324  1.06e+03       physS hadElastic
-  182     -106      300      147   1.4e-07 9.34e-08     8.65  1.07e+03       physS hadElastic
-  183     -108      303      146  5.05e-08 1.07e-07     3.59  1.07e+03       physS hadElastic
-  184     -109      303      143  6.14e-08  6.4e-09     2.61  1.07e+03       physS hadElastic
-  185     -109      303      143  7.84e-09 7.09e-08  0.00565  1.07e+03       physS hadElastic
-  186     -109      304      141  1.39e-08 6.96e-08     2.03  1.07e+03       physS hadElastic
-  187     -108      304      140  4.67e-08 4.84e-08      1.7  1.08e+03       physS hadElastic
-  188     -107      301      141  8.11e-08 6.37e-09     3.12  1.08e+03       physS hadElastic
-  189     -106      300      140  6.62e-08 4.42e-08     2.05  1.08e+03       physS hadElastic
-  190     -107      299      140  1.47e-08 7.28e-08     1.06  1.08e+03       physS hadElastic
-  191     -107      299      139  3.56e-08 2.03e-08    0.358  1.08e+03       physS hadElastic
-  192     -115      291      134  3.33e-09 7.65e-08     12.5   1.1e+03       physS hadElastic
-  193     -116      289      133  9.23e-08 3.37e-08     2.14   1.1e+03       physS hadElastic
-  194     -119      286      133  8.74e-08 2.15e-08     4.79   1.1e+03       physS hadElastic
-  195     -120      284      132  4.95e-08 7.52e-08     2.09   1.1e+03       physS hadElastic
-  196     -120      284      130  7.63e-08 3.48e-08     1.96  1.11e+03       physS hadElastic
-  197     -123      283      120  7.99e-08 4.72e-09     9.81  1.12e+03       physS hadElastic
-  198     -124      282      117  1.13e-07 5.32e-08     3.38  1.12e+03       physS hadElastic
-  199     -122      283      118  2.66e-08 9.51e-08     2.25  1.12e+03       physS hadElastic
-  200     -121      283      113  4.66e-08 9.86e-08      6.2  1.13e+03       physS hadElastic
-  201     -114      283      108  3.48e-08 1.88e-08     8.35  1.14e+03       physS hadElastic
-  202     -108      289      102  5.79e-08 6.94e-08     10.5  1.15e+03       physS hadElastic
-  203     -103      293       99  6.82e-08 1.28e-08     6.52  1.15e+03       physS hadElastic
-  204    -98.5      295     98.7  3.12e-08 7.13e-08     5.37  1.16e+03       physS hadElastic
-  205     -103      300      110  2.48e-08 3.84e-08     12.8  1.17e+03       physS hadElastic
-  206     -103      302      113  2.99e-08 7.06e-08     4.13  1.18e+03       physS hadElastic
-  207     -102      300      113  6.85e-08 8.77e-10     2.75  1.18e+03       physS hadElastic
-  208     -102      298      112  5.89e-08 1.13e-08      2.5  1.18e+03       physS hadElastic
-  209     -104      295      111  6.49e-08  3.7e-08     3.23  1.18e+03       physS hadElastic
-  210     -104      291      109  4.99e-08 2.82e-08     4.16  1.19e+03       physS hadElastic
-  211     -104      291      109  5.91e-08 3.95e-08    0.134  1.19e+03       physS hadElastic
-  212     -104      291      108  2.93e-08 3.24e-08    0.829  1.19e+03       physS hadElastic
-  213     -104      291      108  2.83e-08 7.43e-08     0.41  1.19e+03       physS hadElastic
-  214     -111      285      108  4.81e-08 2.81e-08     9.19   1.2e+03       physS hadElastic
-  215     -112      287      108  1.93e-09 7.06e-08     1.73   1.2e+03       physS hadElastic
-  216     -110      288      111  6.78e-09 5.31e-08     3.72   1.2e+03       physS hadElastic
-  217     -110      288      111         0        0    0.183   1.2e+03       physS nCapture
-
-*********************************************************************************************************
-* G4Track Information:   Particle = C12,   Track ID = 2,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -94.2      357      144    0.0756        0        0         0       physS initStep
-    1    -94.2      357      144         0   0.0756 0.000436  0.000436       physS ionIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 3,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -94.9      358      149     0.826        0        0         0       physS initStep
-    1    -94.9      358      149     0.825 0.000418 1.64e-05  1.64e-05       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = C12,   Track ID = 4,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -124      361      152   0.00293        0        0         0       physS initStep
-    1     -124      361      152         0  0.00293  6.5e-05   6.5e-05       physS ionIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 5,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -127      359      153    0.0112        0        0         0       physS initStep
-    1     -127      359      153         0   0.0112 0.000363  0.000363       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 6,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -130      357      157    0.0264        0        0         0       physS initStep
-    1     -130      357      157         0   0.0264 0.000564  0.000564       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 7,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -135      347      159    0.0022        0        0         0       physS initStep
-    1     -135      347      159         0   0.0022 0.000161  0.000161       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 8,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -138      345      158    0.0112        0        0         0       physS initStep
-    1     -138      345      158         0   0.0112 0.000363  0.000363       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 9,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -138      344      155  0.000256        0        0         0       physS initStep
-    1     -138      344      155         0 0.000256 5.49e-05  5.49e-05       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 10,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -144      344      143   0.00185        0        0         0       physS initStep
-    1     -144      344      143         0  0.00185 0.000148  0.000148       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 11,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -142      340      138  0.000163        0        0         0       physS initStep
-    1     -142      340      138         0 0.000163 4.38e-05  4.38e-05       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 12,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -139      338      134  0.000128        0        0         0       physS initStep
-    1     -139      338      134         0 0.000128 3.88e-05  3.88e-05       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 13,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -132      339      130  0.000275        0        0         0       physS initStep
-    1     -132      339      130         0 0.000275 5.69e-05  5.69e-05       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = deuteron,   Track ID = 14,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -110      288      111   0.00132        0        0         0       physS initStep
-    1     -110      288      111         0  0.00132 8.75e-05  8.75e-05       physS ionIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = gamma,   Track ID = 15,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -110      288      111      2.22        0        0         0       physS initStep
-    1     2.89      365     84.3     0.232 8.99e-06      140       140       physS compt
-    2    -24.6      355     95.3     0.207 1.76e-05     31.3       171       physS compt
-    3    -67.8      375      130     0.207        0     58.8       230   physWorld Transportation
-    4   -2e+03 1.28e+03 1.66e+03     0.207        0 2.63e+03  2.86e+03  OutOfWorld Transportation
-
-*********************************************************************************************************
-* G4Track Information:   Particle = e-,   Track ID = 16,   Parent ID = 15
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     2.89      365     84.3      1.99        0        0         0       physS initStep
-    1     2.93      365     84.3      1.99  0.00508   0.0453    0.0453       physS eIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = e-,   Track ID = 17,   Parent ID = 15
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -24.6      355     95.3    0.0249        0        0         0       physS initStep
-    1    -24.6      355     95.3    0.0236 0.000902 0.000933  0.000933       physS eIoni
-     LXe collection: 223 hits
+    0     8.48    -3.73    -3.78    0.0156        0        0         0   physWorld initStep
+    1     -700      329     76.9    0.0156        0      787       787  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 5
 
-     Primary Energy: 4.969856743008244 MeV
+     Primary Energy: 3.030944603608998 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1105,33 +656,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0  -0.0894    -5.84     8.11      4.97        0        0         0     physSD2 initStep
-    1    -72.1      183     -350      4.97        0      411       411       physS Transportation
-    2    -72.2      183     -351      2.88        0    0.609       412       physS hadElastic
-    3    -76.7      178     -373     0.704        0     23.5       435       physS hadElastic
-    4    -75.1      180     -375     0.704        0     3.33       439   physWorld Transportation
-    5      955 1.29e+03   -2e+03     0.704        0 2.22e+03  2.66e+03  OutOfWorld Transportation
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 2,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -72.2      183     -351      2.09        0        0         0       physS initStep
-    1    -72.2      183     -351      2.09  9.3e-06  8.2e-07   8.2e-07       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 3,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -76.7      178     -373      2.17        0        0         0       physS initStep
-    1    -76.7      178     -373      2.17  0.00121 0.000114  0.000114       physS hIoni
-     LXe collection: 4 hits
+    0   -0.196     9.39    -3.43      3.03        0        0         0   physWorld initStep
+    1    -33.3     -700      443      3.03        0      839       839  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 6
 
-     Primary Energy: 4.919480466207155 MeV
+     Primary Energy: 7.538432158196449 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1139,33 +670,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     9.61   -0.854    -2.63      4.92        0        0         0     physSD2 initStep
-    1     -350    -5.63      188      4.92        0      407       407       physS Transportation
-    2     -353    -5.68      190      4.86        0     3.68       411       physS hadElastic
-    3     -365    -5.35      194      4.36        0     12.5       423       physS hadElastic
-    4     -375    -1.24      200      4.36        0     12.5       436   physWorld Transportation
-    5   -2e+03      635 1.05e+03      4.36        0 1.94e+03  2.38e+03  OutOfWorld Transportation
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 2,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -353    -5.68      190    0.0637        0        0         0       physS initStep
-    1     -353    -5.68      190         0   0.0637 0.000927  0.000927       physS hIoni
-
-*********************************************************************************************************
-* G4Track Information:   Particle = proton,   Track ID = 3,   Parent ID = 1
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     -365    -5.35      194     0.494        0        0         0       physS initStep
-    1     -365    -5.35      194     0.493 0.000853  2.6e-05   2.6e-05       physS hIoni
-     LXe collection: 4 hits
+    0    -1.13     9.91    0.737      7.54        0        0         0   physWorld initStep
+    1    -75.9     -700       90      7.54        0      719       719  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 7
 
-     Primary Energy: 7.141643583840922 MeV
+     Primary Energy: 5.107119362647732 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1173,15 +684,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -1.07    -9.81    -1.64      7.14        0        0         0     physSD2 initStep
-    1      119      350      145      7.14        0      407       407       physS Transportation
-    2      128      375      156      7.14        0     28.7       436   physWorld Transportation
-    3      670    2e+03      819      7.14        0 1.84e+03  2.27e+03  OutOfWorld Transportation
-     LXe collection: 2 hits
+    0     3.83    -8.89     2.51      5.11        0        0         0   physWorld initStep
+    1     -271      700      3.1      5.11        0      760       760  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 8
 
-     Primary Energy: 6.223765148225612 MeV
+     Primary Energy: 1.352566654481229 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1189,15 +698,13 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0     4.75     5.59     -6.8      6.22        0        0         0     physSD2 initStep
-    1     -163     -350      343      6.22        0      527       527       physS Transportation
-    2     -175     -375      368      6.22        0     37.6       564   physWorld Transportation
-    3     -943   -2e+03 1.97e+03      6.22        0 2.41e+03  2.97e+03  OutOfWorld Transportation
-     LXe collection: 2 hits
+    0   -0.133      3.9    -9.21      1.35        0        0         0   physWorld initStep
+    1      167     -298      700      1.35        0      789       789  OutOfWorld Transportation
+     LXe collection: 1 hits
 
 ---> Begin of event: 9
 
-     Primary Energy: 2.174353853243374 MeV
+     Primary Energy: 5.650551330206138 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1205,20 +712,18 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0    -2.55     9.46     1.99      2.17        0        0         0     physSD2 initStep
-    1     48.1     -350     17.2      2.17        0      363       363       physS Transportation
-    2     51.6     -375     18.3      2.17        0     25.7       389   physWorld Transportation
-    3      280   -2e+03     87.3      2.17        0 1.64e+03  2.03e+03  OutOfWorld Transportation
-     LXe collection: 2 hits
+    0     7.78     3.21     -5.4      5.65        0        0         0   physWorld initStep
+    1     -700     -271      309      5.65        0      822       822  OutOfWorld Transportation
+     LXe collection: 1 hits
  Run terminated.
 Run Summary
   Number of events processed : 10
-  User=0.04s Real=0.08s Sys=0s
+  User=0s Real=0.01s Sys=0s
 Graphics systems deleted.
 Visualization Manager deleting...
 G4 kernel has come to Quit state.
 ================== Deleting memory pools ===================
-Number of memory pools allocated: 13; of which, static: 0
-Dynamic pools deleted: 13 / Total memory freed: 0.044 MB
+Number of memory pools allocated: 12; of which, static: 0
+Dynamic pools deleted: 12 / Total memory freed: 0.017 MB
 ============================================================
 RunManagerKernel is deleted. Good bye :)

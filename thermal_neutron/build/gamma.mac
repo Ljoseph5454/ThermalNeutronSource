@@ -9,7 +9,7 @@
 # verbosities
 /control/verbose 1
 /run/verbose 1
-/tracking/verbose 0
+/tracking/verbose 1
 /hits/verbose 1
 #
 # draw flags
