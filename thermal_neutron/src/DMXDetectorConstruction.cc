@@ -220,7 +220,6 @@ void DMXDetectorConstruction::ConstructSDandField()
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicEnv)
       SetSensitiveDetector(logicEnv,LXeSD.Get());
-gedit
 
     /*if (pmtSD.Get() == 0)                                        //Aquí detecto los eventos en el SiPM
     {
