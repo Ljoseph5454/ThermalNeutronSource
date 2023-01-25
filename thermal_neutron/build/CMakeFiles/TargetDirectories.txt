@@ -1,8 +1,8 @@
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/install/local.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/list_install_components.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/install/strip.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/underground_physics.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/DMX.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build/CMakeFiles/install.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/DMX.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/underground_physics.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/edit_cache.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/rebuild_cache.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/list_install_components.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/install.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/install/local.dir
+/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles/install/strip.dir
