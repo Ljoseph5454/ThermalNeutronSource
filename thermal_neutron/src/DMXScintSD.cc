@@ -66,6 +66,7 @@
 
 
 int n=1;
+int n1=1;
 int HasHit=0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
@@ -108,6 +109,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   //need to know if this is an optical photon and exclude it:
   //if(aStep->GetTrack()->GetDefinition()
   //  == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
+  if(aStep->GetTrack()->GetDefinition() == G4Electron::ElectronDefinition()){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
@@ -156,6 +160,10 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   if(Volume == "physSD2"){
   HasHit = HasHit+1;}
+
+  if(n1!=n){
+  HasHit =0;
+  n1=n;}
 
 /*  if(Volume == "physS" && LastStep == true){
   Info << n <<",";}

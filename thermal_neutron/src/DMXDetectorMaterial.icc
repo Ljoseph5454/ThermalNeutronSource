@@ -960,11 +960,11 @@ const G4int PTFE_NUMENTRIES = 3;
 
    // Sapphire
   G4Material* sapphire= new G4Material
-    (name="sapphire", density=4.0*g/cm3, ncomponents=4);
+    (name="sapphire", density=4.0*g/cm3, ncomponents=2);
   sapphire->AddElement(Al, 2);
   sapphire->AddElement(O, 3);
-  sapphire->AddElement(Ni, 1);
-  sapphire->AddElement(Fe, 1);
+  //sapphire->AddElement(Ni, 1);
+  //sapphire->AddElement(Fe, 1);
 
 
 
