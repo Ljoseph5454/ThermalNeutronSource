@@ -190,7 +190,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
 
   // 
   G4VSolid* Cylinder = new G4Tubs("Cylinder",0.,1*cm,4*cm,0.,2*M_PI*rad);
-  logicCyl = new G4LogicalVolume(Cylinder, sapphire_mat, "logicCyl");
+  logicCyl = new G4LogicalVolume(Cylinder, vacuum_mat, "logicCyl");
   physCyl = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicCyl, "physCyl", logicWorld, false, 0);
 
  /* // Sapphire Window
