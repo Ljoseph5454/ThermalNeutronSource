@@ -129,6 +129,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   G4double posz = aStep->GetPreStepPoint()->GetPosition().z();
 
   G4String Volume = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
+  //G4String NextVolume = aStep->GetPostStepPoint()->GetPhysicalVolume()->GetName();
   G4bool FirstStep = aStep-> IsFirstStepInVolume();
   G4bool LastStep = aStep-> IsLastStepInVolume();
   G4double StepLength = aStep->GetStepLength();
@@ -172,7 +173,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
  
 
 
-  if(Volume == "physWorld"){
+  if(Volume == "physCyl"){
   HasHit = HasHit+1;}
 
   if (Volume == "physWorld"){
@@ -203,10 +204,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   //if(Volume == "World"){
   //Info << '\n';//}
 
-  if(particleName == "neutron" && HasHit > 0){
-  Info << '\n' << n <<"," << "1";
-  Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ() << ',';}
-  if(ek == 0 && particleName == "neutron"){
+  if(particleName == "neutron" && HasHit == 1 && Volume == "physCyl"){
+  Info << '\n' << n <<"," << "1";}
+  if(Volume == "OutOfWorld" && particleName == "neutron" && HasHit == 0){
   Info << '\n' << n <<"," << "0"; 
   /*Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";*/}
 

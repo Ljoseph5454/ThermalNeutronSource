@@ -13,9 +13,3 @@
 /vis/scene/add/volume world
 /vis/sceneHandler/attach
 /vis/viewer/update
-/run/beamOn 1
-/vis/scene/notifyHandlers scene-0
-/vis/viewer/set/projection p
-/vis/viewer/refresh
-/vis/viewer/set/projection o
-/vis/viewer/refresh

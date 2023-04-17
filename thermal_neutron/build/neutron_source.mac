@@ -6,9 +6,9 @@
 ###############################################################################
 
 # verbosities
-/control/verbose 0
+/control/verbose 1
 /run/verbose 1
-/tracking/verbose  0
+/tracking/verbose  1
 /hits/verbose 1
 #turn off the scintillation
 
@@ -41,9 +41,9 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0 0 0 m
-/gps/ang/type iso
-#/gps/direction 0 0 -1
+/gps/pos/centre 0 0.35 0 m
+#/gps/ang/type iso
+/gps/direction 0 -1 0
 
 #
 #
