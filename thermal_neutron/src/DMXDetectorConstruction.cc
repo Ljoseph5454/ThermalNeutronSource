@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double S_l = (1*2.54)*cm, V_l=2*35*cm, F_d = 5*cm, W_d = 5*mm, S_p=4*cm;
+  G4double S_l = (8*2.54)*cm, V_l=2*35*cm, F_d = 5*cm, W_d = 5*mm, S_p=4*cm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -174,9 +174,9 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
                      
     
   // Filter
-  G4Box* solidS = new G4Box("solidS", 0.5*12.7*cm, 0.5*S_l, 0.5*12.7*cm); 
-  logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
-  physS = new G4PVPlacement(0, G4ThreeVector(0.,S_p+0.5*S_l,0.), logicS, "physS", logicWorld, false, 0);  
+  //G4Box* solidS = new G4Box("solidS", 0.5*12.7*cm, 0.5*S_l, 0.5*12.7*cm); 
+  //logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
+  //physS = new G4PVPlacement(0, G4ThreeVector(0.,S_p+0.5*S_l,0.), logicS, "physS", logicWorld, false, 0);  
   
   // SD before
  // G4Box* solidSD1 = new G4Box("solidSD1", S_l, S_l, 1*mm); 
@@ -190,7 +190,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
 
   // 
   G4VSolid* Cylinder = new G4Tubs("Cylinder",0.,1*cm,4*cm,0.,2*M_PI*rad);
-  logicCyl = new G4LogicalVolume(Cylinder, vacuum_mat, "logicCyl");
+  logicCyl = new G4LogicalVolume(Cylinder, sapphire_mat, "logicCyl");
   physCyl = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicCyl, "physCyl", logicWorld, false, 0);
 
  /* // Sapphire Window
@@ -221,11 +221,12 @@ void DMXDetectorConstruction::ConstructSDandField()
         LXeSD.Put(aSD);
       }
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
- if(logicS){
-      SetSensitiveDetector(logicS,LXeSD.Get());
+ if(logicWorld){
+      //SetSensitiveDetector(logicS,LXeSD.Get());
       //SetSensitiveDetector(logicWindow,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());
-      SetSensitiveDetector(logicCyl,LXeSD.Get());}
+      SetSensitiveDetector(logicCyl,LXeSD.Get());
+}
  //if(logicSD2)
    //   SetSensitiveDetector(logicSD2,LXeSD.Get());
     /*if (pmtSD.Get() == 0)                                        //Aquí detecto los eventos en el SiPM

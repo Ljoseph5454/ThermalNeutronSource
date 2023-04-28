@@ -11,7 +11,7 @@
 # verbosities
 /control/verbose 1
 /run/verbose 1
-/tracking/verbose 1
+/tracking/verbose 0
 /hits/verbose 1
 #
 # draw flags
@@ -43,10 +43,14 @@
 /gps/pos/centre 0 35 0 cm
 /gps/ang/surfnorm 1
 /gps/ang/type iso
-/gps/ang/mintheta 78 deg
-/gps/ang/maxtheta 102 deg
-/gps/ang/minphi 78 deg
-/gps/ang/maxphi 102 deg
+/gps/ang/mintheta 49.9 deg
+/gps/ang/maxtheta 130.1 deg
+/gps/ang/minphi 49.9 deg
+/gps/ang/maxphi 130.1 deg
+#/gps/ang/mintheta 49.9 deg
+#/gps/ang/maxtheta 130.1 deg
+#/gps/ang/minphi 49.9 deg
+#/gps/ang/maxphi 130.1 deg
 #/gps/angtype iso
 #/gps/surfnorm 1
 #/gps/mintheta 0.
@@ -123,4 +127,4 @@
 #/random/setSavingFlag
 #/dmx/hitsfile ambe_spectrum.out
 #/dmx/histogramfile ambe_spectrum.his
-/run/beamOn 10
+/run/beamOn 1000000

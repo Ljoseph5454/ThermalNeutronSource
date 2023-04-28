@@ -68,6 +68,8 @@
 int n=1;
 int n1=1;
 int HasHit=0;
+int HasHitTotal=0;
+int HasPrint=0;
 int step = 0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
@@ -120,7 +122,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
-  G4double ek = aStep->GetPostStepPoint()->GetKineticEnergy();
+  G4double ek = aStep->GetPreStepPoint()->GetKineticEnergy();
   G4ParticleDefinition* particleType = aStep->GetTrack()->GetDefinition();
   G4String particleName = particleType->GetParticleName();
 
@@ -183,6 +185,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   if(n1!=n){
   HasHit =0;
+  HasPrint =0;
   n1=n;}
 
 /*  if(Volume == "physS" && LastStep == true){
@@ -204,11 +207,17 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   //if(Volume == "World"){
   //Info << '\n';//}
 
-  if(particleName == "neutron" && HasHit == 1 && Volume == "physCyl"){
-  Info << '\n' << n <<"," << "1";}
+  if(particleName == "neutron" && HasHit == 1 && Volume == "physCyl" && ek>=0.2){
+  Info << '\n' << n <<"," << "1" <<"," << ek;}
   if(Volume == "OutOfWorld" && particleName == "neutron" && HasHit == 0){
   Info << '\n' << n <<"," << "0"; 
   /*Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";*/}
+
+  /*if(particleName == "neutron" && Volume == "physS" && HasPrint == 0){
+  HasHitTotal = HasHitTotal+1;
+  Info1 << '\n' << n <<"," << "1" <<"," << HasHitTotal;
+  HasPrint = HasPrint+1;
+  }*/
 
   step++;
 

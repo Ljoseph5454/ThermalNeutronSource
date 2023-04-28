@@ -53,8 +53,8 @@
 #/gps/ene/max 0.1 eV
 
 /gps/ene/type Lin
-/gps/ene/min 1 MeV
-/gps/ene/max 1.001 MeV
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.3 MeV
 /gps/ene/intercept 1
 /gps/ene/gradient 0
 
@@ -69,5 +69,5 @@
 
 #/run/beamOn 10000000
 #/run/beamOn 108000
-/run/beamOn 10
+/run/beamOn 100
 
