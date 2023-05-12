@@ -1,0 +1,39 @@
+	
+	// elastic scattering
+
+	G4HadronElasticProcess* theElasticProcess = new G4HadronElasticProcess;
+	theElasticProcess->AddDataSet(G4CrossSectionDataSetRegistry::Instance()->GetCrossSectionDataSet(G4ChipsNeutronElasticXS::Default_Name()));
+	G4HadronElastic* elastic_neutronChipsModel = new G4ChipsElasticModel();
+	elastic_neutronChipsModel->SetMinEnergy( 19.0*MeV );
+        theElasticProcess->RegisterMe( elastic_neutronChipsModel );
+	G4ParticleHPElastic * theElasticNeutronHP = new G4ParticleHPElastic;
+        theElasticNeutronHP->SetMinEnergy( theHPMin );
+        theElasticNeutronHP->SetMaxEnergy( theHPMax );
+	theElasticProcess->RegisterMe( theElasticNeutronHP );
+	theElasticProcess->AddDataSet( new G4ParticleHPElasticData );
+	pmanager->AddDiscreteProcess( theElasticProcess );
+
+	// inelastic scattering		
+
+	G4NeutronInelasticProcess* theInelasticProcess =
+	  new G4NeutronInelasticProcess("inelastic");
+	theInelasticProcess->AddDataSet( new G4BGGNucleonInelasticXS( G4Neutron::Neutron() ) );
+	theInelasticProcess->RegisterMe( theFTFModel1 );
+        theInelasticProcess->RegisterMe( theBERTModel1 );
+	G4ParticleHPInelastic * theNeutronInelasticHPModel = new G4ParticleHPInelastic;
+        theNeutronInelasticHPModel->SetMinEnergy( theHPMin );
+        theNeutronInelasticHPModel->SetMaxEnergy( theHPMax );
+	theInelasticProcess->RegisterMe( theNeutronInelasticHPModel );
+	theInelasticProcess->AddDataSet( new G4ParticleHPInelasticData );
+	pmanager->AddDiscreteProcess(theInelasticProcess);
+
+	// capture
+
+	G4HadronCaptureProcess* theCaptureProcess =
+	  new G4HadronCaptureProcess;
+	G4ParticleHPCapture * theLENeutronCaptureModel = new G4ParticleHPCapture;
+	theLENeutronCaptureModel->SetMinEnergy(theHPMin);
+	theLENeutronCaptureModel->SetMaxEnergy(theHPMax);
+	theCaptureProcess->RegisterMe(theLENeutronCaptureModel);
+	theCaptureProcess->AddDataSet( new G4ParticleHPCaptureData);
+	pmanager->AddDiscreteProcess(theCaptureProcess);

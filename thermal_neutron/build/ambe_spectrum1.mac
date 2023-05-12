@@ -127,4 +127,4 @@
 #/random/setSavingFlag
 #/dmx/hitsfile ambe_spectrum.out
 #/dmx/histogramfile ambe_spectrum.his
-/run/beamOn 1000000
+/run/beamOn 100

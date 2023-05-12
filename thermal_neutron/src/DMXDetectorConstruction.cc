@@ -174,9 +174,9 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
                      
     
   // Filter
-  //G4Box* solidS = new G4Box("solidS", 0.5*12.7*cm, 0.5*S_l, 0.5*12.7*cm); 
-  //logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
-  //physS = new G4PVPlacement(0, G4ThreeVector(0.,S_p+0.5*S_l,0.), logicS, "physS", logicWorld, false, 0);  
+  G4Box* solidS = new G4Box("solidS", 0.5*12.7*cm, 0.5*S_l, 0.5*12.7*cm); 
+  logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
+  physS = new G4PVPlacement(0, G4ThreeVector(0.,S_p+0.5*S_l,0.), logicS, "physS", logicWorld, false, 0);  
   
   // SD before
  // G4Box* solidSD1 = new G4Box("solidSD1", S_l, S_l, 1*mm); 
@@ -222,7 +222,7 @@ void DMXDetectorConstruction::ConstructSDandField()
       }
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicWorld){
-      //SetSensitiveDetector(logicS,LXeSD.Get());
+      SetSensitiveDetector(logicS,LXeSD.Get());
       //SetSensitiveDetector(logicWindow,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());
       SetSensitiveDetector(logicCyl,LXeSD.Get());
