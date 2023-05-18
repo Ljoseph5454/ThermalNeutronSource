@@ -86,6 +86,7 @@
   G4Material*    BF3_mat;
   G4Material*    B4C_mat;
   G4Material*    HE3Detector_mat;
+  G4Material* 	 Oxygen_mat;
 
 
 

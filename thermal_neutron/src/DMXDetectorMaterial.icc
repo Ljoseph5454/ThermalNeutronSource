@@ -1023,6 +1023,11 @@ const G4int PTFE_NUMENTRIES = 3;
   PEEK->AddElement(F, 2);
   PEEK->AddElement(O,1);
 
+//Pure Oxygen
+  G4Material* Oxygen = new G4Material
+    (name="Oxygen", density=1.43*g/cm3, ncomponents=1);	
+  Oxygen->AddElement(0,1);
+
 
 
   // assign materials
@@ -1061,6 +1066,7 @@ jacketflange_mat = ssteel;
       Cable_mat = Polip_Ether;
       HDPE_mat = HDPE;
       PEEK_mat = PEEK;
+      Oxygen_mat = Oxygen;
       SIPM_mat = SIPM;
       LED_mat = LED;
       Berilio_mat = Berilio;
