@@ -8,7 +8,7 @@
 # verbosities
 /control/verbose 0
 /run/verbose 1
-/tracking/verbose  0
+/tracking/verbose  1
 /hits/verbose 1
 #turn off the scintillation
 
@@ -53,8 +53,8 @@
 #/gps/ene/max 0.1 eV
 
 /gps/ene/type Lin
-/gps/ene/min 0.001 eV
-/gps/ene/max 0.1 eV
+/gps/ene/min 0.1 eV
+/gps/ene/max 0.1001 eV
 /gps/ene/intercept 1
 /gps/ene/gradient 0
 
@@ -69,5 +69,5 @@
 
 #/run/beamOn 10000000
 #/run/beamOn 108000
-/run/beamOn 100000
+/run/beamOn 10
 

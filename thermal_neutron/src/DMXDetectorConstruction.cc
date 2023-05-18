@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double S_l = 25.4*mm, S_d=27*mm, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = 100*mm, S_d=100*mm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -184,9 +184,9 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   //physSD1 = new G4PVPlacement(0, G4ThreeVector(0.,0.,5*cm), logicSD1, "physSD1", logicWorld, false, 0);   
   
   // SD After
-  G4Box* solidSD2 = new G4Box("solidSD2", 0.5*S_l, 0.5*S_l, 0.5*mm); 
-  logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
-  physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,-14*mm), logicSD2, "physSD2", logicWorld, false, 0);   
+  // G4Box* solidSD2 = new G4Box("solidSD2", 0.5*S_l, 0.5*S_l, 0.5*mm); 
+  // logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
+  // physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,-14*mm), logicSD2, "physSD2", logicWorld, false, 0);   
 
   //
   //always return the physical World
@@ -213,7 +213,7 @@ void DMXDetectorConstruction::ConstructSDandField()
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
  if(logicS){
       SetSensitiveDetector(logicS,LXeSD.Get());
-      SetSensitiveDetector(logicSD2,LXeSD.Get());
+      //SetSensitiveDetector(logicSD2,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());}
  //if(logicSD2)
    //   SetSensitiveDetector(logicSD2,LXeSD.Get());
