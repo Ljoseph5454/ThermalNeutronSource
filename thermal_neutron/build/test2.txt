@@ -52,3 +52,2372 @@ Available colours:
   black, blue, brown, cyan, gray, green, grey, magenta, red, white, yellow
 
  Using GPS and not DMX gun 
+/home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5
+@@@ G4ParticleHPInelastic instantiated for particle neutron data directory variable is G4NEUTRONHPDATA pointing to /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic
+@@@ G4ParticleHPInelasticData instantiated for particle neutron data directory variable is G4NEUTRONHPDATA pointing to /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Inelastic file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/6_nat_Carbon
+DMXPhysicsList::SetCuts:CutLength : 1 um 
+
+### ===  Deexcitation model UAtomDeexcitation is activated for 1 region:
+          DefaultRegionForTheWorld  1  1  1
+
+### === G4UAtomicDeexcitation::InitialiseForNewRun()
+### ===  Auger cascade flag: 0
+### ===  Ignore cuts flag:   0
+### ===  PIXE model for hadrons: Empirical
+### ===  PIXE model for e+-:     Livermore
+
+Rayl:   for  gamma    SubType= 11  BuildTable= 1
+      Lambda table from 100 eV  to 100 keV, 20 bins per decade, spline: 0
+      LambdaPrime table from 100 keV to 100 GeV in 120 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV   CullenGenerator
+
+phot:   for  gamma    SubType= 12  BuildTable= 0
+      LambdaPrime table from 200 keV to 100 GeV in 114 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric :  Emin=        0 eV    Emax=      100 GeV   AngularGenSauterGavrila  FluoActive
+
+compt:   for  gamma    SubType= 13  BuildTable= 1
+      Lambda table from 100 eV  to 1 MeV, 20 bins per decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 GeV in 100 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+    LivermoreCompton :  Emin=        0 eV    Emax=      100 GeV  FluoActive
+
+conv:   for  gamma    SubType= 14  BuildTable= 1
+      Lambda table from 1.022 MeV to 100 GeV, 24 bins per decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermoreConversion :  Emin=        0 eV    Emax=       80 GeV
+     BetheHeitlerLPM :  Emin=       80 GeV   Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 3, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       LowEnergyIoni :  Emin=        0 eV    Emax=      100 GeV   deltaVI
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           LowEnBrem :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=      100 GeV   DipBustGen
+
+msc:   for e+    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 3, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=      100 GeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=      100 GeV   DipBustGen
+
+annihil:   for  e+, integral: 1     SubType= 5  BuildTable= 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for proton    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=      100 GeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=      100 GeV
+      ===== Limit on energy threshold has been applied 
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.02, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=      100 GeV   deltaVI
+
+msc:   for alpha    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+ionIoni:   for  alpha    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.02, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=   7.9452 MeV
+          BetheBloch :  Emin=   7.9452 MeV   Emax=      100 GeV
+
+msc:   for anti_proton    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=      100 GeV
+
+msc:   for kaon+    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=      100 GeV
+
+msc:   for kaon-    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=      100 GeV
+
+msc:   for mu+    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=      100 GeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=      100 GeV
+      ===== Limit on energy threshold has been applied 
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      Sampling table 9x1001; from 1 GeV to 0.1 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for mu-    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=      100 GeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=      100 GeV
+      ===== Limit on energy threshold has been applied 
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      Sampling table 9x1001; from 1 GeV to 0.1 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=      100 GeV
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Inelastic file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Elastic/CrossSection/6_nat_Carbon
+@@@ G4ParticleHPInelastic instantiated for particle neutron data directory variable is G4NEUTRONHPDATA pointing to /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Inelastic
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /home/ljoseph/geant4.10.03.p03/share/Geant4-10.3.3/data/G4NDL4.5/Capture/CrossSection/6_nat_Carbon
+
+msc:   for pi+    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=      100 GeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=      100 GeV
+      ===== Limit on energy threshold has been applied 
+
+msc:   for pi-    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 GeV  Table with 180 bins Emin=    100 eV    Emax=    100 GeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=      100 GeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 100 eV  to 100 GeV in 180 bins
+      Lambda tables from threshold to 100 GeV, 20 bins per decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=      100 GeV
+      ===== Limit on energy threshold has been applied 
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+---------------------------------------------------
+                           Hadronic Processes for alpha
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV/n ---> 100 TeV/n
+        Model:            BertiniCascade: 0 eV /n ---> 5 GeV/n
+     Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_neutron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_proton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for deuteron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV/n ---> 100 TeV/n
+        Model:            BertiniCascade: 0 eV /n ---> 5 GeV/n
+     Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:  ChipsKaonPlusInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns: ChipsKaonMinusInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for mu-
+
+  Process: muMinusCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for neutron
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 19 MeV ---> 100 TeV
+        Model:          NeutronHPElastic: 0 eV  ---> 20 MeV
+     Cr_sctns:        NeutronHPElasticXS: 0 eV  ---> 20 MeV
+     Cr_sctns:     ChipsNeutronElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 19 MeV ---> 5 GeV
+        Model:        NeutronHPInelastic: 0 eV  ---> 20 MeV
+     Cr_sctns:      NeutronHPInelasticXS: 0 eV  ---> 20 MeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: nCapture
+        Model:          NeutronHPCapture: 0 eV  ---> 20 MeV
+     Cr_sctns:        NeutronHPCaptureXS: 0 eV  ---> 20 MeV
+     Cr_sctns:          GheishaCaptureXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for proton
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:      ChipsProtonElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for triton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: inelastic
+        Model:                      FTFP: 4 GeV/n ---> 100 TeV/n
+        Model:            BertiniCascade: 0 eV /n ---> 5 GeV/n
+     Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+================================================================
+=======================================================================
+======       Pre-compound/De-excitation Physics Parameters     ========
+=======================================================================
+Type of pre-compound inverse x-section              3
+Type of de-excitation inverse x-section             3
+Min excitation energy (keV)                         0.01
+Level density (1/MeV)                               0.1
+Time limit for long lived isomeres (ns)             1e+12
+Use new data files                                  1
+Use complete data files                             0
+Correlated gamma emission flag                      0
+=======================================================================
+Number of de-excitation channels                    8
+=======================================================================
+======       Pre-compound/De-excitation Physics Parameters     ========
+=======================================================================
+Type of pre-compound inverse x-section              3
+Type of de-excitation inverse x-section             3
+Min excitation energy (keV)                         0.01
+Level density (1/MeV)                               0.1
+Time limit for long lived isomeres (ns)             1e+12
+Use new data files                                  1
+Use complete data files                             0
+Correlated gamma emission flag                      0
+=======================================================================
+Number of de-excitation channels                    8
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes
+ Material : Vacuum
+ Range cuts        :  gamma  1 um     e-  1 nm     e+  1 um  proton 1 um 
+ Energy thresholds :  gamma  250 eV     e-  250 eV     e+  250 eV  proton 100 eV 
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes
+ Material : Oxygen
+ Range cuts        :  gamma  1 um     e-  1 nm     e+  1 um  proton 1 um 
+ Energy thresholds :  gamma  250 eV     e-  250 eV     e+  394.171 eV  proton 100 eV 
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+### Run 0 starts.
+### Run 0 starts (master).
+
+---> Begin of event: 0
+
+     Primary Energy: 1.54716 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  1.55e-06        0        0         0       World initStep
+    1        0        0       50  1.55e-06        0      450       450       physS Transportation
+WARNING: G4VisManager::IsValidView(): Attempt to draw when no graphics system
+  has been instantiated.  Use "/vis/open" or "/vis/sceneHandler/create".
+  Alternatively, to avoid this message, suppress instantiation of vis
+  manager (G4VisExecutive), possibly by setting G4VIS_NONE, and ensure
+  drawing code is executed only if G4VVisManager::GetConcreteInstance()
+  is non-zero.
+    2        0        0     39.4  1.25e-06  3.3e-07     10.6       461       physS hadElastic
+    3    -1.05    -1.87       50  1.25e-06        0     10.8       471       World Transportation
+    4     -194     -346    2e+03  1.25e-06        0 1.99e+03  2.46e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 1
+
+     Primary Energy: 5.144436997404882 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.14e-06        0        0         0       World initStep
+    1        0        0       50  5.14e-06        0      450       450       physS Transportation
+    2        0        0    -10.6  5.09e-06 6.12e-08     60.6       511       physS hadElastic
+    3     9.24    -11.7    -38.7  4.58e-06 5.58e-07     31.8       542       physS hadElastic
+    4     20.5     45.1    -28.5   4.2e-06  4.7e-07     58.8       601       physS hadElastic
+    5       17       50    -23.1   4.2e-06        0     8.12       609       World Transportation
+    6 -1.31e+03 1.87e+03    2e+03   4.2e-06        0 3.02e+03  3.63e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 2
+
+     Primary Energy: 9.561907777472969 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.56e-06        0        0         0       World initStep
+    1        0        0       50  9.56e-06        0      450       450       physS Transportation
+    2        0        0     41.4  7.77e-06 1.87e-06     8.64       459       physS hadElastic
+    3     1.55   -0.251     42.4  6.94e-06 8.74e-07     1.88       461       physS hadElastic
+    4       18    -46.7    -4.47  6.28e-06 6.65e-07       68       529       physS hadElastic
+    5     19.5      -50    -2.57  6.28e-06        0     4.09       533       World Transportation
+    6      932   -2e+03 1.13e+03  6.28e-06        0 2.43e+03  2.96e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 3
+
+     Primary Energy: 2.716910458710451 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.72e-06        0        0         0       World initStep
+    1        0        0       50  2.72e-06        0      450       450       physS Transportation
+    2        0        0      -19  2.53e-06 2.05e-07       69       519       physS hadElastic
+    3     9.09    0.769    -28.5  2.41e-06 1.38e-07     13.2       532       physS hadElastic
+    4     21.6    -46.4    -44.9  2.39e-06 4.41e-08     51.5       584       physS hadElastic
+    5     23.6      -50    -44.1  2.39e-06        0     4.15       588       World Transportation
+    6 1.11e+03   -2e+03      358  2.39e-06        0 2.27e+03  2.85e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 4
+
+     Primary Energy: 7.066697154508491 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.07e-06        0        0         0       World initStep
+    1        0        0       50  7.07e-06        0      450       450       physS Transportation
+    2        0        0    -12.9  6.24e-06 8.41e-07     62.9       513       physS hadElastic
+    3      -50     28.1    0.453  6.24e-06        0     58.9       572       World Transportation
+    4   -2e+03 1.12e+03      522  6.24e-06        0  2.3e+03  2.87e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 5
+
+     Primary Energy: 2.458534389970733 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.46e-06        0        0         0       World initStep
+    1        0        0       50  2.46e-06        0      450       450       physS Transportation
+    2        0        0     30.8  2.14e-06 3.53e-07     19.2       469       physS hadElastic
+    3      -50     5.03     10.4  2.14e-06        0     54.2       523       World Transportation
+    4   -2e+03      201     -785  2.14e-06        0 2.12e+03  2.64e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 6
+
+     Primary Energy: 7.51765778058888 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.52e-06        0        0         0       World initStep
+    1        0        0       50  7.52e-06        0      450       450       physS Transportation
+    2        0        0     9.59  7.31e-06 2.27e-07     40.4       490       physS hadElastic
+    3    -11.6     0.31    -7.02  6.62e-06 6.97e-07     20.2       511       physS hadElastic
+    4      -34    -49.2    -15.7     6e-06 6.34e-07       55       566       physS hadElastic
+    5    -32.9      -49    -26.8  5.15e-06 9.81e-07     11.2       577       physS hadElastic
+    6    -32.3      -50    -26.8  5.15e-06        0     1.15       578       World Transportation
+    7 1.23e+03   -2e+03     51.9  5.15e-06        0 2.32e+03   2.9e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 7
+
+     Primary Energy: 7.9724616337619 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.97e-06        0        0         0       World initStep
+    1        0        0       50  7.97e-06        0      450       450       physS Transportation
+    2        0        0     7.29   7.1e-06 9.22e-07     42.7       493       physS hadElastic
+    3     29.4    -9.71     17.4  6.11e-06 1.02e-06     32.5       525       physS hadElastic
+    4     19.4    -14.4      5.1   5.5e-06 6.41e-07     16.5       542       physS hadElastic
+    5     14.6    -30.9     13.5  5.45e-06 5.47e-08     19.1       561       physS hadElastic
+    6     11.2      -50       16  5.45e-06        0     19.6       580       World Transportation
+    7     -341   -2e+03      271  5.45e-06        0    2e+03  2.58e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 8
+
+     Primary Energy: 9.442182016074192 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.44e-06        0        0         0       World initStep
+    1        0        0       50  9.44e-06        0      450       450       physS Transportation
+    2        0        0     30.1  8.79e-06 6.69e-07     19.9       470       physS hadElastic
+    3       50     1.32     7.11  8.79e-06        0       55       525       World Transportation
+    4    2e+03       53     -889  8.79e-06        0 2.15e+03  2.67e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 9
+
+     Primary Energy: 7.415488298336371 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.42e-06        0        0         0       World initStep
+    1        0        0       50  7.42e-06        0      450       450       physS Transportation
+    2        0        0    -2.03  6.82e-06 6.01e-07       52       502       physS hadElastic
+    3    -2.33     3.18    -3.69  6.28e-06 5.68e-07     4.28       506       physS hadElastic
+    4   -0.404    -4.51    -19.7  5.16e-06 1.13e-06     17.9       524       physS hadElastic
+    5      -50    -40.5     15.1  5.16e-06        0     70.5       595       World Transportation
+    6   -2e+03 -1.46e+03 1.38e+03  5.16e-06        0 2.77e+03  3.36e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 10
+
+     Primary Energy: 6.597360255907447 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   6.6e-06        0        0         0       World initStep
+    1        0        0       50   6.6e-06        0      450       450       physS Transportation
+    2        0        0     34.8  6.12e-06 5.22e-07     15.2       465       physS hadElastic
+    3    -6.88     4.39     29.3  5.49e-06 6.85e-07     9.83       475       physS hadElastic
+    4     7.89       22     5.87  4.82e-06 7.96e-07     32.8       508       physS hadElastic
+    5     8.15     12.6     30.5  4.09e-06 7.34e-07     26.4       534       physS hadElastic
+    6     30.9     14.6     20.1  3.84e-06 2.81e-07     25.1       559       physS hadElastic
+    7       31     14.5     17.4   3.8e-06 5.41e-08     2.72       562       physS hadElastic
+    8     48.3     24.4    -25.1  3.17e-06 6.68e-07     46.9       609       physS hadElastic
+    9    -7.66    -29.4    -27.1  2.63e-06  5.4e-07     77.6       687       physS hadElastic
+   10    -7.74    -29.3    -26.9  2.14e-06 5.27e-07    0.214       687       physS hadElastic
+   11    -8.78      -50    -45.2  2.14e-06        0     27.6       714       World Transportation
+   12     -106   -2e+03 -1.76e+03  2.14e-06        0  2.6e+03  3.31e+03  OutOfWorld Transportation
+     LXe collection: 12 hits
+
+---> Begin of event: 11
+
+     Primary Energy: 0.1543962301897643 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  1.54e-07        0        0         0       World initStep
+    1        0        0       50  1.54e-07        0      450       450       physS Transportation
+    2        0        0        3  1.42e-07 1.27e-07       47       497       physS hadElastic
+    3    -40.1      -50    -46.9  1.42e-07        0     81.3       578       World Transportation
+    4 -1.61e+03   -2e+03 -1.99e+03  1.42e-07        0 3.17e+03  3.75e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 12
+
+     Primary Energy: 2.478938303722568 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.48e-06        0        0         0       World initStep
+    1        0        0       50  2.48e-06        0      450       450       physS Transportation
+    2        0        0    -1.49  1.87e-06 6.23e-07     51.5       501       physS hadElastic
+    3   -0.975    0.092     2.31  1.77e-06 1.78e-07     3.93       505       physS hadElastic
+    4     19.1     1.42       50  1.77e-06        0     51.7       557       World Transportation
+    5      838     55.7    2e+03  1.77e-06        0 2.12e+03  2.67e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 13
+
+     Primary Energy: 3.781735715501894 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.78e-06        0        0         0       World initStep
+    1        0        0       50  3.78e-06        0      450       450       physS Transportation
+    2        0        0     33.3  3.69e-06 1.01e-07     16.7       467       physS hadElastic
+    3    -2.74    -11.2     21.6  2.66e-06 1.09e-06     16.4       483       physS hadElastic
+    4    -9.73    -9.13     34.5  2.09e-06 5.99e-07     14.7       498       physS hadElastic
+    5    -5.56    -10.9     32.1  1.89e-06 2.07e-07      5.1       503       physS hadElastic
+    6     18.9    0.425       50  1.89e-06        0     32.3       535       World Transportation
+    7    2e+03      919  1.5e+03  1.89e-06        0 2.62e+03  3.16e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 14
+
+     Primary Energy: 4.275323256685215 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.28e-06        0        0         0       World initStep
+    1        0        0       50  4.28e-06        0      450       450       physS Transportation
+    2        0        0     35.2   3.5e-06 7.81e-07     14.8       465       physS hadElastic
+    3    -6.68    -3.26     42.7  2.48e-06 1.14e-06     10.6       475       physS hadElastic
+    4    -1.73    -2.92       43  1.87e-06 6.23e-07     4.97       480       physS hadElastic
+    5      -50    -3.37     37.6  1.87e-06        0     48.6       529       World Transportation
+    6   -2e+03    -21.7     -178  1.87e-06        0 1.96e+03  2.49e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 15
+
+     Primary Energy: 4.612370866430906 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.61e-06        0        0         0       World initStep
+    1        0        0       50  4.61e-06        0      450       450       physS Transportation
+    2        0        0     29.5  3.94e-06 6.84e-07     20.5       471       physS hadElastic
+    3    -29.5     13.1       50  3.94e-06        0     38.2       509       World Transportation
+    4   -2e+03      891 1.42e+03  3.94e-06        0 2.56e+03  3.06e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 16
+
+     Primary Energy: 2.427630152189828 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.43e-06        0        0         0       World initStep
+    1        0        0       50  2.43e-06        0      450       450       physS Transportation
+    2        0        0     1.03  2.35e-06 8.93e-08       49       499       physS hadElastic
+    3     5.31    0.848    -8.96  2.13e-06 3.05e-07     11.3       510       physS hadElastic
+    4    -3.32     1.93    -22.1   1.8e-06 3.48e-07     15.7       526       physS hadElastic
+    5    -6.94     2.69    -20.1  1.36e-06  5.2e-07     4.18       530       physS hadElastic
+    6    -15.7      -50    -49.1  1.36e-06        0     60.8       591       World Transportation
+    7     -339   -2e+03 -1.12e+03  1.36e-06        0 2.25e+03  2.84e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 17
+
+     Primary Energy: 6.561237907257395 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.56e-06        0        0         0       World initStep
+    1        0        0       50  6.56e-06        0      450       450       physS Transportation
+    2        0        0     48.9  6.34e-06 2.76e-07     1.13       451       physS hadElastic
+    3  -0.0846    -1.98     47.9  5.07e-06 1.33e-06      2.2       453       physS hadElastic
+    4     2.55     26.9     15.8  4.32e-06 7.75e-07     43.3       497       physS hadElastic
+    5     23.8     13.5     6.81  3.63e-06 6.99e-07     26.7       523       physS hadElastic
+    6    -19.9     26.4    -27.8  3.14e-06 5.17e-07     57.3       581       physS hadElastic
+    7      -50    -5.33    -10.6  3.14e-06        0       47       628       World Transportation
+    8 -1.94e+03   -2e+03 1.07e+03  3.14e-06        0 2.95e+03  3.58e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 18
+
+     Primary Energy: 9.388643532295246 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.39e-06        0        0         0       World initStep
+    1        0        0       50  9.39e-06        0      450       450       physS Transportation
+    2        0        0       47  9.41e-06 6.97e-09     3.04       453       physS hadElastic
+    3    -3.18    -10.5     14.1  9.23e-06 2.18e-07     34.7       488       physS hadElastic
+    4    -19.9    -11.5     1.02  8.79e-06 5.23e-07     21.2       509       physS hadElastic
+    5    -33.6       50    -41.8  8.79e-06        0     76.2       585       World Transportation
+    6     -469    2e+03 -1.4e+03  8.79e-06        0 2.42e+03     3e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 19
+
+     Primary Energy: 8.618072642257255 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  8.62e-06        0        0         0       World initStep
+    1        0        0       50  8.62e-06        0      450       450       physS Transportation
+    2        0        0    -24.3   8.2e-06 4.27e-07     74.3       524       physS hadElastic
+    3     22.1     30.8      -50   8.2e-06        0     45.8       570       World Transportation
+    4 1.43e+03    2e+03 -1.69e+03   8.2e-06        0 2.92e+03  3.49e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 20
+
+     Primary Energy: 9.396092343279333 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   9.4e-06        0        0         0       World initStep
+    1        0        0       50   9.4e-06        0      450       450       physS Transportation
+    2        0        0     31.1  8.01e-06  1.4e-06     18.9       469       physS hadElastic
+    3     47.2    0.676     43.7  7.67e-06 3.82e-07     48.9       518       physS hadElastic
+    4       50     3.53     44.2  7.67e-06        0        4       522       World Transportation
+    5 1.98e+03    2e+03      423  7.67e-06        0  2.8e+03  3.33e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 21
+
+     Primary Energy: 0.3428116939327555 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.43e-07        0        0         0       World initStep
+    1        0        0       50  3.43e-07        0      450       450       physS Transportation
+    2        0        0    -26.2  2.72e-07 9.56e-08     76.2       526       physS hadElastic
+    3       50     3.65    -39.5  2.72e-07        0     51.9       578       World Transportation
+    4    2e+03      146     -560  2.72e-07        0 2.02e+03   2.6e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 22
+
+     Primary Energy: 5.432242238783035 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.43e-06        0        0         0       World initStep
+    1        0        0       50  5.43e-06        0      450       450       physS Transportation
+    2        0        0    -14.5  4.54e-06  9.1e-07     64.5       515       physS hadElastic
+    3       17     12.6     12.8  4.29e-06 2.65e-07     34.6       549       physS hadElastic
+    4       22      9.3       17  3.59e-06 7.06e-07     7.33       556       physS hadElastic
+    5     16.5     8.51     20.4  3.32e-06 2.92e-07     6.49       563       physS hadElastic
+    6     10.3     45.9       50  3.32e-06        0     48.1       611       World Transportation
+    7     -312    2e+03  1.6e+03  3.32e-06        0 2.51e+03  3.12e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 23
+
+     Primary Energy: 2.707506141362715 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.71e-06        0        0         0       World initStep
+    1        0        0       50  2.71e-06        0      450       450       physS Transportation
+    2        0        0     13.3  2.12e-06 6.07e-07     36.7       487       physS hadElastic
+    3    -7.52    -8.95       50  2.12e-06        0     38.5       525       World Transportation
+    4     -407     -485    2e+03  2.12e-06        0 2.05e+03  2.57e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 24
+
+     Primary Energy: 7.749692040638581 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.75e-06        0        0         0       World initStep
+    1        0        0       50  7.75e-06        0      450       450       physS Transportation
+    2        0        0       10  7.62e-06 1.83e-07       40       490       physS hadElastic
+    3     1.06     0.41     9.08  6.85e-06 7.88e-07     1.48       491       physS hadElastic
+    4     5.06     16.1     17.3  6.45e-06 3.99e-07     18.2       510       physS hadElastic
+    5     18.7     21.6       18  5.02e-06 1.56e-06     14.7       524       physS hadElastic
+    6     14.1    -33.4      -27  4.34e-06 6.95e-07     71.3       596       physS hadElastic
+    7     15.1    -31.1    -28.5   3.3e-06 1.14e-06     2.92       599       physS hadElastic
+    8    -23.6      -50    -11.3   3.3e-06        0     46.4       645       World Transportation
+    9   -2e+03 -1.01e+03      868   3.3e-06        0 2.37e+03  3.01e+03  OutOfWorld Transportation
+     LXe collection: 9 hits
+
+---> Begin of event: 25
+
+     Primary Energy: 6.915692744120776 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.92e-06        0        0         0       World initStep
+    1        0        0       50  6.92e-06        0      450       450       physS Transportation
+    2        0        0     23.1  6.84e-06 8.74e-08     26.9       477       physS hadElastic
+    3    -26.7     17.5      -50  6.84e-06        0     79.8       557       World Transportation
+    4     -738      483   -2e+03  6.84e-06        0 2.13e+03  2.68e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 26
+
+     Primary Energy: 3.031237159103922 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.03e-06        0        0         0       World initStep
+    1        0        0       50  3.03e-06        0      450       450       physS Transportation
+    2        0        0     41.1  2.65e-06 4.44e-07     8.92       459       physS hadElastic
+    3    -3.72    -1.77       50  2.65e-06        0     9.83       469       World Transportation
+    4     -817     -390    2e+03  2.65e-06        0 2.15e+03  2.62e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 27
+
+     Primary Energy: 4.535648554737299 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.54e-06        0        0         0       World initStep
+    1        0        0       50  4.54e-06        0      450       450       physS Transportation
+    2        0        0     47.7  3.34e-06 1.23e-06     2.28       452       physS hadElastic
+    3   0.0596     1.54       50  3.34e-06        0     2.75       455       World Transportation
+    4     51.1 1.33e+03    2e+03  3.34e-06        0 2.36e+03  2.81e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 28
+
+     Primary Energy: 9.091278416317749 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.09e-06        0        0         0       World initStep
+    1        0        0       50  9.09e-06        0      450       450       physS Transportation
+    2        0        0     32.1  6.94e-06 2.19e-06     17.9       468       physS hadElastic
+    3   0.0436    0.134     40.7  6.87e-06 6.77e-08     8.56       476       physS hadElastic
+    4    0.298     1.84     43.9  5.62e-06 1.28e-06     3.61       480       physS hadElastic
+    5     33.2     -6.4     -7.5  4.98e-06  6.5e-07     61.6       542       physS hadElastic
+    6     39.3      -50     1.39  4.98e-06        0     44.9       587       World Transportation
+    7      314   -2e+03      399  4.98e-06        0 2.01e+03   2.6e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 29
+
+     Primary Energy: 3.467948790296554 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.47e-06        0        0         0       World initStep
+    1        0        0       50  3.47e-06        0      450       450       physS Transportation
+    2        0        0      -50  3.47e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  3.47e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 30
+
+     Primary Energy: 8.233975916153311 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  8.23e-06        0        0         0       World initStep
+    1        0        0       50  8.23e-06        0      450       450       physS Transportation
+    2        0        0     43.1  7.94e-06 3.35e-07     6.89       457       physS hadElastic
+    3      -50     27.8    -16.3  7.94e-06        0     82.5       539       World Transportation
+    4 -1.72e+03      958   -2e+03  7.94e-06        0 2.75e+03  3.29e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 31
+
+     Primary Energy: 6.296383302270044 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   6.3e-06        0        0         0       World initStep
+    1        0        0       50   6.3e-06        0      450       450       physS Transportation
+    2        0        0     16.7  5.76e-06 5.46e-07     33.3       483       physS hadElastic
+    3     6.52       50     5.51  5.76e-06        0     51.7       535       World Transportation
+    4      261    2e+03     -431  5.76e-06        0 2.01e+03  2.55e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 32
+
+     Primary Energy: 2.316188934343395 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.32e-06        0        0         0       World initStep
+    1        0        0       50  2.32e-06        0      450       450       physS Transportation
+    2        0        0     7.38  2.32e-06 5.92e-09     42.6       493       physS hadElastic
+    3     1.34    -7.66    -14.1  1.97e-06 3.55e-07     22.9       515       physS hadElastic
+    4    -14.8    -1.13    -9.33  1.99e-06 7.34e-08     18.1       534       physS hadElastic
+    5    -38.3   -0.477     34.9  1.87e-06 1.41e-07     50.1       584       physS hadElastic
+    6    -23.5      -50     46.7  1.87e-06        0       53       637       World Transportation
+    7      563   -2e+03      509  1.87e-06        0 2.09e+03  2.72e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 33
+
+     Primary Energy: 2.358908654811369 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.36e-06        0        0         0       World initStep
+    1        0        0       50  2.36e-06        0      450       450       physS Transportation
+    2        0        0      -50  2.36e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  2.36e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 34
+
+     Primary Energy: 5.412932892833568 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.41e-06        0        0         0       World initStep
+    1        0        0       50  5.41e-06        0      450       450       physS Transportation
+    2        0        0      -50  5.41e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  5.41e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 35
+
+     Primary Energy: 8.316842636841006 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  8.32e-06        0        0         0       World initStep
+    1        0        0       50  8.32e-06        0      450       450       physS Transportation
+    2        0        0     15.8  7.55e-06 8.25e-07     34.2       484       physS hadElastic
+    3       14      -35     5.89  5.93e-06 1.62e-06       39       523       physS hadElastic
+    4     8.37    -12.1     17.8  5.04e-06 8.97e-07     26.4       550       physS hadElastic
+    5     9.43    -14.9     -8.7  4.02e-06 1.03e-06     26.7       576       physS hadElastic
+    6    -3.88       50     28.8  4.02e-06        0     76.1       652       World Transportation
+    7     -404    2e+03 1.16e+03  4.02e-06        0 2.29e+03  2.94e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 36
+
+     Primary Energy: 4.579203900672506 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.58e-06        0        0         0       World initStep
+    1        0        0       50  4.58e-06        0      450       450       physS Transportation
+    2        0        0     43.3  3.38e-06 1.24e-06     6.73       457       physS hadElastic
+    3   -0.542    0.514       50  3.38e-06        0     6.77       464       World Transportation
+    4     -157      149    2e+03  3.38e-06        0 1.96e+03  2.43e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 37
+
+     Primary Energy: 5.390763907650784 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.39e-06        0        0         0       World initStep
+    1        0        0       50  5.39e-06        0      450       450       physS Transportation
+    2        0        0    -35.1  4.63e-06  8.2e-07     85.1       535       physS hadElastic
+    3   -0.606    0.733      -35  4.24e-06  4.6e-07    0.958       536       physS hadElastic
+    4      -31    -14.3    -30.3   3.3e-06 1.03e-06     34.2       570       physS hadElastic
+    5    -14.3     11.3   -0.739  3.05e-06 2.63e-07     42.5       613       physS hadElastic
+    6    -31.3   -0.957     27.3  2.38e-06 6.85e-07       35       648       physS hadElastic
+    7    -30.6    -2.07     24.1   2.2e-06 2.04e-07     3.45       651       physS hadElastic
+    8    -29.3    -3.05     24.4  2.14e-06 1.29e-07     1.62       653       physS hadElastic
+    9    -14.7     13.1       50  2.14e-06        0     33.6       686       World Transportation
+   10  1.1e+03 1.25e+03    2e+03  2.14e-06        0 2.56e+03  3.25e+03  OutOfWorld Transportation
+     LXe collection: 10 hits
+
+---> Begin of event: 38
+
+     Primary Energy: 3.915362053533111 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.92e-06        0        0         0       World initStep
+    1        0        0       50  3.92e-06        0      450       450       physS Transportation
+    2        0        0     49.3  3.31e-06 6.83e-07    0.746       451       physS hadElastic
+    3     1.48     1.15       50  3.31e-06        0     2.02       453       World Transportation
+    4    2e+03 1.56e+03 1.06e+03  3.31e-06        0 2.72e+03  3.18e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 39
+
+     Primary Energy: 5.062254540498991 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.06e-06        0        0         0       World initStep
+    1        0        0       50  5.06e-06        0      450       450       physS Transportation
+    2        0        0      -50  5.06e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  5.06e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 40
+
+     Primary Energy: 7.348467276502066 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.35e-06        0        0         0       World initStep
+    1        0        0       50  7.35e-06        0      450       450       physS Transportation
+    2        0        0      -50  7.35e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  7.35e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 41
+
+     Primary Energy: 7.630226273958907 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.63e-06        0        0         0       World initStep
+    1        0        0       50  7.63e-06        0      450       450       physS Transportation
+    2        0        0     2.63  6.24e-06 1.46e-06     47.4       497       physS hadElastic
+    3     38.9    -44.5       50  6.24e-06        0     75.8       573       World Transportation
+    4 1.64e+03 -1.88e+03    2e+03  6.24e-06        0 3.12e+03  3.69e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 42
+
+     Primary Energy: 6.49316205675696 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.49e-06        0        0         0       World initStep
+    1        0        0       50  6.49e-06        0      450       450       physS Transportation
+    2        0        0    -28.9   5.5e-06 1.06e-06     78.9       529       physS hadElastic
+    3    0.361    0.307    -28.5  4.81e-06 7.03e-07    0.594       529       physS hadElastic
+    4    -14.3       50    -45.2  4.81e-06        0     54.4       584       World Transportation
+    5     -591    2e+03     -699  4.81e-06        0 2.14e+03  2.72e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 43
+
+     Primary Energy: 9.707214730063422 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.71e-06        0        0         0       World initStep
+    1        0        0       50  9.71e-06        0      450       450       physS Transportation
+    2        0        0       19  9.26e-06 4.77e-07       31       481       physS hadElastic
+    3     32.1    -9.18     -4.8  8.26e-06 1.04e-06       41       522       physS hadElastic
+    4     28.9     11.8    -8.49  6.83e-06 1.45e-06     21.5       544       physS hadElastic
+    5     36.6     7.65    -18.4  6.39e-06 5.02e-07     13.2       557       physS hadElastic
+    6       50     11.2    -21.4  6.39e-06        0     14.2       571       World Transportation
+    7    2e+03      526     -462  6.39e-06        0 2.06e+03  2.64e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 44
+
+     Primary Energy: 9.65697629423906 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.66e-06        0        0         0       World initStep
+    1        0        0       50  9.66e-06        0      450       450       physS Transportation
+    2        0        0      -50  9.66e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  9.66e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 45
+
+     Primary Energy: 3.645439535220486 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.65e-06        0        0         0       World initStep
+    1        0        0       50  3.65e-06        0      450       450       physS Transportation
+    2        0        0     1.96  3.63e-06 6.15e-08       48       498       physS hadElastic
+    3     0.76    -24.5    -26.2  3.55e-06 9.83e-08     37.3       535       physS hadElastic
+    4    -22.3    -29.4      -50  3.55e-06        0     33.5       569       World Transportation
+    5 -1.92e+03     -436   -2e+03  3.55e-06        0 2.75e+03  3.32e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 46
+
+     Primary Energy: 0.4963629294038952 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.96e-07        0        0         0       World initStep
+    1        0        0       50  4.96e-07        0      450       450       physS Transportation
+    2        0        0     10.3   4.4e-07 7.99e-08     39.7       490       physS hadElastic
+    3     4.81    -7.05     16.4  4.35e-07 1.44e-08     10.5       500       physS hadElastic
+    4     34.5    -9.11     23.6  3.89e-07 6.67e-08     30.6       531       physS hadElastic
+    5     35.2     11.7      -50  3.89e-07        0     76.5       607       World Transportation
+    6     52.9      564   -2e+03  3.89e-07        0 2.03e+03  2.63e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 47
+
+     Primary Energy: 7.23345338737432 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.23e-06        0        0         0       World initStep
+    1        0        0       50  7.23e-06        0      450       450       physS Transportation
+    2        0        0     3.41  7.02e-06 2.23e-07     46.6       497       physS hadElastic
+    3     -2.2    0.632     1.27  5.44e-06 1.61e-06     3.14       500       physS hadElastic
+    4    -1.35    -0.55     1.62  5.22e-06 2.25e-07      1.5       501       physS hadElastic
+    5    -10.5    -32.8       50  5.22e-06        0     58.9       560       World Transportation
+    6     -380 -1.33e+03    2e+03  5.22e-06        0 2.37e+03  2.93e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 48
+
+     Primary Energy: 3.585858164904484 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.59e-06        0        0         0       World initStep
+    1        0        0       50  3.59e-06        0      450       450       physS Transportation
+    2        0        0    -11.1  3.31e-06  3.4e-07     61.1       511       physS hadElastic
+    3     22.4      -50    -49.4  3.31e-06        0     66.8       578       World Transportation
+    4      895   -2e+03 -1.54e+03  3.31e-06        0 2.61e+03  3.18e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 49
+
+     Primary Energy: 3.021878001135523 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.02e-06        0        0         0       World initStep
+    1        0        0       50  3.02e-06        0      450       450       physS Transportation
+    2        0        0       44  2.77e-06 3.31e-07     5.96       456       physS hadElastic
+    3    -16.5     21.8     41.9  2.53e-06  3.3e-07     27.4       483       physS hadElastic
+    4    -19.6     19.8     33.5  2.15e-06 4.78e-07     9.17       493       physS hadElastic
+    5     3.95     13.9       50  2.15e-06        0     29.3       522       World Transportation
+    6    2e+03     -487 1.45e+03  2.15e-06        0 2.49e+03  3.01e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 50
+
+     Primary Energy: 2.334144080983559 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.33e-06        0        0         0       World initStep
+    1        0        0       50  2.33e-06        0      450       450       physS Transportation
+    2        0        0    -15.3  2.22e-06 1.41e-07     65.3       515       physS hadElastic
+    3     25.7    -24.6    -19.8  1.67e-06 6.41e-07     35.9       551       physS hadElastic
+    4     20.4      -26    -24.9  1.67e-06 9.52e-09     7.53       559       physS hadElastic
+    5     12.7    -30.5      -50  1.67e-06        0     26.6       585       World Transportation
+    6     -585     -378   -2e+03  1.67e-06        0 2.07e+03  2.65e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 51
+
+     Primary Energy: 2.273454322176607 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.27e-06        0        0         0       World initStep
+    1        0        0       50  2.27e-06        0      450       450       physS Transportation
+    2        0        0     39.9  2.03e-06 2.46e-07     10.1       460       physS hadElastic
+    3    -49.7    -31.5     28.6  1.49e-06 5.67e-07     59.9       520       physS hadElastic
+    4     5.71    -18.3       35  1.37e-06 1.47e-07     57.3       577       physS hadElastic
+    5     6.89    -39.9       50  1.37e-06        0     26.3       603       World Transportation
+    6      114   -2e+03 1.42e+03  1.37e-06        0 2.39e+03     3e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 52
+
+     Primary Energy: 0.442605102729069 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.43e-07        0        0         0       World initStep
+    1        0        0       50  4.43e-07        0      450       450       physS Transportation
+    2        0        0     30.8  3.97e-07 8.03e-08     19.2       469       physS hadElastic
+    3    -10.4     6.26       50  3.97e-07        0     22.7       492       World Transportation
+    4 -1.06e+03      641    2e+03  3.97e-07        0  2.3e+03   2.8e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 53
+
+     Primary Energy: 7.177939765148483 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.18e-06        0        0         0       World initStep
+    1        0        0       50  7.18e-06        0      450       450       physS Transportation
+    2        0        0       48  6.82e-06 4.72e-07     2.02       452       physS hadElastic
+    3    -0.98     7.82     47.6   6.2e-06  7.1e-07     7.89       460       physS hadElastic
+    4    -1.43     7.73     46.3  5.68e-06 5.39e-07      1.4       461       physS hadElastic
+    5     20.1     14.8     33.7  5.55e-06 1.57e-07     25.9       487       physS hadElastic
+    6       23     14.4     33.6  4.94e-06 6.12e-07     2.95       490       physS hadElastic
+    7     28.3     28.3       50  4.94e-06        0     22.2       512       World Transportation
+    8      655 1.68e+03    2e+03  4.94e-06        0 2.63e+03  3.15e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 54
+
+     Primary Energy: 5.211805673817644 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.21e-06        0        0         0       World initStep
+    1        0        0       50  5.21e-06        0      450       450       physS Transportation
+    2        0        0     45.5  4.52e-06 7.39e-07     4.52       455       physS hadElastic
+    3    -4.81    -10.2       50  4.52e-06        0     12.2       467       World Transportation
+    4     -940   -2e+03      929  4.52e-06        0 2.37e+03  2.83e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 55
+
+     Primary Energy: 3.293127515097513 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.29e-06        0        0         0       World initStep
+    1        0        0       50  3.29e-06        0      450       450       physS Transportation
+    2        0        0       47  2.64e-06 7.12e-07     3.04       453       physS hadElastic
+    3    -3.23     1.61       50  2.64e-06        0     4.72       458       World Transportation
+    4   -2e+03      996 1.93e+03  2.64e-06        0 2.92e+03  3.38e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 56
+
+     Primary Energy: 6.344584075932692 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.34e-06        0        0         0       World initStep
+    1        0        0       50  6.34e-06        0      450       450       physS Transportation
+    2        0        0      -50  6.34e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  6.34e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 57
+
+     Primary Energy: 5.505547380568144 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.51e-06        0        0         0       World initStep
+    1        0        0       50  5.51e-06        0      450       450       physS Transportation
+    2        0        0     37.2  4.01e-06 1.52e-06     12.8       463       physS hadElastic
+    3    0.572   -0.158     39.3  3.65e-06 3.63e-07     2.16       465       physS hadElastic
+    4       22    -2.27     39.9  3.69e-06 1.35e-08     21.6       487       physS hadElastic
+    5     23.9    -3.33     40.8  3.18e-06 5.82e-07     2.34       489       physS hadElastic
+    6     35.4    -7.22     5.84  2.52e-06 6.79e-07       37       526       physS hadElastic
+    7     42.3    -10.8     26.6   2.4e-06 1.32e-07     22.2       548       physS hadElastic
+    8       29    -16.6       50   2.4e-06        0     27.5       575       World Transportation
+    9 -1.08e+03     -497    2e+03   2.4e-06        0 2.29e+03  2.87e+03  OutOfWorld Transportation
+     LXe collection: 9 hits
+
+---> Begin of event: 58
+
+     Primary Energy: 6.744874961054439 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.74e-06        0        0         0       World initStep
+    1        0        0       50  6.74e-06        0      450       450       physS Transportation
+    2        0        0      -50  6.74e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  6.74e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 59
+
+     Primary Energy: 3.616765578463559 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.62e-06        0        0         0       World initStep
+    1        0        0       50  3.62e-06        0      450       450       physS Transportation
+    2        0        0    -7.05  2.96e-06 6.67e-07     57.1       507       physS hadElastic
+    3     8.97     2.52    0.893  2.59e-06 4.31e-07     12.2       519       physS hadElastic
+    4     11.9      -13    -1.26  2.55e-06 5.57e-08       16       535       physS hadElastic
+    5     2.73    -31.6    -9.03   2.2e-06 3.58e-07     22.1       557       physS hadElastic
+    6     6.22    -36.8       11  1.94e-06  2.6e-07       21       578       physS hadElastic
+    7     18.3      -50     8.06  1.94e-06        0     18.1       596       World Transportation
+    8 1.81e+03   -2e+03     -421  1.94e-06        0 2.68e+03  3.28e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 60
+
+     Primary Energy: 1.223024872493143 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  1.22e-06        0        0         0       World initStep
+    1        0        0       50  1.22e-06        0      450       450       physS Transportation
+    2        0        0      -50  1.22e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  1.22e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 61
+
+     Primary Energy: 0.1173122726730207 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  1.17e-07        0        0         0       World initStep
+    1        0        0       50  1.17e-07        0      450       450       physS Transportation
+    2        0        0     22.3  1.19e-07 1.43e-08     27.7       478       physS hadElastic
+    3     14.9     -5.2     20.4   1.4e-07  2.4e-08     15.9       494       physS hadElastic
+    4       29    -6.48       35  1.44e-07 2.42e-08     20.3       514       physS hadElastic
+    5     23.9    -2.54     31.4  1.31e-07 3.69e-08     7.39       521       physS hadElastic
+    6    -26.1      -50    -27.7  1.31e-07        0     90.8       612       World Transportation
+    7 -1.7e+03 -1.63e+03   -2e+03  1.31e-07        0 3.03e+03  3.64e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 62
+
+     Primary Energy: 8.430841496974223 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  8.43e-06        0        0         0       World initStep
+    1        0        0       50  8.43e-06        0      450       450       physS Transportation
+    2        0        0     17.5  7.43e-06 1.04e-06     32.5       483       physS hadElastic
+    3   -0.251     26.7     24.8  6.41e-06 1.08e-06     27.7       510       physS hadElastic
+    4    -25.2     13.9    -2.81  5.62e-06 8.21e-07     39.4       550       physS hadElastic
+    5      -50     22.3     25.8  5.62e-06        0     38.8       588       World Transportation
+    6 -1.76e+03      598    2e+03  5.62e-06        0 2.67e+03  3.26e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 63
+
+     Primary Energy: 6.18597445912736 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.19e-06        0        0         0       World initStep
+    1        0        0       50  6.19e-06        0      450       450       physS Transportation
+    2        0        0       39  5.87e-06 3.25e-07       11       461       physS hadElastic
+    3     25.6      -19       23   4.7e-06  1.2e-06     35.7       497       physS hadElastic
+    4       16    -18.2       31  4.02e-06  7.2e-07     12.6       509       physS hadElastic
+    5     17.5    -16.4     21.9  3.92e-06 1.13e-07     9.47       519       physS hadElastic
+    6       14    0.964    0.988  3.19e-06 7.78e-07     27.4       546       physS hadElastic
+    7    -49.7    -39.7     6.33  3.15e-06 5.65e-08     75.7       622       physS hadElastic
+    8      -50    -39.7     6.19  3.15e-06        0    0.362       622       World Transportation
+    9   -2e+03      126     -794  3.15e-06        0 2.11e+03  2.74e+03  OutOfWorld Transportation
+     LXe collection: 9 hits
+
+---> Begin of event: 64
+
+     Primary Energy: 6.101571267158269 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   6.1e-06        0        0         0       World initStep
+    1        0        0       50   6.1e-06        0      450       450       physS Transportation
+    2        0        0     39.2  5.12e-06    1e-06     10.8       461       physS hadElastic
+    3    -4.17    -10.4       50  5.12e-06        0     15.6       476       World Transportation
+    4     -759 -1.89e+03    2e+03  5.12e-06        0 2.81e+03  3.29e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 65
+
+     Primary Energy: 7.196272470835456 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   7.2e-06        0        0         0       World initStep
+    1        0        0       50   7.2e-06        0      450       450       physS Transportation
+    2        0        0     40.4   7.1e-06 1.41e-07      9.6       460       physS hadElastic
+    3     4.61    -14.5     1.12  6.13e-06 9.92e-07     42.1       502       physS hadElastic
+    4     27.5     9.15    -1.23  5.33e-06 8.26e-07       33       535       physS hadElastic
+    5     27.5     8.73    -1.63  5.16e-06 2.31e-07     0.58       535       physS hadElastic
+    6     8.76    -15.2    -14.5  4.99e-06  1.7e-07       33       568       physS hadElastic
+    7    -13.8    -27.4      -50  4.99e-06        0     43.7       612       World Transportation
+    8 -1.25e+03     -697   -2e+03  4.99e-06        0 2.41e+03  3.02e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 66
+
+     Primary Energy: 9.698431887358392 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   9.7e-06        0        0         0       World initStep
+    1        0        0       50   9.7e-06        0      450       450       physS Transportation
+    2        0        0     4.46  8.65e-06 1.07e-06     45.5       496       physS hadElastic
+    3     6.31     3.97     2.88  7.16e-06  1.5e-06     7.62       503       physS hadElastic
+    4     3.71     3.81     12.4  6.11e-06 1.08e-06     9.84       513       physS hadElastic
+    5     38.2      -38     13.6  5.54e-06 5.95e-07     54.2       567       physS hadElastic
+    6     35.7    -37.7      -50  5.54e-06        0     63.7       631       World Transportation
+    7    -41.3      -27   -2e+03  5.54e-06        0 1.95e+03  2.58e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 67
+
+     Primary Energy: 5.163130344833536 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.16e-06        0        0         0       World initStep
+    1        0        0       50  5.16e-06        0      450       450       physS Transportation
+    2        0        0    -1.03  4.98e-06 1.93e-07       51       501       physS hadElastic
+    3    -1.93    -14.5    -15.7  4.62e-06 3.61e-07     20.7       522       physS hadElastic
+    4    -8.13    -20.8    -13.8  4.08e-06 6.05e-07     9.06       531       physS hadElastic
+    5       20      -50     3.96  4.08e-06        0     44.3       575       World Transportation
+    6  1.9e+03   -2e+03 1.19e+03  4.08e-06        0 2.96e+03  3.53e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 68
+
+     Primary Energy: 9.989253833948931 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  9.99e-06        0        0         0       World initStep
+    1        0        0       50  9.99e-06        0      450       450       physS Transportation
+    2        0        0    -7.89  8.53e-06  1.5e-06     57.9       508       physS hadElastic
+    3     38.3       50      -10  8.53e-06        0       63       571       World Transportation
+    4 1.53e+03    2e+03    -92.9  8.53e-06        0 2.46e+03  3.03e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 69
+
+     Primary Energy: 5.8027841802065 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   5.8e-06        0        0         0       World initStep
+    1        0        0       50   5.8e-06        0      450       450       physS Transportation
+    2        0        0    -15.4  5.46e-06 3.59e-07     65.4       515       physS hadElastic
+    3     13.2     10.8    -24.2   4.4e-06 1.07e-06     19.2       535       physS hadElastic
+    4      3.2     21.4     7.38  4.32e-06  1.7e-07     34.8       569       physS hadElastic
+    5     -1.3     19.6     11.7  4.06e-06 2.59e-07     6.49       576       physS hadElastic
+    6    -22.7     34.1     20.2  3.26e-06 9.49e-07     27.2       603       physS hadElastic
+    7    -37.1    -19.8       50  3.26e-06        0     63.3       666       World Transportation
+    8     -565   -2e+03 1.15e+03  3.26e-06        0 2.32e+03  2.99e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 70
+
+     Primary Energy: 2.761129598162297 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.76e-06        0        0         0       World initStep
+    1        0        0       50  2.76e-06        0      450       450       physS Transportation
+    2        0        0     47.3  2.75e-06  5.2e-08     2.67       453       physS hadElastic
+    3    -5.85     24.5      -50  2.75e-06        0      101       553       World Transportation
+    4     -123      515   -2e+03  2.75e-06        0 2.01e+03  2.57e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 71
+
+     Primary Energy: 7.91434869763805 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.91e-06        0        0         0       World initStep
+    1        0        0       50  7.91e-06        0      450       450       physS Transportation
+    2        0        0     47.7  6.74e-06 1.17e-06     2.33       452       physS hadElastic
+    3    -4.61     3.45       50  6.74e-06        0     6.21       459       World Transportation
+    4   -2e+03  1.5e+03 1.06e+03  6.74e-06        0 2.69e+03  3.15e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 72
+
+     Primary Energy: 4.510741015012977 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.51e-06        0        0         0       World initStep
+    1        0        0       50  4.51e-06        0      450       450       physS Transportation
+    2        0        0     38.2  4.39e-06 1.64e-07     11.8       462       physS hadElastic
+    3     10.6    -1.53     28.3  4.05e-06 4.07e-07     14.6       476       physS hadElastic
+    4     0.34    -8.39     26.5  3.73e-06 4.57e-07     12.5       489       physS hadElastic
+    5     42.3     32.6      -50  3.73e-06        0     96.4       585       World Transportation
+    6 1.11e+03 1.08e+03   -2e+03  3.73e-06        0 2.46e+03  3.04e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 73
+
+     Primary Energy: 6.051772830277345 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.05e-06        0        0         0       World initStep
+    1        0        0       50  6.05e-06        0      450       450       physS Transportation
+    2        0        0     13.4  5.73e-06 3.49e-07     36.6       487       physS hadElastic
+    3     11.4      -50       -5  5.73e-06        0     54.5       541       World Transportation
+    4      455   -2e+03     -721  5.73e-06        0 2.12e+03  2.67e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 74
+
+     Primary Energy: 9.196268818455337 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   9.2e-06        0        0         0       World initStep
+    1        0        0       50   9.2e-06        0      450       450       physS Transportation
+    2        0        0    -4.74  7.13e-06 2.08e-06     54.7       505       physS hadElastic
+    3     2.94    -17.1     17.4  6.35e-06 7.95e-07     28.1       533       physS hadElastic
+    4     11.1   -0.936     24.8  6.08e-06 2.95e-07     19.5       552       physS hadElastic
+    5     10.1     11.7     23.6  6.04e-06 4.81e-08     12.8       565       physS hadElastic
+    6    0.652     37.1     21.2  5.45e-06 6.07e-07     27.2       592       physS hadElastic
+    7    -18.4       46       50  5.45e-06        0     35.6       628       World Transportation
+    8 -1.31e+03      647    2e+03  5.45e-06        0 2.41e+03  3.04e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 75
+
+     Primary Energy: 1.792885189778985 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  1.79e-06        0        0         0       World initStep
+    1        0        0       50  1.79e-06        0      450       450       physS Transportation
+    2        0        0     28.6  1.42e-06 4.31e-07     21.4       471       physS hadElastic
+    3    -32.9      -17       31  1.31e-06 1.39e-07     37.1       509       physS hadElastic
+    4    -42.8     2.88       50  1.31e-06        0     29.2       538       World Transportation
+    5 -1.03e+03    2e+03 1.96e+03  1.31e-06        0 2.94e+03  3.47e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 76
+
+     Primary Energy: 7.721045464491109 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.72e-06        0        0         0       World initStep
+    1        0        0       50  7.72e-06        0      450       450       physS Transportation
+    2        0        0     14.3  7.59e-06 1.37e-07     35.7       486       physS hadElastic
+    3     7.36     4.12     2.74  6.83e-06 8.28e-07     14.3       500       physS hadElastic
+    4    -22.4      -50    -24.7  6.83e-06        0     67.6       568       World Transportation
+    5 -1.09e+03   -2e+03 -1.01e+03  6.83e-06        0 2.43e+03     3e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 77
+
+     Primary Energy: 8.23676139025622 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  8.24e-06        0        0         0       World initStep
+    1        0        0       50  8.24e-06        0      450       450       physS Transportation
+    2        0        0     48.4  7.77e-06 4.85e-07     1.56       452       physS hadElastic
+    3     15.4     18.3       29  7.56e-06 2.52e-07     30.8       482       physS hadElastic
+    4     12.9     24.8     24.8  6.12e-06 1.46e-06      8.1       490       physS hadElastic
+    5     15.3     15.9       24  5.37e-06 7.57e-07     9.21       500       physS hadElastic
+    6     39.8     22.7     34.3  4.63e-06 8.11e-07     27.5       527       physS hadElastic
+    7     33.2       -2     48.5  4.43e-06 2.52e-07     29.3       556       physS hadElastic
+    8   -0.474    -29.7       43  3.69e-06 7.62e-07       44       600       physS hadElastic
+    9    -1.34      -25     36.1  3.52e-06 1.85e-07     8.42       609       physS hadElastic
+   10      -25    -26.6     13.2  3.09e-06 5.11e-07       33       642       physS hadElastic
+   11    -41.6    -3.93     7.29  2.66e-06 4.57e-07     28.7       671       physS hadElastic
+   12     15.4     33.6      -50  2.66e-06        0     89.1       760       World Transportation
+   13 1.95e+03 1.31e+03   -2e+03  2.66e-06        0 3.03e+03  3.79e+03  OutOfWorld Transportation
+     LXe collection: 13 hits
+
+---> Begin of event: 78
+
+     Primary Energy: 5.929110405383176 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.93e-06        0        0         0       World initStep
+    1        0        0       50  5.93e-06        0      450       450       physS Transportation
+    2        0        0     39.9  4.39e-06 1.57e-06     10.1       460       physS hadElastic
+    3    -2.86     1.46     44.7  3.93e-06 4.88e-07     5.76       466       physS hadElastic
+    4    -2.19     5.11     44.1  3.56e-06 4.97e-07     3.75       470       physS hadElastic
+    5    -6.45      7.3       50  3.56e-06        0     7.57       477       World Transportation
+    6 -1.42e+03      737    2e+03  3.56e-06        0 2.52e+03  2.99e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 79
+
+     Primary Energy: 4.147642282724418 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.15e-06        0        0         0       World initStep
+    1        0        0       50  4.15e-06        0      450       450       physS Transportation
+    2        0        0     24.5  3.37e-06 7.95e-07     25.5       476       physS hadElastic
+    3    -11.9    -22.9     42.5  3.22e-06 1.48e-07     31.5       507       physS hadElastic
+    4      -50    -49.7     32.8  3.22e-06        0     47.6       555       World Transportation
+    5   -2e+03 -1.42e+03     -462  3.22e-06        0 2.44e+03  2.99e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 80
+
+     Primary Energy: 6.139190976589918 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.14e-06        0        0         0       World initStep
+    1        0        0       50  6.14e-06        0      450       450       physS Transportation
+    2        0        0     37.9  5.64e-06  5.1e-07     12.1       462       physS hadElastic
+    3    -10.9     28.8     28.7  5.23e-06 4.09e-07     32.1       494       physS hadElastic
+    4    -13.5       30     18.6  5.05e-06 2.46e-07     10.5       505       physS hadElastic
+    5      -28       50     4.53  5.05e-06        0     28.5       533       World Transportation
+    6 -1.45e+03    2e+03 -1.37e+03  5.05e-06        0 2.78e+03  3.31e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 81
+
+     Primary Energy: 3.771056458258722 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.77e-06        0        0         0       World initStep
+    1        0        0       50  3.77e-06        0      450       450       physS Transportation
+    2        0        0       -3  3.64e-06 2.53e-07       53       503       physS hadElastic
+    3     34.7    -2.89    -11.5  3.45e-06 2.09e-07     35.8       539       physS hadElastic
+    4       50     6.14    -4.22  3.45e-06        0     19.2       558       World Transportation
+    5    2e+03 1.16e+03      919  3.45e-06        0 2.45e+03     3e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 82
+
+     Primary Energy: 8.597587247909461 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   8.6e-06        0        0         0       World initStep
+    1        0        0       50   8.6e-06        0      450       450       physS Transportation
+    2        0        0      -13  6.93e-06 1.68e-06       63       513       physS hadElastic
+    3    -20.5     14.1     14.7   6.2e-06 7.35e-07     37.2       550       physS hadElastic
+    4    -27.3     22.5     5.02  6.24e-06 5.59e-08     14.5       565       physS hadElastic
+    5    -39.8       50    -2.05  6.24e-06        0       31       596       World Transportation
+    6     -923    2e+03     -504  6.24e-06        0  2.2e+03  2.79e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 83
+
+     Primary Energy: 6.650228566674014 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.65e-06        0        0         0       World initStep
+    1        0        0       50  6.65e-06        0      450       450       physS Transportation
+    2        0        0    -17.2  6.44e-06 2.28e-07     67.2       517       physS hadElastic
+    3     40.6     8.05      -50  6.44e-06        0     52.8       570       World Transportation
+    4    2e+03      396 -1.63e+03  6.44e-06        0 2.55e+03  3.12e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 84
+
+     Primary Energy: 0.0344908417485162 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.45e-08        0        0         0       World initStep
+    1        0        0       50  3.45e-08        0      450       450       physS Transportation
+    2        0        0     36.3  2.92e-08 6.24e-09     13.7       464       physS hadElastic
+    3     8.55    -8.49       50  2.92e-08        0     18.3       482       World Transportation
+    4 1.22e+03 -1.21e+03    2e+03  2.92e-08        0  2.6e+03  3.08e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 85
+
+     Primary Energy: 1.346995997387943 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  1.35e-06        0        0         0       World initStep
+    1        0        0       50  1.35e-06        0      450       450       physS Transportation
+    2        0        0     24.6  1.27e-06 1.21e-07     25.4       475       physS hadElastic
+    3     1.56    -9.55     12.2  1.19e-06 9.68e-08     15.8       491       physS hadElastic
+    4   -0.221    -11.6       11  1.09e-06  1.2e-07     2.97       494       physS hadElastic
+    5    -2.85       15      -50  1.09e-06        0     66.6       561       World Transportation
+    6    -86.7      866   -2e+03  1.09e-06        0 2.13e+03  2.69e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 86
+
+     Primary Energy: 0.422219186605728 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.22e-07        0        0         0       World initStep
+    1        0        0       50  4.22e-07        0      450       450       physS Transportation
+    2        0        0     12.8  3.44e-07 1.26e-07     37.2       487       physS hadElastic
+    3     1.54     6.93     12.9   3.4e-07 1.51e-08      7.1       494       physS hadElastic
+    4     10.5     43.1     20.2  3.27e-07 1.73e-08     37.9       532       physS hadElastic
+    5     13.6       50     11.2  3.27e-07        0     11.8       544       World Transportation
+    6      707  1.6e+03   -2e+03  3.27e-07        0 2.63e+03  3.18e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 87
+
+     Primary Energy: 0.2213717108063038 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.21e-07        0        0         0       World initStep
+    1        0        0       50  2.21e-07        0      450       450       physS Transportation
+    2        0        0     10.7   1.4e-07 1.43e-07     39.3       489       physS hadElastic
+    3    -23.5    -32.9     21.4  1.36e-07 2.92e-08     41.9       531       physS hadElastic
+    4    -30.1      -50     22.2  1.36e-07        0     18.3       550       World Transportation
+    5     -783   -2e+03      114  1.36e-07        0 2.09e+03  2.64e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 88
+
+     Primary Energy: 7.909676191977961 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.91e-06        0        0         0       World initStep
+    1        0        0       50  7.91e-06        0      450       450       physS Transportation
+    2        0        0     2.08  6.49e-06 1.48e-06     47.9       498       physS hadElastic
+    3      -50      -14     7.14  6.49e-06        0     52.2       550       World Transportation
+    4   -2e+03     -559      205  6.49e-06        0 2.03e+03  2.58e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 89
+
+     Primary Energy: 2.568476836095999 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.57e-06        0        0         0       World initStep
+    1        0        0       50  2.57e-06        0      450       450       physS Transportation
+    2        0        0    -18.6  2.38e-06 2.91e-07     68.6       519       physS hadElastic
+    3    -22.6      -50    -23.3  2.38e-06        0     55.1       574       World Transportation
+    4     -906   -2e+03     -207  2.38e-06        0 2.15e+03  2.72e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 90
+
+     Primary Energy: 5.411081185987838 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  5.41e-06        0        0         0       World initStep
+    1        0        0       50  5.41e-06        0      450       450       physS Transportation
+    2        0        0      -13  4.72e-06 7.07e-07       63       513       physS hadElastic
+    3       50    -19.7    -12.3  4.72e-06        0     53.7       567       World Transportation
+    4    2e+03     -787     15.2  4.72e-06        0  2.1e+03  2.66e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 91
+
+     Primary Energy: 3.515379041944483 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  3.52e-06        0        0         0       World initStep
+    1        0        0       50  3.52e-06        0      450       450       physS Transportation
+    2        0        0       22  3.56e-06 1.76e-08       28       478       physS hadElastic
+    3    -17.1      -50    -34.6  3.56e-06        0     77.4       555       World Transportation
+    4     -613 -1.79e+03   -2e+03  3.56e-06        0 2.69e+03  3.25e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 92
+
+     Primary Energy: 6.95445927734107 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  6.95e-06        0        0         0       World initStep
+    1        0        0       50  6.95e-06        0      450       450       physS Transportation
+    2        0        0      -50  6.95e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  6.95e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 93
+
+     Primary Energy: 8.745985778640774 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  8.75e-06        0        0         0       World initStep
+    1        0        0       50  8.75e-06        0      450       450       physS Transportation
+    2        0        0     20.4  7.27e-06 1.53e-06     29.6       480       physS hadElastic
+    3    -18.6       11     30.9  6.87e-06 4.08e-07       24       504       physS hadElastic
+    4    -19.5     11.2     30.5  6.63e-06 2.59e-07    0.988       505       physS hadElastic
+    5    -31.8    -4.73     8.92  5.52e-06 1.13e-06     29.6       534       physS hadElastic
+    6    -34.7     4.67     13.6  5.17e-06 3.75e-07     10.9       545       physS hadElastic
+    7      -50     13.8     8.28  5.17e-06        0     18.6       564       World Transportation
+    8   -2e+03 1.18e+03     -677  5.17e-06        0 2.37e+03  2.94e+03  OutOfWorld Transportation
+     LXe collection: 8 hits
+
+---> Begin of event: 94
+
+     Primary Energy: 1.099957801306384 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   1.1e-06        0        0         0       World initStep
+    1        0        0       50   1.1e-06        0      450       450       physS Transportation
+    2        0        0     40.8  1.07e-06 4.13e-08     9.23       459       physS hadElastic
+    3    -32.5     6.08     9.14  6.64e-07 5.08e-07     45.8       505       physS hadElastic
+    4     8.92    0.527     30.3  6.81e-07 2.58e-08     46.9       552       physS hadElastic
+    5    -1.81    -16.8     25.8  6.38e-07 5.21e-08     20.9       573       physS hadElastic
+    6     1.16    -35.2       50  6.38e-07        0     30.5       603       World Transportation
+    7      240 -1.51e+03    2e+03  6.38e-07        0 2.46e+03  3.06e+03  OutOfWorld Transportation
+     LXe collection: 7 hits
+
+---> Begin of event: 95
+
+     Primary Energy: 7.835488761275387 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.84e-06        0        0         0       World initStep
+    1        0        0       50  7.84e-06        0      450       450       physS Transportation
+    2        0        0     29.1  7.13e-06 7.72e-07     20.9       471       physS hadElastic
+    3     13.8     42.9     22.6  6.08e-06 1.09e-06     45.5       516       physS hadElastic
+    4       50     6.04     20.3  6.08e-06        0     51.7       568       World Transportation
+    5    2e+03 -1.98e+03     -106  6.08e-06        0 2.78e+03  3.35e+03  OutOfWorld Transportation
+     LXe collection: 5 hits
+
+---> Begin of event: 96
+
+     Primary Energy: 2.488353224071618 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  2.49e-06        0        0         0       World initStep
+    1        0        0       50  2.49e-06        0      450       450       physS Transportation
+    2        0        0      -50  2.49e-06        0      100       550       World Transportation
+    3        0        0   -2e+03  2.49e-06        0 1.95e+03   2.5e+03  OutOfWorld Transportation
+     LXe collection: 3 hits
+
+---> Begin of event: 97
+
+     Primary Energy: 0.4228156694574559 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  4.23e-07        0        0         0       World initStep
+    1        0        0       50  4.23e-07        0      450       450       physS Transportation
+    2        0        0     41.4  3.96e-07 4.07e-08     8.61       459       physS hadElastic
+    3    -3.62   0.0567       50  3.96e-07        0     9.34       468       World Transportation
+    4     -824     12.9    2e+03  3.96e-07        0 2.12e+03  2.58e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+
+---> Begin of event: 98
+
+     Primary Energy: 7.492280104624453 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500  7.49e-06        0        0         0       World initStep
+    1        0        0       50  7.49e-06        0      450       450       physS Transportation
+    2        0        0     44.6  6.92e-06 6.38e-07     5.37       455       physS hadElastic
+    3     5.33   -0.319     45.4  5.78e-06 1.18e-06     5.41       461       physS hadElastic
+    4    -13.8    -37.6       34  5.26e-06  5.6e-07     43.4       504       physS hadElastic
+    5    -5.01      -50     31.4  5.26e-06        0     15.4       520       World Transportation
+    6 1.37e+03   -2e+03     -373  5.26e-06        0 2.42e+03  2.94e+03  OutOfWorld Transportation
+     LXe collection: 6 hits
+
+---> Begin of event: 99
+
+     Primary Energy: 3.100429058146762 eV 
+<pmtCollection> is not found.
+
+*********************************************************************************************************
+* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
+*********************************************************************************************************
+
+Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+    0        0        0      500   3.1e-06        0        0         0       World initStep
+    1        0        0       50   3.1e-06        0      450       450       physS Transportation
+    2        0        0     42.9   2.4e-06 7.26e-07     7.06       457       physS hadElastic
+    3      -11     0.36       50   2.4e-06        0     13.1       470       World Transportation
+    4   -2e+03     65.4 1.33e+03   2.4e-06        0 2.36e+03  2.83e+03  OutOfWorld Transportation
+     LXe collection: 4 hits
+ Run terminated.
+Run Summary
+  Number of events processed : 100
+  User=0.01s Real=0.79s Sys=0.05s
+Graphics systems deleted.
+Visualization Manager deleting...
+G4 kernel has come to Quit state.
+================== Deleting memory pools ===================
+Number of memory pools allocated: 12; of which, static: 0
+Dynamic pools deleted: 12 / Total memory freed: 0.019 MB
+============================================================
+RunManagerKernel is deleted. Good bye :)
