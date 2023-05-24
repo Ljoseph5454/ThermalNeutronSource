@@ -136,6 +136,8 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   G4bool LastStep = aStep-> IsLastStepInVolume();
   G4double StepLength = aStep->GetStepLength();
   G4bool hit = false;
+
+  G4String IntProcessName = aStep -> GetPostStepPoint() -> GetProcessDefinedStep() -> GetProcessName();
   
 
 
@@ -166,7 +168,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
  
 
 
-  if(Volume == "physSD2"){
+  if(IntProcessName == "nCapture"){
   HasHit = HasHit+1;}
 
   if(n1!=n){
@@ -180,15 +182,17 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   if(Volume =="OutOfWorld" && hit == false){
   Info << "0" <<'\n' ;}*/
  
-  if(StepLength == 486.5){
+  /*if(IntProcessName == "nCapture"){
   Info << '\n' << n <<"," << 1000000*ek <<",";}
   //if(Volume == "physS" && LastStep == true){
   //Info << '\n' << n <<"," << ek;}
   if(Volume == "physSD2" && HasHit == 1){
-  Info << "1" ;}
+  Info << "1" ;}*/
    
   //if(Volume == "World"){
   //Info << '\n';//}
+
+  //Info << n << "," << Volume << "," << particleName << "," << IntProcessName << '\n';
 
   return true;
 }
@@ -215,6 +219,9 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   }
   if (verboseLevel>=2)
     scintillatorCollection->PrintAllHits();
+
+  if (HasHit > 0)
+    Info << '\n' << n-1 <<"," << HasHit;
 
 
 
