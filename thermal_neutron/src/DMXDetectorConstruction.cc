@@ -175,7 +175,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
     
   // Filter
   G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_d); 
-  logicS = new G4LogicalVolume(solidS, Oxygen_mat, "logicS");                    
+  logicS = new G4LogicalVolume(solidS, Nickel_mat, "logicS");                    
   physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  
   
   // SD before

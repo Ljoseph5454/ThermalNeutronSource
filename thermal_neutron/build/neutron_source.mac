@@ -54,7 +54,7 @@
 
 /gps/ene/type Lin
 /gps/ene/min 0.0001 eV
-/gps/ene/max 10 eV
+/gps/ene/max 0.001 eV
 /gps/ene/intercept 1
 /gps/ene/gradient 0
 
@@ -69,5 +69,5 @@
 
 #/run/beamOn 10000000
 #/run/beamOn 108000
-/run/beamOn 100
+/run/beamOn 5
 

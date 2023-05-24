@@ -109,9 +109,17 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   //need to know if this is an optical photon and exclude it:
   //if(aStep->GetTrack()->GetDefinition()
   //  == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
-  if(aStep->GetTrack()->GetDefinition() == G4Electron::ElectronDefinition()){
+  /*if(aStep->GetTrack()->GetDefinition() == G4Electron::ElectronDefinition()){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}*/
+  /*if(aStep->GetTrack()->GetDefinition()
+    == G4Electron::ElectronDefinition()) 
+    {aStep->GetTrack()->SetTrackStatus(fStopAndKill);
+    return false;}*/
+  if (aStep->GetTrack()->GetTrackID() != 1){
+    aStep->GetTrack()->SetTrackStatus(fStopAndKill);
     return false;}
+  
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
