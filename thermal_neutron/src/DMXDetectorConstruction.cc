@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double S_l = 100*mm, S_d=0.005*cm, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = 100*mm, S_d=10*cm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
