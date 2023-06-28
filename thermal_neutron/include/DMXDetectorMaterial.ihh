@@ -88,6 +88,8 @@
   G4Material*    HE3Detector_mat;
   G4Material* 	 Oxygen_mat;
   G4Material* 	 Nickel_mat;
+  G4Material* 	 HDPEH_mat;
+  G4Material* 	 HDPEC_mat;
 
 
 
