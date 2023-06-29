@@ -90,7 +90,8 @@
   G4Material* 	 Nickel_mat;
   G4Material* 	 HDPEH_mat;
   G4Material* 	 HDPEC_mat;
-
+  G4Material*    SapphireAl_mat;
+  G4Material*    SapphireO_mat;
 
 
                                 

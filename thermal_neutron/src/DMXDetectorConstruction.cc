@@ -139,7 +139,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double S_l = 100*mm, S_d=0.8*cm, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = 100*mm, S_d=2.1*cm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -175,7 +175,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
     
   // Filter
   G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_d); 
-  logicS = new G4LogicalVolume(solidS, HDPEH_mat, "logicS");                    
+  logicS = new G4LogicalVolume(solidS, SapphireAl_mat, "logicS");                    
   physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  
   
   // SD before
