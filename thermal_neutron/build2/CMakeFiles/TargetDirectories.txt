@@ -1,0 +1,8 @@
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/install/local.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/list_install_components.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/install/strip.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/underground_physics.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/DMX.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/edit_cache.dir
+/mnt/c/Users/User/Documents/GitHub/TN/thermal_neutron/build2/CMakeFiles/install.dir
