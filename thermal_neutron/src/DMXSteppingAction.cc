@@ -92,6 +92,15 @@ DMXSteppingAction::~DMXSteppingAction()
 
 void DMXSteppingAction::UserSteppingAction(const G4Step* fStep)
 {
+
+  // Remove Secondary Particles (Logan)
+  if (fStep->GetTrack()->GetTrackID() != 1){
+    fStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    }
+//fStopAndKill
+
+
+
   if (!evtAction)
     evtAction = 
       dynamic_cast<const DMXEventAction*>

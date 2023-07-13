@@ -1054,6 +1054,16 @@ const G4int PTFE_NUMENTRIES = 3;
     (name="SapphireO", density=1.883*g/cm3, ncomponents=1);	
   SapphireO->AddElement(O,1);
 
+//Protactinium-233
+  G4Isotope* Pa233 = new G4Isotope
+    (name="Pa233", iz= 91, in=233, a=233.0402473*g/mole);
+  G4Element* Pa = new G4Element
+    (name="Protactinium", "Pa", ncomponents=1);
+  Pa->AddIsotope(Pa233, abundance=1);
+  G4Material* Pa233Detector = new G4Material
+    (name="Pa233Detector", density=15.37*g/cm3, ncomponents=1);
+  Pa233Detector->AddElement(Pa, 1);
+
 
   // assign materials
        world_mat = concrete;
@@ -1097,6 +1107,7 @@ jacketflange_mat = ssteel;
       HDPEC_mat = HDPEC;
       SapphireAl_mat = SapphireAl;
       SapphireO_mat = SapphireO;
+      Pa233Detector_mat = Pa233Detector;
       SIPM_mat = SIPM;
       LED_mat = LED;
       Berilio_mat = Berilio;

@@ -92,6 +92,6 @@
   G4Material* 	 HDPEC_mat;
   G4Material*    SapphireAl_mat;
   G4Material*    SapphireO_mat;
-
+  G4Material*    Pa233Detector_mat;
 
                                 

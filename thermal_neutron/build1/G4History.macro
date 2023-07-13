@@ -1,0 +1,9 @@
+/vis/open OGL
+/vis/sceneHandler/create OGL
+/tracking/storeTrajectory 1
+/vis/drawView 70 -90 0. 0. cm 1.5
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/sceneHandler/attach
+/vis/viewer/update

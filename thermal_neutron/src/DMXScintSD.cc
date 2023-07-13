@@ -116,9 +116,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
     == G4Electron::ElectronDefinition()) 
     {aStep->GetTrack()->SetTrackStatus(fStopAndKill);
     return false;}*/
-  if (aStep->GetTrack()->GetTrackID() != 1){
+  /*if (aStep->GetTrack()->GetTrackID() != 1){
     aStep->GetTrack()->SetTrackStatus(fStopAndKill);
-    return false;}
+    return false;}*/
   
 
   
