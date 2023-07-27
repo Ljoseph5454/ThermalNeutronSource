@@ -68,6 +68,7 @@
 int n=1;
 int n1=1;
 int HasHit=0;
+G4double zCol = 0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -79,7 +80,7 @@ DMXScintSD::DMXScintSD(G4String name)
 
   Info.open("Informacion.csv");
   Info1.open("General.csv");
-  Info << "Event,"<<"Energy_Cinetica," << "Particle," << "x,"<<"y,"<<"z,"<<"Volume"<<'\n';
+  Info << "Event,"<<"HasHit," << "Pos" <<'\n';
   Info1 << "Evento," << "Hits_Generados\n";
 
 
@@ -169,7 +170,12 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
 
   if(IntProcessName == "nCapture"){
-  HasHit = HasHit+1;}
+  HasHit = HasHit+1;
+  }
+
+  if(IntProcessName == "nCapture" || IntProcessName == "hadElastic"){
+  zCol = posz;
+  }
 
   if(n1!=n){
   HasHit =0;
@@ -193,6 +199,8 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   //Info << '\n';//}
 
   //Info << n << "," << Volume << "," << particleName << "," << IntProcessName << '\n';
+
+  //Info << '\n' << n <<"," << posz;
 
   return true;
 }
@@ -220,8 +228,11 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   if (verboseLevel>=2)
     scintillatorCollection->PrintAllHits();
 
-  if (HasHit > 0)
-    Info << '\n' << n-1 <<"," << HasHit;
+  //if (HasHit > 0)
+    if(n==2){
+    Info << n-1 <<"," << HasHit <<"," << zCol;}
+    if(n!=2){
+    Info << '\n' << n-1 <<"," << HasHit <<"," << zCol;}
 
 
 

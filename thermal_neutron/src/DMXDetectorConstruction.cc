@@ -149,8 +149,8 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   //     
   // World
   //
-  G4double world_sizeXY = 2*m;
-  G4double world_sizeZ  = 2*m;
+  G4double world_sizeXY = 0.01*m;
+  G4double world_sizeZ  = 102*m;
   //G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
   
   G4Box* solidWorld =    
@@ -174,9 +174,14 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
                      
     
   // Filter
-  G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_d); 
+  /*G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_d); 
   logicS = new G4LogicalVolume(solidS, Pa233Detector_mat, "logicS");                    
-  physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  
+  physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  */
+
+  G4VSolid* Cylinder = new G4Tubs("Cylinder",0.,0.00000001*cm,50*m,0.,2*M_PI*rad);
+  //0.00000001*cm,1000*m
+  logicCyl = new G4LogicalVolume(Cylinder, Pa233Detector_mat, "logicCyl");
+  physCyl = new G4PVPlacement(0, G4ThreeVector(0.,0.,50*m), logicCyl, "physCyl", logicWorld, false, 0);
   
   // SD before
  // G4Box* solidSD1 = new G4Box("solidSD1", S_l, S_l, 1*mm); 
@@ -211,8 +216,8 @@ void DMXDetectorConstruction::ConstructSDandField()
         LXeSD.Put(aSD);
       }
     G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get());
- if(logicS){
-      SetSensitiveDetector(logicS,LXeSD.Get());
+ if(logicCyl){
+      SetSensitiveDetector(logicCyl,LXeSD.Get());
       //SetSensitiveDetector(logicSD2,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());}
  //if(logicSD2)
