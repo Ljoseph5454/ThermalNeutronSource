@@ -108,15 +108,20 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 {
 
   //need to know if this is an optical photon and exclude it:
-  if(aStep->GetTrack()->GetDefinition()
+  /*if(aStep->GetTrack()->GetDefinition()
     == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
   if(aStep->GetTrack()->GetDefinition() == G4Electron::ElectronDefinition()){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
     return false;}
   if(aStep->GetTrack()->GetDefinition() == G4Proton::ProtonDefinition()){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
-    return false;}
-  
+    return false;}*/
+  /*if(aStep->GetTrack()->GetDefinition() != G4Neutron::NeutronDefinition()){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}*/
+  /*if (aStep->GetTrack()->GetTrackID() != 1){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    }*/
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
