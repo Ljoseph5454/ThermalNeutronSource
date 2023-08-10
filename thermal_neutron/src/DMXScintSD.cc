@@ -69,6 +69,8 @@ int n=1;
 int n1=1;
 int HasHit=0;
 int step = 0;
+G4double eki = 0;
+G4double eke = 0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -80,7 +82,7 @@ DMXScintSD::DMXScintSD(G4String name)
 
   Info.open("Informacion.csv");
   Info1.open("General.csv");
-  Info << "Event,"<<"Hit";
+  Info << "Event,"<<"Hit,"<<"KE_i,"<<"KE_e";
   Info1 << "Evento," << "KE," << "px," << "py," << "pz," << "x," << "y," << "z";
 
 
@@ -108,17 +110,17 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 {
 
   //need to know if this is an optical photon and exclude it:
-  /*if(aStep->GetTrack()->GetDefinition()
+  if(aStep->GetTrack()->GetDefinition()
     == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
   if(aStep->GetTrack()->GetDefinition() == G4Electron::ElectronDefinition()){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
     return false;}
   if(aStep->GetTrack()->GetDefinition() == G4Proton::ProtonDefinition()){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
-    return false;}*/
-  /*if(aStep->GetTrack()->GetDefinition() != G4Neutron::NeutronDefinition()){
+    return false;}
+  if(aStep->GetTrack()->GetDefinition() != G4Neutron::NeutronDefinition()){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
-    return false;}*/
+    return false;}
   /*if (aStep->GetTrack()->GetTrackID() != 1){
     aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
     }*/
@@ -175,10 +177,13 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
  //if (FirstStep == true || LastStep ==true)
 //if (FirstStep == true)
  
+  if(posx == 0 && posy == 0 && posz == 0 && n>0){
+  eki=ek;}
 
 
   if(Volume == "physWorld"){
-  HasHit = HasHit+1;}
+  HasHit = HasHit+1;
+  eke = ek;}
 
   if (Volume == "physWorld"){
     Position.setX(posx) ;
@@ -187,6 +192,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   if(n1!=n){
   HasHit =0;
+  eke =0;
   n1=n;}
 
 /*  if(Volume == "physS" && LastStep == true){
@@ -205,16 +211,15 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   //if(Volume == "physS" && HasHit == 1){
   //Info << "1" ;}*/
    
-  //if(Volume == "World"){
-  //Info << '\n';//}
 
-  if(particleName == "neutron" && HasHit > 0){
+  /*if(particleName == "neutron" && HasHit > 0){
   Info << '\n' << n <<"," << "1";
-  Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ() << ',';}
+  //Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ() << ',';}
   if(ek == 0 && particleName == "neutron"){
   Info << '\n' << n <<"," << "0"; 
-  /*Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";*/}
-
+  //Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";
+  }*/
+ 
   step++;
 
   return true;
@@ -231,6 +236,13 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   if(HCID<0)
     HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCname);
   HCE->AddHitsCollection(HCID,scintillatorCollection);
+  
+  if(n==0){
+  Info << n <<"," << HasHit <<"," << eki <<"," << eke;
+  }
+  if(n>0){
+  Info << '\n' << n <<"," << HasHit <<"," << eki <<"," << eke;
+  }
 
   G4int nHits = scintillatorCollection->entries();
   if (verboseLevel>=1){
