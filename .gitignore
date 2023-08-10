@@ -8,3 +8,4 @@ thermal_neutron/build/DMX
 *.root
 *.csv
 *.txt
+*.root
