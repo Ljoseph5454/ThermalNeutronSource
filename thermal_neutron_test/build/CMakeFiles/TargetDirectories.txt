@@ -1,0 +1,8 @@
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/DMX.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/underground_physics.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/edit_cache.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/rebuild_cache.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/list_install_components.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/install.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/install/local.dir
+/data/ljoseph/Geant4/TN/thermal_neutron_test/build/CMakeFiles/install/strip.dir

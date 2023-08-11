@@ -1,0 +1,8 @@
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/exampleB1.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/B1.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/edit_cache.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/rebuild_cache.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/list_install_components.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/install.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/install/local.dir
+/data/ljoseph/Geant4/TN/Simple/build/CMakeFiles/install/strip.dir

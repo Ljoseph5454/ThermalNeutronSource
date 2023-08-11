@@ -39,11 +39,7 @@
 // main program
 // --------------------------------------------------------------
 
-#ifdef G4MULTITHREADED
-#include "G4MTRunManager.hh"
-#else
 #include "G4RunManager.hh"
-#endif
 
 #include "G4UImanager.hh"
 #include "Randomize.hh"
@@ -60,22 +56,22 @@
 #include "DMXDetectorConstruction.hh"
 #include "DMXPhysicsList.hh"
 #include "DMXActionInitializer.hh"
+//Logan Added
+#include "G4NCrystal/G4NCrystal.hh"
 
 //#define DMXENV_GPS_USE 1
 
 
 int main(int argc,char** argv) {
 
+  // Logan Added (NCrystal)
+  NCrystal::libClashDetect();
+
   // choose the Random engine
   G4Random::setTheEngine(new CLHEP::RanecuEngine);
   
-  // Construct the default run manager
-#ifdef G4MULTITHREADED
-  G4MTRunManager* runManager = new G4MTRunManager;
-  //runManager->SetNumberOfThreads(2); 
-#else
   G4RunManager* runManager = new G4RunManager;
-#endif
+
 
   // set mandatory initialization classes
   runManager->SetUserInitialization(new DMXDetectorConstruction);
@@ -98,6 +94,9 @@ int main(int argc,char** argv) {
  
   //Initialize G4 kernel
   runManager->Initialize();
+
+  //Logan Added (NCrystal)
+  G4NCrystal::installOnDemand();
     
   // get the pointer to the User Interface manager 
   G4UImanager* UImanager = G4UImanager::GetUIpointer();  
@@ -127,6 +126,10 @@ int main(int argc,char** argv) {
   G4AnalysisManager* man = G4AnalysisManager::Instance();
   man->Write();
   man->CloseFile();
+
+  //Logan Added (NCrystal)
+  G4NCrystal::Manager::cleanup();
+
   // Complete clean-up
   delete G4AnalysisManager::Instance();
 
@@ -134,6 +137,8 @@ int main(int argc,char** argv) {
   if(visManager) delete visManager;
 #endif
   delete runManager;
+
+  
 
   return 0;
 }

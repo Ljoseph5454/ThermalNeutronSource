@@ -73,309 +73,309 @@ CMakeFiles/DMX.dir/DMX.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/DMX.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc
 CMakeFiles/DMX.dir/DMX.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DMX.dir/DMX.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/DMX.cc.o -MF CMakeFiles/DMX.dir/DMX.cc.o.d -o CMakeFiles/DMX.dir/DMX.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/DMX.cc.o -MF CMakeFiles/DMX.dir/DMX.cc.o.d -o CMakeFiles/DMX.dir/DMX.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc
 
 CMakeFiles/DMX.dir/DMX.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/DMX.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc > CMakeFiles/DMX.dir/DMX.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc > CMakeFiles/DMX.dir/DMX.cc.i
 
 CMakeFiles/DMX.dir/DMX.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/DMX.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc -o CMakeFiles/DMX.dir/DMX.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/DMX.cc -o CMakeFiles/DMX.dir/DMX.cc.s
 
 CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc
 CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o -MF CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o.d -o CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o -MF CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o.d -o CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc
 
 CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc > CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc > CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.i
 
 CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc -o CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXActionInitializer.cc -o CMakeFiles/DMX.dir/src/DMXActionInitializer.cc.s
 
 CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc
 CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o -MF CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o -MF CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc
 
 CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc > CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc > CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.i
 
 CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc -o CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXDetectorConstruction.cc -o CMakeFiles/DMX.dir/src/DMXDetectorConstruction.cc.s
 
 CMakeFiles/DMX.dir/src/DMXEventAction.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXEventAction.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc
 CMakeFiles/DMX.dir/src/DMXEventAction.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DMX.dir/src/DMXEventAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXEventAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXEventAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXEventAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXEventAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXEventAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXEventAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc
 
 CMakeFiles/DMX.dir/src/DMXEventAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXEventAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc > CMakeFiles/DMX.dir/src/DMXEventAction.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc > CMakeFiles/DMX.dir/src/DMXEventAction.cc.i
 
 CMakeFiles/DMX.dir/src/DMXEventAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXEventAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc -o CMakeFiles/DMX.dir/src/DMXEventAction.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventAction.cc -o CMakeFiles/DMX.dir/src/DMXEventAction.cc.s
 
 CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc
 CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc
 
 CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.i
 
 CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXEventActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXEventActionMessenger.cc.s
 
 CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc
 CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o -MF CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o.d -o CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o -MF CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o.d -o CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc
 
 CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc > CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc > CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.i
 
 CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc -o CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMaxTimeCuts.cc -o CMakeFiles/DMX.dir/src/DMXMaxTimeCuts.cc.s
 
 CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc
 CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o -MF CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o.d -o CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o -MF CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o.d -o CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc
 
 CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc > CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc > CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.i
 
 CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc -o CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXMinEkineCuts.cc -o CMakeFiles/DMX.dir/src/DMXMinEkineCuts.cc.s
 
 CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc
 CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o -MF CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o.d -o CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o -MF CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o.d -o CMakeFiles/DMX.dir/src/DMXParticleSource.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc
 
 CMakeFiles/DMX.dir/src/DMXParticleSource.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXParticleSource.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc > CMakeFiles/DMX.dir/src/DMXParticleSource.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc > CMakeFiles/DMX.dir/src/DMXParticleSource.cc.i
 
 CMakeFiles/DMX.dir/src/DMXParticleSource.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXParticleSource.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc -o CMakeFiles/DMX.dir/src/DMXParticleSource.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSource.cc -o CMakeFiles/DMX.dir/src/DMXParticleSource.cc.s
 
 CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc
 CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc
 
 CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc > CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc > CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.i
 
 CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc -o CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXParticleSourceMessenger.cc -o CMakeFiles/DMX.dir/src/DMXParticleSourceMessenger.cc.s
 
 CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc
 CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o -MF CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o -MF CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc
 
 CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc > CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc > CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.i
 
 CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc -o CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPhysicsList.cc -o CMakeFiles/DMX.dir/src/DMXPhysicsList.cc.s
 
 CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc
 CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o -MF CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o -MF CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPmtHit.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc
 
 CMakeFiles/DMX.dir/src/DMXPmtHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXPmtHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc > CMakeFiles/DMX.dir/src/DMXPmtHit.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc > CMakeFiles/DMX.dir/src/DMXPmtHit.cc.i
 
 CMakeFiles/DMX.dir/src/DMXPmtHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXPmtHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc -o CMakeFiles/DMX.dir/src/DMXPmtHit.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtHit.cc -o CMakeFiles/DMX.dir/src/DMXPmtHit.cc.s
 
 CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc
 CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o -MF CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o -MF CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPmtSD.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc
 
 CMakeFiles/DMX.dir/src/DMXPmtSD.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXPmtSD.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc > CMakeFiles/DMX.dir/src/DMXPmtSD.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc > CMakeFiles/DMX.dir/src/DMXPmtSD.cc.i
 
 CMakeFiles/DMX.dir/src/DMXPmtSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXPmtSD.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc -o CMakeFiles/DMX.dir/src/DMXPmtSD.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPmtSD.cc -o CMakeFiles/DMX.dir/src/DMXPmtSD.cc.s
 
 CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc
 CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc
 
 CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc > CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc > CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.i
 
 CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc -o CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXPrimaryGeneratorAction.cc -o CMakeFiles/DMX.dir/src/DMXPrimaryGeneratorAction.cc.s
 
 CMakeFiles/DMX.dir/src/DMXRunAction.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXRunAction.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc
 CMakeFiles/DMX.dir/src/DMXRunAction.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/DMX.dir/src/DMXRunAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXRunAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXRunAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXRunAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXRunAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXRunAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXRunAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc
 
 CMakeFiles/DMX.dir/src/DMXRunAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXRunAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc > CMakeFiles/DMX.dir/src/DMXRunAction.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc > CMakeFiles/DMX.dir/src/DMXRunAction.cc.i
 
 CMakeFiles/DMX.dir/src/DMXRunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXRunAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc -o CMakeFiles/DMX.dir/src/DMXRunAction.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunAction.cc -o CMakeFiles/DMX.dir/src/DMXRunAction.cc.s
 
 CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc
 CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc
 
 CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.i
 
 CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXRunActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXRunActionMessenger.cc.s
 
 CMakeFiles/DMX.dir/src/DMXScintHit.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXScintHit.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc
 CMakeFiles/DMX.dir/src/DMXScintHit.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/DMX.dir/src/DMXScintHit.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXScintHit.cc.o -MF CMakeFiles/DMX.dir/src/DMXScintHit.cc.o.d -o CMakeFiles/DMX.dir/src/DMXScintHit.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXScintHit.cc.o -MF CMakeFiles/DMX.dir/src/DMXScintHit.cc.o.d -o CMakeFiles/DMX.dir/src/DMXScintHit.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc
 
 CMakeFiles/DMX.dir/src/DMXScintHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXScintHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc > CMakeFiles/DMX.dir/src/DMXScintHit.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc > CMakeFiles/DMX.dir/src/DMXScintHit.cc.i
 
 CMakeFiles/DMX.dir/src/DMXScintHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXScintHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc -o CMakeFiles/DMX.dir/src/DMXScintHit.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintHit.cc -o CMakeFiles/DMX.dir/src/DMXScintHit.cc.s
 
 CMakeFiles/DMX.dir/src/DMXScintSD.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXScintSD.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc
 CMakeFiles/DMX.dir/src/DMXScintSD.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/DMX.dir/src/DMXScintSD.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXScintSD.cc.o -MF CMakeFiles/DMX.dir/src/DMXScintSD.cc.o.d -o CMakeFiles/DMX.dir/src/DMXScintSD.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXScintSD.cc.o -MF CMakeFiles/DMX.dir/src/DMXScintSD.cc.o.d -o CMakeFiles/DMX.dir/src/DMXScintSD.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc
 
 CMakeFiles/DMX.dir/src/DMXScintSD.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXScintSD.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc > CMakeFiles/DMX.dir/src/DMXScintSD.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc > CMakeFiles/DMX.dir/src/DMXScintSD.cc.i
 
 CMakeFiles/DMX.dir/src/DMXScintSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXScintSD.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc -o CMakeFiles/DMX.dir/src/DMXScintSD.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXScintSD.cc -o CMakeFiles/DMX.dir/src/DMXScintSD.cc.s
 
 CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc
 CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o -MF CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o.d -o CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o -MF CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o.d -o CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc
 
 CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc > CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc > CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.i
 
 CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc -o CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSpecialCuts.cc -o CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.s
 
 CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc
 CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXStackingAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc
 
 CMakeFiles/DMX.dir/src/DMXStackingAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXStackingAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc > CMakeFiles/DMX.dir/src/DMXStackingAction.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc > CMakeFiles/DMX.dir/src/DMXStackingAction.cc.i
 
 CMakeFiles/DMX.dir/src/DMXStackingAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXStackingAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc -o CMakeFiles/DMX.dir/src/DMXStackingAction.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingAction.cc -o CMakeFiles/DMX.dir/src/DMXStackingAction.cc.s
 
 CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc
 CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc
 
 CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.i
 
 CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXStackingActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.s
 
 CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc
 CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o -MF CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o.d -o CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc
 
 CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc > CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc > CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.i
 
 CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc -o CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingAction.cc -o CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.s
 
 CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o: CMakeFiles/DMX.dir/flags.make
 CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o: /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc
 CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o: CMakeFiles/DMX.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o -MF CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o.d -o CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o -c /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc
 
 CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.i
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc > CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.i
 
 CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.s
+	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/ljoseph/Geant4/TN/thermal_neutron/src/DMXSteppingActionMessenger.cc -o CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.s
 
 # Object files for target DMX
 DMX_OBJECTS = \
@@ -428,36 +428,40 @@ DMX: CMakeFiles/DMX.dir/src/DMXStackingActionMessenger.cc.o
 DMX: CMakeFiles/DMX.dir/src/DMXSteppingAction.cc.o
 DMX: CMakeFiles/DMX.dir/src/DMXSteppingActionMessenger.cc.o
 DMX: CMakeFiles/DMX.dir/build.make
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4Tree.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4GMocren.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4visHepRep.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4RayTracer.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4VRML.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4interfaces.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4persistency.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4analysis.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4error_propagation.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4readout.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4physicslists.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4parmodels.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4FR.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4vis_management.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4modeling.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4run.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4event.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4tracking.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4processes.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4zlib.so
+DMX: /data/hugh/ncrystalinstall/lib64/libG4NCrystal.so
+DMX: /data/hugh/geant4/lib64/libG4Tree.so
+DMX: /data/hugh/geant4/lib64/libG4FR.so
+DMX: /data/hugh/geant4/lib64/libG4GMocren.so
+DMX: /data/hugh/geant4/lib64/libG4visHepRep.so
+DMX: /data/hugh/geant4/lib64/libG4RayTracer.so
+DMX: /data/hugh/geant4/lib64/libG4VRML.so
+DMX: /data/hugh/geant4/lib64/libG4ToolsSG.so
+DMX: /data/hugh/geant4/lib64/libG4vis_management.so
+DMX: /data/hugh/geant4/lib64/libG4modeling.so
+DMX: /data/hugh/geant4/lib64/libG4interfaces.so
+DMX: /data/hugh/geant4/lib64/libG4persistency.so
+DMX: /data/hugh/geant4/lib64/libG4error_propagation.so
+DMX: /data/hugh/geant4/lib64/libG4readout.so
+DMX: /data/hugh/geant4/lib64/libG4physicslists.so
+DMX: /data/hugh/geant4/lib64/libG4run.so
+DMX: /data/hugh/geant4/lib64/libG4event.so
+DMX: /data/hugh/geant4/lib64/libG4tracking.so
+DMX: /data/hugh/geant4/lib64/libG4parmodels.so
+DMX: /data/hugh/geant4/lib64/libG4processes.so
+DMX: /data/hugh/geant4/lib64/libG4analysis.so
 DMX: /usr/lib64/libexpat.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4digits_hits.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4track.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4particles.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4geometry.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4materials.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4graphics_reps.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4intercoms.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4global.so
-DMX: /data/ljoseph/geant4.10.3-install/lib64/libG4clhep.so
+DMX: /data/hugh/geant4/lib64/libG4digits_hits.so
+DMX: /data/hugh/geant4/lib64/libG4track.so
+DMX: /data/hugh/geant4/lib64/libG4particles.so
+DMX: /data/hugh/geant4/lib64/libG4geometry.so
+DMX: /data/hugh/geant4/lib64/libG4materials.so
+DMX: /data/hugh/geant4/lib64/libG4graphics_reps.so
+DMX: /data/hugh/geant4/lib64/libG4intercoms.so
+DMX: /data/hugh/geant4/lib64/libG4global.so
+DMX: /data/hugh/geant4/lib64/libG4clhep.so
+DMX: /data/hugh/geant4/lib64/libG4zlib.so
+DMX: /data/hugh/geant4/lib64/libG4ptl.so.2.3.3
+DMX: /data/hugh/ncrystalinstall/lib64/libNCrystal.so
 DMX: CMakeFiles/DMX.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/data/ljoseph/Geant4/TN/thermal_neutron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable DMX"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DMX.dir/link.txt --verbose=$(VERBOSE)

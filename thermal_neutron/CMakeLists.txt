@@ -1,7 +1,12 @@
 #----------------------------------------------------------------------------
 # Setup the project
-cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(underground_physics)
+cmake_minimum_required(VERSION 3.10...3.26)
+project(underground_physics) # LANGUAGES CXX)
+#set(CMAKE_CXX_STANDARD 11)
+
+#Logan Added
+find_package(NCrystal REQUIRED COMPONENTS GEANT4BINDINGS)
+#COMPONENTS GEANT4BINDINGS
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default
@@ -50,6 +55,9 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #
 add_executable(DMX DMX.cc ${sources} ${headers})
 target_link_libraries(DMX ${Geant4_LIBRARIES})
+
+#Logan Added
+target_link_libraries(DMX NCrystal::G4NCrystal)
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we

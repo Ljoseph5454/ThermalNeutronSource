@@ -1,1 +1,0 @@
-Energia_Cinetica   Energia_Depositada  Particula  Pos_Interaccion  
