@@ -61,4 +61,6 @@
   G4Material*      grid_mat;
   G4Material*       pmt_mat;
   G4Material*    phcath_mat;
+  //Logan
 //  G4Material*  sapphire_mat;
+  G4Material*      HDPE_mat;

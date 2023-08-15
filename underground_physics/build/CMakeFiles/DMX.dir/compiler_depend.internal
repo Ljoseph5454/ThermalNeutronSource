@@ -8508,6 +8508,63 @@ CMakeFiles/DMX.dir/src/DMXScintSD.cc.o
  /data/hugh/geant4/include/Geant4/G4GenericIon.hh
  /data/hugh/geant4/include/Geant4/G4Ions.hh
  /data/hugh/geant4/include/Geant4/G4ios.hh
+ /data/hugh/geant4/include/Geant4/G4VProcess.hh
+ /data/hugh/geant4/include/Geant4/Randomize.hh
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/Randomize.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/DualRand.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandomEngine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandomEngine.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/JamesRandom.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/MixMaxRng.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/MTwistEngine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RanecuEngine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RanluxEngine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/Ranlux64Engine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RanluxppEngine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RanshiEngine.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandBinomial.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/Random.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/Random.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Utility/memory.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandBinomial.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandBreitWigner.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandFlat.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Utility/thread_local.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandFlat.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandBreitWigner.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandChiSquare.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandChiSquare.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandExponential.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandExponential.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandExpZiggurat.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandBit.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandBit.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGamma.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGamma.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGauss.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGauss.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGaussQ.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGaussQ.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGaussZiggurat.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGeneral.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandGeneral.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandLandau.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandLandau.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandPoissonQ.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandPoisson.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandPoisson.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandPoissonQ.icc
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandStudentT.h
+ /data/hugh/geant4/include/Geant4/CLHEP/Random/RandStudentT.icc
+ /data/hugh/geant4/include/Geant4/G4PhysicsTable.hh
+ /data/hugh/geant4/include/Geant4/G4PhysicsTable.icc
+ /data/hugh/geant4/include/Geant4/G4VParticleChange.hh
+ /data/hugh/geant4/include/Geant4/G4VParticleChange.icc
+ /data/hugh/geant4/include/Geant4/G4ForceCondition.hh
+ /data/hugh/geant4/include/Geant4/G4GPILSelection.hh
+ /data/hugh/geant4/include/Geant4/G4ParticleChange.hh
+ /data/hugh/geant4/include/Geant4/G4ParticleChange.icc
+ /data/hugh/geant4/include/Geant4/G4ProcessType.hh
  /data/hugh/geant4/include/Geant4/G4OpticalPhoton.hh
 
 CMakeFiles/DMX.dir/src/DMXSpecialCuts.cc.o

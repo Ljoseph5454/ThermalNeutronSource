@@ -52,8 +52,23 @@
 #include "G4ParticleTypes.hh"
 #include "G4Ions.hh"
 #include "G4ios.hh"
+//Logan 
+#include "G4VProcess.hh"
+//
 
 #include "G4OpticalPhoton.hh"
+
+//Logan
+#include <iostream>
+#include <fstream>
+#include <cstring>
+//
+
+
+int n=1;
+int n1=1;
+int HasHit=0;
+G4double zCol = 0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -62,11 +77,15 @@ DMXScintSD::DMXScintSD(G4String name)
 {
   G4String HCname="scintillatorCollection";
   collectionName.insert(HCname);
+
+  Info.open("Informacion.csv");
+  Info << "Event,"<<"HasHit," << "Pos" <<'\n';
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-DMXScintSD::~DMXScintSD(){ }
+DMXScintSD::~DMXScintSD(){ Info.close(); }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -104,11 +123,23 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   G4ParticleDefinition* particleType = aStep->GetTrack()->GetDefinition();
   G4String particleName = particleType->GetParticleName();
 
+  G4double posx = aStep->GetPostStepPoint()->GetPosition().x();
+  G4double posy = aStep->GetPostStepPoint()->GetPosition().y();
+  G4double posz = aStep->GetPostStepPoint()->GetPosition().z();
+
+  G4String Volume = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
+  G4bool FirstStep = aStep-> IsFirstStepInVolume();
+  G4bool LastStep = aStep-> IsLastStepInVolume();
+  G4double StepLength = aStep->GetStepLength();
+  G4bool hit = false;
+
+  G4String IntProcessName = aStep -> GetPostStepPoint() -> GetProcessDefinedStep() -> GetProcessName();
+
   G4double stepl = 0.;
   if (particleType->GetPDGCharge() != 0.)
     stepl = aStep->GetStepLength();
   
-  if ((edep==0.)&&(stepl==0.)) return false;      
+  // if ((edep==0.)&&(stepl==0.)) return false;      
 
 
   // fill in hit
@@ -121,6 +152,20 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   HitID = scintillatorCollection->insert(newHit);
   
+  if(IntProcessName == "nCapture"){
+  HasHit = HasHit+1;
+  }
+
+  if(IntProcessName == "nCapture" || IntProcessName == "hadElastic"){
+  zCol = posz;
+  }
+
+  if(n1!=n){
+  HasHit =0;
+  n1=n;}
+
+  //Info << '\n' << IntProcessName << "," << "hi";
+
   return true;
 }
 
@@ -139,8 +184,15 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   G4int nHits = scintillatorCollection->entries();
   if (verboseLevel>=1)
     G4cout << "     LXe collection: " <<  nHits << " hits" << G4endl;
+    n++;
   if (verboseLevel>=2)
     scintillatorCollection->PrintAllHits();
+
+  if(n==2){
+    Info << n-1 <<"," << HasHit <<"," << zCol;}
+    if(n!=2){
+    Info << '\n' << n-1 <<"," << HasHit <<"," << zCol;}
+
 
 }
 

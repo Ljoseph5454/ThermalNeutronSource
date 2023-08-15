@@ -137,7 +137,8 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   
   //Logan
   G4Material * mat_aluminium = G4NCrystal::createMaterial("Al_sg225.ncmat");
-  G4Material* sapphire_mat = G4NCrystal::createMaterial("Al2O3_sg167_Corundum.ncmat");
+  G4Material* sapphire_mat = G4NCrystal::createMaterial("Al2O3_sg167_Corundum.ncmat;bragg=0"); 
+  G4Material* HDPENCrystal_mat = G4NCrystal::createMaterial("Polyethylene_CH2.ncmat;density=0.96gcm3");
 
   // Envelope parameters
   //
@@ -182,7 +183,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
 
   G4VSolid* Cylinder = new G4Tubs("Cylinder",0.,0.00000001*cm,50*m,0.,2*M_PI*rad);
   //0.00000001*cm,1000*m
-  logicCyl = new G4LogicalVolume(Cylinder, sapphire_mat, "logicCyl");
+  logicCyl = new G4LogicalVolume(Cylinder, HDPENCrystal_mat, "logicCyl");
   physCyl = new G4PVPlacement(0, G4ThreeVector(0.,0.,50*m), logicCyl, "physCyl", logicWorld, false, 0);
   
   // SD before
@@ -217,10 +218,10 @@ void DMXDetectorConstruction::ConstructSDandField()
       LXeSD.Put(aSD);
     }
   G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get()); 
-  if(logicS){
-      SetSensitiveDetector(logicS,LXeSD.Get());
-      SetSensitiveDetector(logicSD2,LXeSD.Get());
-      SetSensitiveDetector(logicWorld,LXeSD.Get());} 
+  if(logicCyl){
+      SetSensitiveDetector(logicCyl,LXeSD.Get());
+      //SetSensitiveDetector(logicSD2,LXeSD.Get());
+      SetSensitiveDetector(logicWorld,LXeSD.Get());}
   /*if (LXe_log)    
     SetSensitiveDetector(LXe_log,LXeSD.Get());
 

@@ -271,6 +271,11 @@
   // Logans Materials
   // G4Material* sapphire_mat = G4NCrystal::createMaterial("Al2O3_sg167_Corundum.ncmat");
   
+  G4Material* HDPE = new G4Material
+    (name="HDPE", density=0.96*g/cm3, ncomponents=2);
+  HDPE->AddElement(H , 6);
+  HDPE->AddElement(C , 3);
+
   // print materials
   //  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
   //  G4cout << *(G4Isotope::GetIsotopeTable())   << G4endl;
@@ -303,3 +308,5 @@ jacketflange_mat = ssteel;
         grid_mat = LXe;
          pmt_mat = quartz;
       phcath_mat = cathmetalAl;
+  // Logan
+        HDPE_mat = HDPE;

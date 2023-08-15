@@ -46,6 +46,9 @@
 #include "globals.hh"
 #include "DMXScintHit.hh"
 
+#include <iostream>
+#include <fstream>
+
 class G4Step;
 class G4HCofThisEvent;
 
@@ -53,6 +56,9 @@ class G4HCofThisEvent;
 
 class DMXScintSD : public G4VSensitiveDetector
 {
+
+  std::ofstream Info;
+  
   public:
   
      DMXScintSD(G4String);
