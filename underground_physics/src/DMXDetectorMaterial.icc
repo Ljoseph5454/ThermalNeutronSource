@@ -276,6 +276,11 @@
   HDPE->AddElement(H , 6);
   HDPE->AddElement(C , 3);
 
+  G4Material* sapphire= new G4Material
+    (name="sapphire", density=4.0*g/cm3, ncomponents=2);
+  sapphire->AddElement(Al, 2);
+  sapphire->AddElement(O, 3);
+
   // print materials
   //  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
   //  G4cout << *(G4Isotope::GetIsotopeTable())   << G4endl;
@@ -310,3 +315,4 @@ jacketflange_mat = ssteel;
       phcath_mat = cathmetalAl;
   // Logan
         HDPE_mat = HDPE;
+    sapphire_mat = sapphire;

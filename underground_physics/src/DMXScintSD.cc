@@ -121,7 +121,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
-  G4double ek = aStep->GetPostStepPoint()->GetKineticEnergy();
+  G4double ek = aStep->GetPreStepPoint()->GetKineticEnergy();
   G4ParticleDefinition* particleType = aStep->GetTrack()->GetDefinition();
   G4String particleName = particleType->GetParticleName();
 
@@ -154,27 +154,29 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   HitID = scintillatorCollection->insert(newHit);
 
-  if(posx == 0 && posy == 0 && posz == 0 && n>0){
-  eki=ek;}
-
-  if(Volume == "physWorld"){
-  HasHit = HasHit+1;
-  eke = ek;}
+  if(Volume == "physSD2"){
+  HasHit = HasHit+1;}
 
   if(n1!=n){
   HasHit =0;
-  eke =0;
   n1=n;}
-  
-  /*if(IntProcessName == "nCapture"){
-  HasHit = HasHit+1;
-  }
 
-  if(IntProcessName == "nCapture" || IntProcessName == "hadElastic"){
-  zCol = posz;
-  }*/
-
-  // Info << '\n' << n << "," << posx << "," << eki << "," <<ek;
+/*  if(Volume == "physS" && LastStep == true){
+  Info << n <<",";}
+  if(Volume == "OutOfWorld" && hit == true){
+  Info << "1" <<'\n' ;}
+  if(Volume =="OutOfWorld" && hit == false){
+  Info << "0" <<'\n' ;}*/
+ 
+  if(StepLength == 486.5){
+  Info << '\n' << n <<"," << 1000000*ek <<",";}
+  //if(Volume == "physS" && LastStep == true){
+  //Info << '\n' << n <<"," << ek;}
+  if(Volume == "physSD2" && HasHit == 1){
+  Info << "1" ;}
+   
+  //if(Volume == "World"){
+  //Info << '\n';//}
 
   return true;
 }
@@ -190,15 +192,6 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   if(HCID<0)
     HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCname);
   HCE->AddHitsCollection(HCID,scintillatorCollection);
-
-
-  if(n==0){
-  Info << n <<"," << HasHit <<"," << eki <<"," << eke;
-  }
-  if(n>0){
-  Info << '\n' << n <<"," << HasHit <<"," << eki <<"," << eke;
-  }
-
 
   G4int nHits = scintillatorCollection->entries();
   if (verboseLevel>=1)

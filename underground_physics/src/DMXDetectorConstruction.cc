@@ -137,12 +137,12 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   
   //Logan
   G4Material * mat_aluminium = G4NCrystal::createMaterial("Al_sg225.ncmat");
-  G4Material* sapphire_mat = G4NCrystal::createMaterial("Al2O3_sg167_Corundum.ncmat;bragg=0"); 
+  G4Material* sapphireNCrystal_mat = G4NCrystal::createMaterial("Al2O3_sg167_Corundum.ncmat;bragg=0"); 
   G4Material* HDPENCrystal_mat = G4NCrystal::createMaterial("Polyethylene_CH2.ncmat;density=0.96gcm3");
 
   // Envelope parameters
   //
-  G4double S_l = 70*cm, V_l=10*cm, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = 25.4*mm, S_d=27*mm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -169,7 +169,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
     new G4PVPlacement(0,                     //no rotation
                       G4ThreeVector(),       //at (0,0,0)
                       logicWorld,            //its logical volume
-                      "physWorld",               //its name
+                      "World",               //its name
                       0,                     //its mother  volume
                       false,                 //no boolean operation
                       0,                     //copy number
@@ -177,8 +177,8 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
                      
     
   // Filter
-  G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_l); 
-  logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
+  G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_d); 
+  logicS = new G4LogicalVolume(solidS, sapphireNCrystal_mat, "logicS");                    
   physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  
   
   // SD before
@@ -186,15 +186,10 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   //logicSD1 = new G4LogicalVolume(solidSD1, vacuum_mat, "logicSD1");                    
   //physSD1 = new G4PVPlacement(0, G4ThreeVector(0.,0.,5*cm), logicSD1, "physSD1", logicWorld, false, 0);   
   
-  // Empty Inside
-  G4Box* solidSD2 = new G4Box("solidSD2", 0.5*V_l, 0.5*V_l, 0.5*V_l); 
+  // SD After
+  G4Box* solidSD2 = new G4Box("solidSD2", 0.5*S_l, 0.5*S_l, 0.5*mm); 
   logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
-  physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicSD2, "physSD2", logicWorld, false, 0);   
-
- /* // Sapphire Window
-  G4Box* solidWindow = new G4Box("solidWindow", 0.25*(S_l-V_l), 0.5*V_l, 0.5*V_l); 
-  logicWindow = new G4LogicalVolume(solidWindow, vacuum_mat, "logicWindow");                    
-  physWindow = new G4PVPlacement(0, G4ThreeVector(-0.25*(S_l+V_l),0.,0.), logicWindow, "physWindow", logicWorld, false, 0); */
+  physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,-14*mm), logicSD2, "physSD2", logicWorld, false, 0);   
 
   //
   //always return the physical World
