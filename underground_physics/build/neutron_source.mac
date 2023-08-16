@@ -59,7 +59,7 @@
 #/gps/ene/gradient 0
 
 /gps/ene/type Mono
-/gps/ene/mono 1 eV
+/gps/ene/mono 1000000 eV
 
 /gps/particle neutron
 

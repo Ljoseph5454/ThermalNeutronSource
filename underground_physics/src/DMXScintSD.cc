@@ -156,7 +156,11 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   HasHit = HasHit+1;
   }
 
-  if(IntProcessName == "nCapture" || IntProcessName == "hadElastic"){
+  if(IntProcessName == "inelastic"){
+  HasHit = HasHit+2;
+  }
+
+  if(IntProcessName == "nCapture" || IntProcessName == "hadElastic" || IntProcessName == "inelastic"){
   zCol = posz;
   }
 
