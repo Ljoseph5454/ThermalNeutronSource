@@ -142,7 +142,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
 
   // Envelope parameters
   //
-  G4double S_l = 100*mm, S_d=0.1*cm, F_d = 5*cm, W_d = 5*mm;
+  G4double S_l = 70*cm, V_l=10*cm, F_d = 5*cm, W_d = 5*mm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -152,8 +152,8 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   //     
   // World
   //
-  G4double world_sizeXY = 0.01*m;
-  G4double world_sizeZ  = 102*m;
+  G4double world_sizeXY = 2*m;
+  G4double world_sizeZ  = 2*m;
   //G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
   
   G4Box* solidWorld =    
@@ -169,7 +169,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
     new G4PVPlacement(0,                     //no rotation
                       G4ThreeVector(),       //at (0,0,0)
                       logicWorld,            //its logical volume
-                      "World",               //its name
+                      "physWorld",               //its name
                       0,                     //its mother  volume
                       false,                 //no boolean operation
                       0,                     //copy number
@@ -177,24 +177,24 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
                      
     
   // Filter
-  /*G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_d); 
-  logicS = new G4LogicalVolume(solidS, Pa233Detector_mat, "logicS");                    
-  physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  */
-
-  G4VSolid* Cylinder = new G4Tubs("Cylinder",0.,0.00000001*cm,50*m,0.,2*M_PI*rad);
-  //0.00000001*cm,1000*m
-  logicCyl = new G4LogicalVolume(Cylinder, HDPENCrystal_mat, "logicCyl");
-  physCyl = new G4PVPlacement(0, G4ThreeVector(0.,0.,50*m), logicCyl, "physCyl", logicWorld, false, 0);
+  G4Box* solidS = new G4Box("solidS", 0.5*S_l, 0.5*S_l, 0.5*S_l); 
+  logicS = new G4LogicalVolume(solidS, HDPE_mat, "logicS");                    
+  physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicS, "physS", logicWorld, false, 0);  
   
   // SD before
  // G4Box* solidSD1 = new G4Box("solidSD1", S_l, S_l, 1*mm); 
   //logicSD1 = new G4LogicalVolume(solidSD1, vacuum_mat, "logicSD1");                    
   //physSD1 = new G4PVPlacement(0, G4ThreeVector(0.,0.,5*cm), logicSD1, "physSD1", logicWorld, false, 0);   
   
-  // SD After
-  // G4Box* solidSD2 = new G4Box("solidSD2", 0.5*S_l, 0.5*S_l, 0.5*mm); 
-  // logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
-  // physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,-14*mm), logicSD2, "physSD2", logicWorld, false, 0);   
+  // Empty Inside
+  G4Box* solidSD2 = new G4Box("solidSD2", 0.5*V_l, 0.5*V_l, 0.5*V_l); 
+  logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
+  physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicSD2, "physSD2", logicWorld, false, 0);   
+
+ /* // Sapphire Window
+  G4Box* solidWindow = new G4Box("solidWindow", 0.25*(S_l-V_l), 0.5*V_l, 0.5*V_l); 
+  logicWindow = new G4LogicalVolume(solidWindow, vacuum_mat, "logicWindow");                    
+  physWindow = new G4PVPlacement(0, G4ThreeVector(-0.25*(S_l+V_l),0.,0.), logicWindow, "physWindow", logicWorld, false, 0); */
 
   //
   //always return the physical World
@@ -218,9 +218,9 @@ void DMXDetectorConstruction::ConstructSDandField()
       LXeSD.Put(aSD);
     }
   G4SDManager::GetSDMpointer()->AddNewDetector(LXeSD.Get()); 
-  if(logicCyl){
-      SetSensitiveDetector(logicCyl,LXeSD.Get());
-      //SetSensitiveDetector(logicSD2,LXeSD.Get());
+  if(logicS){
+      SetSensitiveDetector(logicS,LXeSD.Get());
+      SetSensitiveDetector(logicSD2,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());}
   /*if (LXe_log)    
     SetSensitiveDetector(LXe_log,LXeSD.Get());

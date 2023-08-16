@@ -68,7 +68,8 @@
 int n=1;
 int n1=1;
 int HasHit=0;
-G4double zCol = 0;
+G4double eki = 0;
+G4double eke = 0;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -79,7 +80,7 @@ DMXScintSD::DMXScintSD(G4String name)
   collectionName.insert(HCname);
 
   Info.open("Informacion.csv");
-  Info << "Event,"<<"HasHit," << "Pos" <<'\n';
+  Info << "Event,"<<"Hit,"<<"KE_i,"<<"KE_e";
 
 }
 
@@ -120,12 +121,13 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   
   G4double edep = aStep->GetTotalEnergyDeposit();
+  G4double ek = aStep->GetPostStepPoint()->GetKineticEnergy();
   G4ParticleDefinition* particleType = aStep->GetTrack()->GetDefinition();
   G4String particleName = particleType->GetParticleName();
 
-  G4double posx = aStep->GetPostStepPoint()->GetPosition().x();
-  G4double posy = aStep->GetPostStepPoint()->GetPosition().y();
-  G4double posz = aStep->GetPostStepPoint()->GetPosition().z();
+  G4double posx = aStep->GetPreStepPoint()->GetPosition().x();
+  G4double posy = aStep->GetPreStepPoint()->GetPosition().y();
+  G4double posz = aStep->GetPreStepPoint()->GetPosition().z();
 
   G4String Volume = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
   G4bool FirstStep = aStep-> IsFirstStepInVolume();
@@ -151,20 +153,28 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   newHit->SetParticleEnergy(aStep->GetPreStepPoint()->GetKineticEnergy() );
 
   HitID = scintillatorCollection->insert(newHit);
+
+  if(posx == 0 && posy == 0 && posz == 0 && n>0){
+  eki=ek;}
+
+  if(Volume == "physWorld"){
+  HasHit = HasHit+1;
+  eke = ek;}
+
+  if(n1!=n){
+  HasHit =0;
+  eke =0;
+  n1=n;}
   
-  if(IntProcessName == "nCapture"){
+  /*if(IntProcessName == "nCapture"){
   HasHit = HasHit+1;
   }
 
   if(IntProcessName == "nCapture" || IntProcessName == "hadElastic"){
   zCol = posz;
-  }
+  }*/
 
-  if(n1!=n){
-  HasHit =0;
-  n1=n;}
-
-  //Info << '\n' << IntProcessName << "," << "hi";
+  // Info << '\n' << n << "," << posx << "," << eki << "," <<ek;
 
   return true;
 }
@@ -181,17 +191,21 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
     HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCname);
   HCE->AddHitsCollection(HCID,scintillatorCollection);
 
+
+  if(n==0){
+  Info << n <<"," << HasHit <<"," << eki <<"," << eke;
+  }
+  if(n>0){
+  Info << '\n' << n <<"," << HasHit <<"," << eki <<"," << eke;
+  }
+
+
   G4int nHits = scintillatorCollection->entries();
   if (verboseLevel>=1)
     G4cout << "     LXe collection: " <<  nHits << " hits" << G4endl;
     n++;
   if (verboseLevel>=2)
     scintillatorCollection->PrintAllHits();
-
-  if(n==2){
-    Info << n-1 <<"," << HasHit <<"," << zCol;}
-    if(n!=2){
-    Info << '\n' << n-1 <<"," << HasHit <<"," << zCol;}
 
 
 }
