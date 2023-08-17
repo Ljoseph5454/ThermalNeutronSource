@@ -128,4 +128,4 @@
 #/dmx/hitsfile ambe_spectrum.out
 #/dmx/histogramfile ambe_spectrum.his
 
-/run/beamOn 1000
+/run/beamOn 100
