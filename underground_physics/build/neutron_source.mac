@@ -41,9 +41,9 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0 0 -1 m
+#####/gps/pos/centre 0 0 -1 m REMOVE THIS WHEN YOU WANT LINEAR
 
-/gps/direction 0 0 1
+#####/gps/direction 0 0 1
 
 #
 #
@@ -58,8 +58,19 @@
 #/gps/ene/intercept 1
 #/gps/ene/gradient 0
 
+
 /gps/ene/type Mono
-/gps/ene/mono 1 eV
+##
+/gps/pos/type Point
+/gps/pos/centre 0 0 0 cm
+/gps/ang/surfnorm 1
+/gps/ang/type iso
+/gps/ang/mintheta 0 deg
+/gps/ang/maxtheta 180 deg
+/gps/ang/minphi 0 deg
+/gps/ang/maxphi 360 deg
+##
+/gps/ene/mono 0.024 MeV
 
 /gps/particle neutron
 
