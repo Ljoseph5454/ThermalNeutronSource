@@ -1,0 +1,22 @@
+#
+# Macro file for "NeutronSource.cc"
+#
+/control/verbose 2
+/run/verbose 1
+#
+/process/em/verbose 0
+/process/had/verbose 0
+#
+/run/initialize
+#
+/process/inactivate hadElastic
+#
+/gun/particle ion
+/gun/ion 98 252
+/gun/energy 0. eV
+#
+##/analysis/setFileName NeutronSource
+##/analysis/h1/set 6  60  0. 12.  MeV #neutrons
+#
+/run/printProgress 1000
+/run/beamOn 10000

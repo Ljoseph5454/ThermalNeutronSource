@@ -9,7 +9,7 @@
 #/run/filename n_phantom_100000.log
 #
 # verbosities
-/control/verbose 0
+/control/verbose 2
 /run/verbose 1
 /tracking/verbose 1
 /hits/verbose 1
