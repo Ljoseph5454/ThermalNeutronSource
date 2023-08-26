@@ -68,6 +68,8 @@
 # - first bin is in MeV:
 /gps/hist/type arb
 /gps/hist/file AmLiMeasuredPNNL.txt
+#AmLiMeasuredPNNL.txt
+#AmLiSimulated.txt
 /gps/hist/inter Lin
 #/random/setDirectoryName ./seeds
 #/random/setSavingFlag

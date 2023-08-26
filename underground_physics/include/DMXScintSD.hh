@@ -58,6 +58,7 @@ class DMXScintSD : public G4VSensitiveDetector
 {
 
   std::ofstream Info;
+  std::ofstream Info1;
   
   public:
   

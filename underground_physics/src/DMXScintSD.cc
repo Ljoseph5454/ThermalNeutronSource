@@ -70,6 +70,7 @@ int n1=1;
 int HasHit=0;
 G4double eki = 0;
 G4double eke = 0;
+G4ThreeVector Position(0.,0.,0.);
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -79,8 +80,10 @@ DMXScintSD::DMXScintSD(G4String name)
   G4String HCname="scintillatorCollection";
   collectionName.insert(HCname);
 
+  Info1.open("General.csv");
   Info.open("Informacion.csv");
   Info << "Event,"<<"Hit,"<<"KE_i,"<<"KE_e";
+  Info1 << "Event,"<<"KE_e,"<<"x,"<<"y,"<<"z";
 
 }
 
@@ -159,7 +162,11 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 
   if(Volume == "physWorld"){
   HasHit = HasHit+1;
-  eke = ek;}
+  eke = ek;
+  Position.setX(posx);
+  Position.setY(posy); 
+  Position.setZ(posz);
+  }
 
   if(n1!=n){
   HasHit =0;
@@ -194,9 +201,13 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
 
   if(n==0){
   Info << n <<"," << HasHit <<"," << eki <<"," << eke;
+  	if(HasHit > 0){
+  	Info1 << n <<"," << eke <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ();}
   }
   if(n>0){
   Info << '\n' << n <<"," << HasHit <<"," << eki <<"," << eke;
+  	if(HasHit > 0){
+  	Info1 << '\n' << n <<"," << eke <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ();}
   }
 
 

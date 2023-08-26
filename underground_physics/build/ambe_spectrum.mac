@@ -11,7 +11,7 @@
 # verbosities
 /control/verbose 0
 /run/verbose 1
-/tracking/verbose 0
+/tracking/verbose 1
 /hits/verbose 1
 #
 # draw flags
@@ -128,5 +128,5 @@
 #/dmx/hitsfile ambe_spectrum.out
 #/dmx/histogramfile ambe_spectrum.his
 
-/run/beamOn 100000
+/run/beamOn 100
 
