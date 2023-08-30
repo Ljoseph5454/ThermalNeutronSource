@@ -21,15 +21,9 @@
 
 
 # draw flags
-/dmx/draw/drawColours custom
-/dmx/draw/gammaColour green
 ##/dmx/draw/drawTracks noscint
-/dmx/draw/drawTracks all
-/dmx/draw/drawHits 0
 #
 # file output
-/dmx/savePmt  0
-/dmx/saveHits 1
 #
 # kill gammas in lab wall
 /dmx/KillGammasInConcrete 0
@@ -41,7 +35,7 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0 0 0 m 
+/gps/pos/centre 0.4 0 -1 m 
 
 /gps/direction 0 0 1
 

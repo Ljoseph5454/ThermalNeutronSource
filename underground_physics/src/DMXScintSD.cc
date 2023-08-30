@@ -162,18 +162,28 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   if(posx == 0 && posy == 0 && posz == 0 && n>0){
   eki=ek;}
 
-  if(Volume == "physWorld"){
+  if(particleName == "neutron" && Volume == "physWorld"){
   HasHit = HasHit+1;
   eke = ek;
   Position.setX(posx);
   Position.setY(posy); 
   Position.setZ(posz);
   }
+  if(particleName == "neutron" && Volume == "physS"){ //In case a neutron escapes the sapphire and hits the poly again
+  HasHit = 0;
+  eke = 0;
+  Position.setX(0);
+  Position.setY(0); 
+  Position.setZ(0);
+  }
 
-  if(n1!=n){
-  HasHit =0;
-  eke =0;
-  n1=n;}
+  /*if(n1!=n){
+  HasHit = 0;
+  eke = 0;
+  Position.setX(0);
+  Position.setY(0); 
+  Position.setZ(0);
+  n1=n;}*/
   
   /*if(IntProcessName == "nCapture"){
   HasHit = HasHit+1;
@@ -183,7 +193,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   zCol = posz;
   }*/
 
-  // Info << '\n' << n << "," << posx << "," << eki << "," <<ek;
+  //Info1 << '\n' << n << "," << HasHit;
 
   return true;
 }
@@ -208,10 +218,12 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   aMan->FillNtupleDColumn(1,Position.getX());
   aMan->FillNtupleDColumn(2,Position.getY());
   aMan->FillNtupleDColumn(3,Position.getZ());
+  aMan->FillNtupleDColumn(4,eki);
+  aMan->FillNtupleDColumn(5,eke);
   aMan->AddNtupleRow();
 
 
-  if(n==0){
+  /*if(n==0){
   Info << n <<"," << HasHit <<"," << eki <<"," << eke;
   	if(HasHit > 0){
   	Info1 << n <<"," << eke <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ();}
@@ -220,7 +232,7 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   Info << '\n' << n <<"," << HasHit <<"," << eki <<"," << eke;
   	if(HasHit > 0){
   	Info1 << '\n' << n <<"," << eke <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ();}
-  }
+  }*/
 
 
   G4int nHits = scintillatorCollection->entries();
@@ -230,6 +242,12 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   if (verboseLevel>=2)
     scintillatorCollection->PrintAllHits();
 
+
+  HasHit = 0;
+  eke = 0;
+  Position.setX(0);
+  Position.setY(0); 
+  Position.setZ(0);
 
 }
 

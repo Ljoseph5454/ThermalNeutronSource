@@ -67,8 +67,7 @@ NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /
 NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /data/hugh/geant4/share/Geant4/data/G4NDL4.7/Elastic/CrossSection/6_nat_Carbon
 NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /data/hugh/geant4/share/Geant4/data/G4NDL4.7/Inelastic/CrossSection/6_nat_Carbon
 DMXPhysicsList::SetCuts:CutLength : 1 um 
-G4NCInstall :: No materials with "NCrystal" property found in active geometry.
-G4NCInstall :: Will not touch existing processes for neutrons
+G4NCrystal :: Wrapping and replacing existing hadElastic process for neutrons
 =======================================================================
 ======                 Electromagnetic Physics Parameters      ========
 =======================================================================
@@ -447,6 +446,20 @@ Index : 0     used in the geometry : Yes
  Region(s) which use this couple : 
     DefaultRegionForTheWorld
 
+Index : 1     used in the geometry : Yes
+ Material : NCrystal::void.ncmat
+ Range cuts        :  gamma  1 um     e-  1 nm     e+  1 um  proton 1 um 
+ Energy thresholds :  gamma  250 eV     e-  250 eV     e+  250 eV  proton 100 eV 
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes
+ Material : G4_H
+ Range cuts        :  gamma  1 um     e-  1 nm     e+  1 um  proton 1 um 
+ Energy thresholds :  gamma  250 eV     e-  250 eV     e+  250 eV  proton 100 eV 
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
 ==================================================================
 
 G4VisManager: Using G4TrajectoryDrawByCharge as fallback trajectory model.
@@ -458,25 +471,9 @@ See commands in /vis/modeling/trajectories/ for other options.
 ... open analysis file : Data.root - done
 ### Run 0 starts (master).
 
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : Analysis_W001
-      issued by : G4BaseAnalysisManager::SetFirstId
-Cannot set FirstId as its value was already used.
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
-
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : Analysis_W001
-      issued by : G4TNtupleManager<NT,FT>::CreateNtuple
-Ntuple 1 already exists.
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
-
 ---> Begin of event: 0
 
-     Primary Energy: 1.96848 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -484,15 +481,15 @@ Ntuple 1 already exists.
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.97        0        0         0     physSD2 initStep
-    1     10.1     9.22      -15      1.97        0     20.3      20.3       physS Transportation
-    2      347      317     -515      1.97        0      677       697   physWorld Transportation
-    3      673      615   -1e+03      1.97        0      656  1.35e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 1
 
-     Primary Energy: 235.1494316656447 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -500,15 +497,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.235        0        0         0     physSD2 initStep
-    1     8.05      -15     13.5     0.235        0     21.7      21.7       physS Transportation
-    2      188     -351      315     0.235        0      486       508   physWorld Transportation
-    3      536   -1e+03      897     0.235        0      939  1.45e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 2
 
-     Primary Energy: 81.85470495258677 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -516,15 +513,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0    0.0819        0        0         0     physSD2 initStep
-    1    -13.1      -15     1.29    0.0819        0       20        20       physS Transportation
-    2     -449     -515     44.2    0.0819        0      665       685   physWorld Transportation
-    3     -873   -1e+03     85.8    0.0819        0      645  1.33e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 3
 
-     Primary Energy: 395.2671437143536 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -532,15 +529,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.395        0        0         0     physSD2 initStep
-    1       15     10.4     3.07     0.395        0     18.5      18.5       physS Transportation
-    2      515      357      105     0.395        0      617       636   physWorld Transportation
-    3    1e+03      694      205     0.395        0      599  1.23e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 4
 
-     Primary Energy: 785.0421458536877 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -548,15 +545,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.785        0        0         0     physSD2 initStep
-    1    -5.44       15     -3.2     0.785        0     16.3      16.3       physS Transportation
-    2     -187      515     -110     0.785        0      542       559   physWorld Transportation
-    3     -363    1e+03     -214     0.785        0      526  1.08e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 5
 
-     Primary Energy: 715.8791476086471 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -564,15 +561,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.716        0        0         0     physSD2 initStep
-    1    -1.97     3.63      -15     0.716        0     15.6      15.6       physS Transportation
-    2    -67.5      125     -515     0.716        0      519       534   physWorld Transportation
-    3     -131      242   -1e+03     0.716        0      503  1.04e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 6
 
-     Primary Energy: 1.195238613400532 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -580,15 +577,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0       1.2        0        0         0     physSD2 initStep
-    1      -15     5.92      3.6       1.2        0     16.5      16.5       physS Transportation
-    2     -515      203      124       1.2        0      551       567   physWorld Transportation
-    3   -1e+03      394      240       1.2        0      534   1.1e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 7
 
-     Primary Energy: 1.318504241985707 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -596,15 +593,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.32        0        0         0     physSD2 initStep
-    1    -3.61      -15    -4.34      1.32        0       16        16       physS Transportation
-    2     -124     -515     -149      1.32        0      534       550   physWorld Transportation
-    3     -241   -1e+03     -289      1.32        0      518  1.07e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 8
 
-     Primary Energy: 1.607182192106936 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -612,15 +609,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.61        0        0         0     physSD2 initStep
-    1      4.3      -15    -8.43      1.61        0     17.7      17.7       physS Transportation
-    2      148     -515     -290      1.61        0      591       609   physWorld Transportation
-    3      287   -1e+03     -562      1.61        0      573  1.18e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 9
 
-     Primary Energy: 594.9699229389223 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -628,15 +625,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.595        0        0         0     physSD2 initStep
-    1      -15    -7.85   0.0683     0.595        0     16.9      16.9       physS Transportation
-    2     -515     -269     2.34     0.595        0      564       581   physWorld Transportation
-    3   -1e+03     -523     4.55     0.595        0      547  1.13e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 10
 
-     Primary Energy: 268.9431453391359 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -644,15 +641,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.269        0        0         0     physSD2 initStep
-    1       15    -1.82     3.88     0.269        0     15.6      15.6       physS Transportation
-    2      515    -62.3      133     0.269        0      520       536   physWorld Transportation
-    3    1e+03     -121      259     0.269        0      504  1.04e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 11
 
-     Primary Energy: 1.903863147183751 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -660,15 +657,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0       1.9        0        0         0     physSD2 initStep
-    1       15     -1.4    -3.72       1.9        0     15.5      15.5       physS Transportation
-    2      515    -48.2     -128       1.9        0      517       533   physWorld Transportation
-    3    1e+03    -93.7     -248       1.9        0      502  1.03e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 12
 
-     Primary Energy: 481.6878394327672 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -676,15 +673,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.482        0        0         0     physSD2 initStep
-    1     2.47    -10.2       15     0.482        0     18.3      18.3       physS Transportation
-    2     51.9     -214      315     0.482        0      366       384   physWorld Transportation
-    3      165     -680    1e+03     0.482        0      836  1.22e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 13
 
-     Primary Energy: 922.4886041960029 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -692,15 +689,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.922        0        0         0     physSD2 initStep
-    1    -11.9      -15    -3.91     0.922        0     19.5      19.5       physS Transportation
-    2     -409     -515     -134     0.922        0      651       671   physWorld Transportation
-    3     -794   -1e+03     -261     0.922        0      632   1.3e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 14
 
-     Primary Energy: 596.6358338179298 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -708,15 +705,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.597        0        0         0     physSD2 initStep
-    1    -8.75        4      -15     0.597        0     17.8      17.8       physS Transportation
-    2     -300      137     -515     0.597        0      594       612   physWorld Transportation
-    3     -583      267   -1e+03     0.597        0      576  1.19e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 15
 
-     Primary Energy: 380.6271829432986 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -724,15 +721,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.381        0        0         0     physSD2 initStep
-    1       15     7.72     13.5     0.381        0     21.6      21.6       physS Transportation
-    2      350      180      315     0.381        0      482       504   physWorld Transportation
-    3    1e+03      514      900     0.381        0      937  1.44e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 16
 
-     Primary Energy: 173.9246493634677 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -740,15 +737,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.174        0        0         0     physSD2 initStep
-    1       15     6.56   -0.149     0.174        0     16.4      16.4       physS Transportation
-    2      515      225     -5.1     0.174        0      546       562   physWorld Transportation
-    3    1e+03      437     -9.9     0.174        0      529  1.09e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 17
 
-     Primary Energy: 43.03697749618563 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -756,15 +753,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.043        0        0         0     physSD2 initStep
-    1    -14.2     3.95       15     0.043        0       21        21       physS Transportation
-    2     -297       83      315     0.043        0      420       441   physWorld Transportation
-    3     -943      263    1e+03     0.043        0      959   1.4e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 18
 
-     Primary Energy: 1.206841362937521 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -772,15 +769,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.21        0        0         0     physSD2 initStep
-    1     12.1       15      6.6      1.21        0     20.4      20.4       physS Transportation
-    2      415      515      227      1.21        0      679       699   physWorld Transportation
-    3      806    1e+03      440      1.21        0      658  1.36e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 19
 
-     Primary Energy: 1.215579845001691 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -788,15 +785,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.22        0        0         0     physSD2 initStep
-    1    -3.43     12.7       15      1.22        0       20        20       physS Transportation
-    2    -72.1      267      315      1.22        0      399       419   physWorld Transportation
-    3     -229      847    1e+03      1.22        0      911  1.33e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 20
 
-     Primary Energy: 466.6664952310329 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -804,15 +801,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.467        0        0         0     physSD2 initStep
-    1      -15     6.44   -0.211     0.467        0     16.3      16.3       physS Transportation
-    2     -515      221    -7.24     0.467        0      544       560   physWorld Transportation
-    3   -1e+03      429    -14.1     0.467        0      528  1.09e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 21
 
-     Primary Energy: 884.2586317594721 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -820,15 +817,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.884        0        0         0     physSD2 initStep
-    1    -1.61       15     13.2     0.884        0       20        20       physS Transportation
-    2    -38.5      359      315     0.884        0      459       479   physWorld Transportation
-    3     -107    1e+03      878     0.884        0      856  1.33e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 22
 
-     Primary Energy: 966.1865978640901 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -836,15 +833,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.966        0        0         0     physSD2 initStep
-    1       15      2.6     3.88     0.966        0     15.7      15.7       physS Transportation
-    2      515     89.3      133     0.966        0      524       539   physWorld Transportation
-    3    1e+03      173      259     0.966        0      508  1.05e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 23
 
-     Primary Energy: 446.9795536506653 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -852,15 +849,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.447        0        0         0     physSD2 initStep
-    1       15    -2.42     1.02     0.447        0     15.2      15.2       physS Transportation
-    2      515    -83.2     35.1     0.447        0      508       523   physWorld Transportation
-    3    1e+03     -162     68.1     0.447        0      492  1.02e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 24
 
-     Primary Energy: 9.059018104158637 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -868,15 +865,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0   0.00906        0        0         0     physSD2 initStep
-    1     13.7     1.36       15   0.00906        0     20.4      20.4       physS Transportation
-    2      288     28.5      315   0.00906        0      408       428   physWorld Transportation
-    3      916     90.6    1e+03   0.00906        0      931  1.36e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 25
 
-     Primary Energy: 346.2720364389435 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -884,15 +881,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.346        0        0         0     physSD2 initStep
-    1       15     4.72  -0.0741     0.346        0     15.7      15.7       physS Transportation
-    2      515      162    -2.55     0.346        0      524       540   physWorld Transportation
-    3    1e+03      315    -4.94     0.346        0      508  1.05e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 26
 
-     Primary Energy: 609.0088507542116 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -900,15 +897,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.609        0        0         0     physSD2 initStep
-    1    -5.13     6.73      -15     0.609        0     17.2      17.2       physS Transportation
-    2     -176      231     -515     0.609        0      574       591   physWorld Transportation
-    3     -342      449   -1e+03     0.609        0      557  1.15e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 27
 
-     Primary Energy: 270.8859255798391 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -916,15 +913,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.271        0        0         0     physSD2 initStep
-    1    -2.73      -15    -9.58     0.271        0       18        18       physS Transportation
-    2    -93.9     -515     -329     0.271        0      600       618   physWorld Transportation
-    3     -182   -1e+03     -639     0.271        0      582   1.2e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 28
 
-     Primary Energy: 1.580566112846788 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -932,15 +929,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.58        0        0         0     physSD2 initStep
-    1       15    -11.7     2.43      1.58        0     19.2      19.2       physS Transportation
-    2      515     -403     83.3      1.58        0      640       659   physWorld Transportation
-    3    1e+03     -782      162      1.58        0      621  1.28e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 29
 
-     Primary Energy: 730.6442706890829 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -948,15 +945,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.731        0        0         0     physSD2 initStep
-    1    -3.57       15    -5.78     0.731        0     16.5      16.5       physS Transportation
-    2     -123      515     -199     0.731        0      549       565   physWorld Transportation
-    3     -238    1e+03     -386     0.731        0      533   1.1e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 30
 
-     Primary Energy: 1.496930136333968 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -964,15 +961,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0       1.5        0        0         0     physSD2 initStep
-    1       12       15    -7.28       1.5        0     20.5      20.5       physS Transportation
-    2      411      515     -250       1.5        0      684       705   physWorld Transportation
-    3      799    1e+03     -485       1.5        0      664  1.37e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 31
 
-     Primary Energy: 1.124949769504347 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -980,15 +977,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.12        0        0         0     physSD2 initStep
-    1      -15    -8.84    -12.4      1.12        0     21.4      21.4       physS Transportation
-    2     -515     -304     -425      1.12        0      712       734   physWorld Transportation
-    3   -1e+03     -589     -826      1.12        0      691  1.42e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 32
 
-     Primary Energy: 641.1669143958324 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -996,15 +993,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.641        0        0         0     physSD2 initStep
-    1    -10.8       15   -0.896     0.641        0     18.5      18.5       physS Transportation
-    2     -371      515    -30.8     0.641        0      617       635   physWorld Transportation
-    3     -720    1e+03    -59.7     0.641        0      598  1.23e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 33
 
-     Primary Energy: 346.4404689335674 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1012,15 +1009,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.346        0        0         0     physSD2 initStep
-    1      -15     10.6     4.16     0.346        0     18.8      18.8       physS Transportation
-    2     -515      364      143     0.346        0      628       646   physWorld Transportation
-    3   -1e+03      706      277     0.346        0      609  1.26e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 34
 
-     Primary Energy: 604.1796951658239 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1028,15 +1025,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.604        0        0         0     physSD2 initStep
-    1     12.9    0.714       15     0.604        0     19.8      19.8       physS Transportation
-    2      270       15      315     0.604        0      395       415   physWorld Transportation
-    3      857     47.6    1e+03     0.604        0      903  1.32e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 35
 
-     Primary Energy: 801.3689727580183 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1044,15 +1041,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.801        0        0         0     physSD2 initStep
-    1     1.55      -15     6.71     0.801        0     16.5      16.5       physS Transportation
-    2     53.2     -515      231     0.801        0      550       567   physWorld Transportation
-    3      103   -1e+03      448     0.801        0      534   1.1e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 36
 
-     Primary Energy: 510.6943558946575 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1060,15 +1057,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.511        0        0         0     physSD2 initStep
-    1      -15     1.31    -3.32     0.511        0     15.4      15.4       physS Transportation
-    2     -515     44.8     -114     0.511        0      514       529   physWorld Transportation
-    3   -1e+03     87.1     -221     0.511        0      499  1.03e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 37
 
-     Primary Energy: 715.7237332698578 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1076,15 +1073,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.716        0        0         0     physSD2 initStep
-    1      -15     9.67      1.9     0.716        0     17.9      17.9       physS Transportation
-    2     -515      332     65.1     0.716        0      598       616   physWorld Transportation
-    3   -1e+03      645      126     0.716        0      580   1.2e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 38
 
-     Primary Energy: 697.6611813171792 keV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1092,15 +1089,15 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.698        0        0         0     physSD2 initStep
-    1      -15    -9.59    -9.36     0.698        0     20.1      20.1       physS Transportation
-    2     -515     -329     -321     0.698        0      670       691   physWorld Transportation
-    3   -1e+03     -639     -624     0.698        0      650  1.34e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
 
 ---> Begin of event: 39
 
-     Primary Energy: 1.273928532445862 MeV
+     Primary Energy: 100 MeV
 <pmtCollection> is not found.
 
 *********************************************************************************************************
@@ -1108,991 +1105,20 @@ Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolu
 *********************************************************************************************************
 
 Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.27        0        0         0     physSD2 initStep
-    1     3.63    -6.05       15      1.27        0     16.6      16.6       physS Transportation
-    2     76.2     -127      315      1.27        0      332       348   physWorld Transportation
-    3      242     -404    1e+03      1.27        0      757  1.11e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 40
-
-     Primary Energy: 593.945046960535 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.594        0        0         0     physSD2 initStep
-    1       15    -6.01     4.43     0.594        0     16.8      16.8       physS Transportation
-    2      515     -207      152     0.594        0      559       575   physWorld Transportation
-    3    1e+03     -401      295     0.594        0      542  1.12e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 41
-
-     Primary Energy: 587.3065339981259 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.587        0        0         0     physSD2 initStep
-    1     5.38    -3.04      -15     0.587        0     16.2      16.2       physS Transportation
-    2      185     -104     -515     0.587        0      541       557   physWorld Transportation
-    3      359     -203   -1e+03     0.587        0      525  1.08e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 42
-
-     Primary Energy: 526.8913575097376 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.527        0        0         0     physSD2 initStep
-    1   -0.831     8.12       15     0.527        0     17.1      17.1       physS Transportation
-    2    -17.4      171      315     0.527        0      342       359   physWorld Transportation
-    3    -55.4      542    1e+03     0.527        0      780  1.14e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 43
-
-     Primary Energy: 1.491652723686153 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.49        0        0         0     physSD2 initStep
-    1       15    -11.3     6.57      1.49        0     19.9      19.9       physS Transportation
-    2      515     -388      226      1.49        0      663       683   physWorld Transportation
-    3    1e+03     -754      438      1.49        0      644  1.33e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 44
-
-     Primary Energy: 655.0618355803877 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.655        0        0         0     physSD2 initStep
-    1       11      -15    -0.42     0.655        0     18.6      18.6       physS Transportation
-    2      377     -515    -14.4     0.655        0      620       638   physWorld Transportation
-    3      732   -1e+03      -28     0.655        0      601  1.24e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 45
-
-     Primary Energy: 28.24491304594746 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0    0.0282        0        0         0     physSD2 initStep
-    1    -12.9      -15     2.64    0.0282        0       20        20       physS Transportation
-    2     -444     -515     90.6    0.0282        0      666       686   physWorld Transportation
-    3     -861   -1e+03      176    0.0282        0      646  1.33e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 46
-
-     Primary Energy: 1.343222271276156 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.34        0        0         0     physSD2 initStep
-    1    -8.11     3.53       15      1.34        0     17.4      17.4       physS Transportation
-    2     -170     74.2      315      1.34        0      348       366   physWorld Transportation
-    3     -540      235    1e+03      1.34        0      795  1.16e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 47
-
-     Primary Energy: 359.1003057526615 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.359        0        0         0     physSD2 initStep
-    1     12.8      -15     -2.4     0.359        0     19.9      19.9       physS Transportation
-    2      440     -515    -82.5     0.359        0      662       682   physWorld Transportation
-    3      854   -1e+03     -160     0.359        0      643  1.32e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 48
-
-     Primary Energy: 430.7052008368356 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.431        0        0         0     physSD2 initStep
-    1     7.48       15     13.4     0.431        0     21.4      21.4       physS Transportation
-    2      176      354      315     0.431        0      484       505   physWorld Transportation
-    3      499    1e+03      890     0.431        0      923  1.43e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 49
-
-     Primary Energy: 681.8002830055527 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.682        0        0         0     physSD2 initStep
-    1    -7.73    -4.48       15     0.682        0     17.5      17.5       physS Transportation
-    2     -162    -94.2      315     0.682        0      349       367   physWorld Transportation
-    3     -515     -299    1e+03     0.682        0      797  1.16e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 50
-
-     Primary Energy: 336.6906727425747 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.337        0        0         0     physSD2 initStep
-    1     9.29      -15     6.31     0.337        0     18.7      18.7       physS Transportation
-    2      319     -515      217     0.337        0      625       643   physWorld Transportation
-    3      620   -1e+03      421     0.337        0      606  1.25e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 51
-
-     Primary Energy: 1.442370664441629 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.44        0        0         0     physSD2 initStep
-    1      -15    -6.99     5.47      1.44        0     17.4      17.4       physS Transportation
-    2     -515     -240      188      1.44        0      581       598   physWorld Transportation
-    3   -1e+03     -466      365      1.44        0      564  1.16e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 52
-
-     Primary Energy: 558.3023082695307 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.558        0        0         0     physSD2 initStep
-    1      -15    -5.71     11.2     0.558        0     19.6      19.6       physS Transportation
-    2     -423     -161      315     0.558        0      532       552   physWorld Transportation
-    3   -1e+03     -381      744     0.558        0      752   1.3e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 53
-
-     Primary Energy: 473.9907541227351 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.474        0        0         0     physSD2 initStep
-    1     1.69      -15     1.16     0.474        0     15.1      15.1       physS Transportation
-    2     58.1     -515     39.8     0.474        0      505       520   physWorld Transportation
-    3      113   -1e+03     77.2     0.474        0      490  1.01e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 54
-
-     Primary Energy: 96.2132691849518 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0    0.0962        0        0         0     physSD2 initStep
-    1    -4.85      -15    -1.72    0.0962        0     15.9      15.9       physS Transportation
-    2     -167     -515    -59.1    0.0962        0      529       545   physWorld Transportation
-    3     -324   -1e+03     -115    0.0962        0      513  1.06e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 55
-
-     Primary Energy: 1.290092912369054 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.29        0        0         0     physSD2 initStep
-    1    -10.2       15    -2.96      1.29        0     18.4      18.4       physS Transportation
-    2     -352      515     -102      1.29        0      613       632   physWorld Transportation
-    3     -683    1e+03     -197      1.29        0      595  1.23e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 56
-
-     Primary Energy: 251.4396331441891 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.251        0        0         0     physSD2 initStep
-    1       15    -11.3     3.08     0.251        0       19        19       physS Transportation
-    2      515     -389      106     0.251        0      635       654   physWorld Transportation
-    3    1e+03     -755      206     0.251        0      616  1.27e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 57
-
-     Primary Energy: 271.9461059296912 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.272        0        0         0     physSD2 initStep
-    1      -15   -0.206     12.5     0.272        0     19.5      19.5       physS Transportation
-    2     -379     -5.2      315     0.272        0      473       493   physWorld Transportation
-    3   -1e+03    -13.7      831     0.272        0      807   1.3e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 58
-
-     Primary Energy: 1.156528643630476 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.16        0        0         0     physSD2 initStep
-    1    -3.25       15     10.1      1.16        0     18.4      18.4       physS Transportation
-    2     -102      469      315      1.16        0      555       574   physWorld Transportation
-    3     -217    1e+03      672      1.16        0      651  1.22e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 59
-
-     Primary Energy: 1.021250631889736 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.02        0        0         0     physSD2 initStep
-    1    -12.2       15     11.1      1.02        0     22.3      22.3       physS Transportation
-    2     -348      427      315      1.02        0      613       635   physWorld Transportation
-    3     -816    1e+03      737      1.02        0      851  1.49e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 60
-
-     Primary Energy: 715.5041266314084 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.716        0        0         0     physSD2 initStep
-    1   -0.105     1.45       15     0.716        0     15.1      15.1       physS Transportation
-    2   -0.807     11.1      115     0.716        0      100       116     physSap Transportation
-    3    -1.51     20.8      215     0.716        0      100       216   physWorld Transportation
-    4    -1.82       25      259     0.716        0     44.2       260       physS Transportation
-    5    -2.21     30.4      315     0.716        0     56.3       316   physWorld Transportation
-    6    -7.01     96.5    1e+03     0.716        0      688     1e+03  OutOfWorld Transportation
-     LXe collection: 6 hits
-
----> Begin of event: 61
-
-     Primary Energy: 567.2044002554351 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.567        0        0         0     physSD2 initStep
-    1      7.5      -15     1.97     0.567        0     16.9      16.9       physS Transportation
-    2      257     -515     67.7     0.567        0      563       580   physWorld Transportation
-    3      500   -1e+03      132     0.567        0      546  1.13e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 62
-
-     Primary Energy: 572.1844718744587 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.572        0        0         0     physSD2 initStep
-    1      -15    -12.2     5.22     0.572        0       20        20       physS Transportation
-    2     -515     -419      179     0.572        0      668       688   physWorld Transportation
-    3   -1e+03     -813      348     0.572        0      648  1.34e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 63
-
-     Primary Energy: 858.2709475723076 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.858        0        0         0     physSD2 initStep
-    1     7.69       15  -0.0965     0.858        0     16.9      16.9       physS Transportation
-    2      264      515    -3.31     0.858        0      562       579   physWorld Transportation
-    3      513    1e+03    -6.43     0.858        0      545  1.12e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 64
-
-     Primary Energy: 1.233306623831226 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.23        0        0         0     physSD2 initStep
-    1       15     8.24    -5.02      1.23        0     17.8      17.8       physS Transportation
-    2      515      283     -172      1.23        0      595       612   physWorld Transportation
-    3    1e+03      550     -335      1.23        0      577  1.19e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 65
-
-     Primary Energy: 397.2121448690617 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.397        0        0         0     physSD2 initStep
-    1    -7.25    -5.57      -15     0.397        0     17.6      17.6       physS Transportation
-    2     -249     -191     -515     0.397        0      585       603   physWorld Transportation
-    3     -483     -371   -1e+03     0.397        0      568  1.17e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 66
-
-     Primary Energy: 431.9216305803186 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.432        0        0         0     physSD2 initStep
-    1       15     -4.7    -1.22     0.432        0     15.8      15.8       physS Transportation
-    2      515     -161      -42     0.432        0      526       541   physWorld Transportation
-    3    1e+03     -313    -81.6     0.432        0      510  1.05e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 67
-
-     Primary Energy: 624.0541545324671 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.624        0        0         0     physSD2 initStep
-    1    0.892       15     11.4     0.624        0     18.9      18.9       physS Transportation
-    2     24.6      414      315     0.624        0      502       520   physWorld Transportation
-    3     59.5    1e+03      762     0.624        0      738  1.26e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 68
-
-     Primary Energy: 861.9622573930541 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.862        0        0         0     physSD2 initStep
-    1       15     -6.3     13.6     0.862        0     21.2      21.2       physS Transportation
-    2      348     -146      315     0.862        0      470       492   physWorld Transportation
-    3    1e+03     -420      905     0.862        0      921  1.41e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 69
-
-     Primary Energy: 514.0351243207958 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.514        0        0         0     physSD2 initStep
-    1    -4.85     2.69       15     0.514        0       16        16       physS Transportation
-    2     -102     56.5      315     0.514        0      320       336   physWorld Transportation
-    3     -323      179    1e+03     0.514        0      730  1.07e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 70
-
-     Primary Energy: 483.2735825854244 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.483        0        0         0     physSD2 initStep
-    1    -7.73      -15     10.2     0.483        0     19.7      19.7       physS Transportation
-    2     -239     -463      315     0.483        0      589       609   physWorld Transportation
-    3     -515   -1e+03      680     0.483        0      705  1.31e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 71
-
-     Primary Energy: 891.5985078518777 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.892        0        0         0     physSD2 initStep
-    1      -15     8.43    -7.24     0.892        0     18.7      18.7       physS Transportation
-    2     -515      290     -248     0.892        0      622       641   physWorld Transportation
-    3   -1e+03      562     -482     0.892        0      604  1.24e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 72
-
-     Primary Energy: 761.7462412132938 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.762        0        0         0     physSD2 initStep
-    1      -15   -0.762    -12.1     0.762        0     19.3      19.3       physS Transportation
-    2     -515    -26.2     -417     0.762        0      644       663   physWorld Transportation
-    3   -1e+03    -50.8     -809     0.762        0      624  1.29e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 73
-
-     Primary Energy: 40.46994721273389 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0    0.0405        0        0         0     physSD2 initStep
-    1     12.9       15     12.1    0.0405        0     23.2      23.2       physS Transportation
-    2      335      390      315    0.0405        0      580       603   physWorld Transportation
-    3      860    1e+03      808    0.0405        0      943  1.55e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 74
-
-     Primary Energy: 1.279135002651393 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.28        0        0         0     physSD2 initStep
-    1     2.95     -2.8      -15      1.28        0     15.5      15.5       physS Transportation
-    2      101    -96.2     -515      1.28        0      518       534   physWorld Transportation
-    3      197     -187   -1e+03      1.28        0      503  1.04e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 75
-
-     Primary Energy: 257.7328769349782 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.258        0        0         0     physSD2 initStep
-    1      -15    -9.23      4.1     0.258        0     18.1      18.1       physS Transportation
-    2     -515     -317      141     0.258        0      603       621   physWorld Transportation
-    3   -1e+03     -615      274     0.258        0      585  1.21e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 76
-
-     Primary Energy: 779.1986918213133 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.779        0        0         0     physSD2 initStep
-    1    -4.81      -15    -4.29     0.779        0     16.3      16.3       physS Transportation
-    2     -165     -515     -147     0.779        0      544       560   physWorld Transportation
-    3     -320   -1e+03     -286     0.779        0      528  1.09e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 77
-
-     Primary Energy: 792.2167685604867 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.792        0        0         0     physSD2 initStep
-    1    -2.68      -15     3.09     0.792        0     15.5      15.5       physS Transportation
-    2    -91.9     -515      106     0.792        0      518       534   physWorld Transportation
-    3     -178   -1e+03      206     0.792        0      503  1.04e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 78
-
-     Primary Energy: 661.2068128917597 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.661        0        0         0     physSD2 initStep
-    1     3.24     4.78      -15     0.661        0     16.1      16.1       physS Transportation
-    2      111      164     -515     0.661        0      536       552   physWorld Transportation
-    3      216      319   -1e+03     0.661        0      520  1.07e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 79
-
-     Primary Energy: 337.3424296363063 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.337        0        0         0     physSD2 initStep
-    1     3.51       15    -4.33     0.337        0       16        16       physS Transportation
-    2      121      515     -148     0.337        0      533       549   physWorld Transportation
-    3      234    1e+03     -288     0.337        0      517  1.07e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 80
-
-     Primary Energy: 104.7159760701918 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.105        0        0         0     physSD2 initStep
-    1      -13       15    -13.4     0.105        0       24        24       physS Transportation
-    2     -448      515     -460     0.105        0      799       823   physWorld Transportation
-    3     -870    1e+03     -894     0.105        0      775   1.6e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 81
-
-     Primary Energy: 831.1237426017498 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.831        0        0         0     physSD2 initStep
-    1     6.51     3.82      -15     0.831        0     16.8      16.8       physS Transportation
-    2      224      131     -515     0.831        0      560       577   physWorld Transportation
-    3      434      255   -1e+03     0.831        0      543  1.12e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 82
-
-     Primary Energy: 597.8631423530261 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.598        0        0         0     physSD2 initStep
-    1     3.25      -15     6.92     0.598        0     16.8      16.8       physS Transportation
-    2      112     -515      238     0.598        0      561       578   physWorld Transportation
-    3      217   -1e+03      461     0.598        0      544  1.12e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 83
-
-     Primary Energy: 1.099604446587111 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0       1.1        0        0         0     physSD2 initStep
-    1      2.9       15    -2.65       1.1        0     15.5      15.5       physS Transportation
-    2     99.5      515    -90.9       1.1        0      517       532   physWorld Transportation
-    3      193    1e+03     -176       1.1        0      501  1.03e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 84
-
-     Primary Energy: 723.0724235075797 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.723        0        0         0     physSD2 initStep
-    1     6.01       15     8.47     0.723        0     18.2      18.2       physS Transportation
-    2      206      515      291     0.723        0      608       626   physWorld Transportation
-    3      400    1e+03      565     0.723        0      590  1.22e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 85
-
-     Primary Energy: 743.534686697669 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.744        0        0         0     physSD2 initStep
-    1    0.877      -15     -6.1     0.744        0     16.2      16.2       physS Transportation
-    2     30.1     -515     -209     0.744        0      541       557   physWorld Transportation
-    3     58.5   -1e+03     -407     0.744        0      524  1.08e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 86
-
-     Primary Energy: 258.0118831075266 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.258        0        0         0     physSD2 initStep
-    1      -15      -10    -8.02     0.258        0     19.7      19.7       physS Transportation
-    2     -515     -344     -275     0.258        0      658       678   physWorld Transportation
-    3   -1e+03     -667     -534     0.258        0      638  1.32e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 87
-
-     Primary Energy: 1.079612858799348 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.08        0        0         0     physSD2 initStep
-    1      4.8    -10.8      -15      1.08        0     19.1      19.1       physS Transportation
-    2      165     -372     -515      1.08        0      637       656   physWorld Transportation
-    3      320     -722   -1e+03      1.08        0      618  1.27e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 88
-
-     Primary Energy: 1.537077019670647 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.54        0        0         0     physSD2 initStep
-    1     14.2    -4.03      -15      1.54        0       21        21       physS Transportation
-    2      488     -138     -515      1.54        0      701       723   physWorld Transportation
-    3      947     -268   -1e+03      1.54        0      680   1.4e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 89
-
-     Primary Energy: 651.6554084236494 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.652        0        0         0     physSD2 initStep
-    1    -9.41    -14.3       15     0.652        0     22.8      22.8       physS Transportation
-    2     -198     -301      315     0.652        0      456       478   physWorld Transportation
-    3     -627     -955    1e+03     0.652        0 1.04e+03  1.52e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 90
-
-     Primary Energy: 656.714528049667 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.657        0        0         0     physSD2 initStep
-    1    -5.15      -15     4.41     0.657        0     16.5      16.5       physS Transportation
-    2     -177     -515      151     0.657        0      549       565   physWorld Transportation
-    3     -343   -1e+03      294     0.657        0      532   1.1e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 91
-
-     Primary Energy: 974.9949445794583 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.975        0        0         0     physSD2 initStep
-    1       15     6.68    -3.57     0.975        0     16.8      16.8       physS Transportation
-    2      515      229     -122     0.975        0      560       577   physWorld Transportation
-    3    1e+03      445     -238     0.975        0      543  1.12e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 92
-
-     Primary Energy: 161.2943421444176 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.161        0        0         0     physSD2 initStep
-    1     10.8       15     3.49     0.161        0     18.8      18.8       physS Transportation
-    2      372      515      120     0.161        0      628       647   physWorld Transportation
-    3      723    1e+03      233     0.161        0      609  1.26e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 93
-
-     Primary Energy: 1.195537455544754 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0       1.2        0        0         0     physSD2 initStep
-    1      -15     2.84     1.18       1.2        0     15.3      15.3       physS Transportation
-    2     -515     97.5     40.4       1.2        0      510       526   physWorld Transportation
-    3   -1e+03      189     78.4       1.2        0      495  1.02e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 94
-
-     Primary Energy: 1.213614265051189 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.21        0        0         0     physSD2 initStep
-    1    -2.66    -4.35       15      1.21        0     15.8      15.8       physS Transportation
-    2    -55.8    -91.4      315      1.21        0      317       333   physWorld Transportation
-    3     -177     -290    1e+03      1.21        0      723  1.06e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 95
-
-     Primary Energy: 1.132303049904253 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.13        0        0         0     physSD2 initStep
-    1      -15    -6.03    -12.6      1.13        0     20.5      20.5       physS Transportation
-    2     -515     -207     -434      1.13        0      684       705   physWorld Transportation
-    3   -1e+03     -402     -843      1.13        0      664  1.37e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 96
-
-     Primary Energy: 760.735355116837 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.761        0        0         0     physSD2 initStep
-    1       15     8.87     11.7     0.761        0       21        21       physS Transportation
-    2      405      239      315     0.761        0      545       566   physWorld Transportation
-    3    1e+03      591      778     0.761        0      832   1.4e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 97
-
-     Primary Energy: 526.5704305806825 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.527        0        0         0     physSD2 initStep
-    1    -13.5     2.49       15     0.527        0     20.3      20.3       physS Transportation
-    2     -283     52.2      315     0.527        0      406       427   physWorld Transportation
-    3     -898      166    1e+03     0.527        0      928  1.35e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 98
-
-     Primary Energy: 1.092659514941413 MeV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0      1.09        0        0         0     physSD2 initStep
-    1     2.34      -15     11.4      1.09        0       19        19       physS Transportation
-    2     64.6     -414      315      1.09        0      505       524   physWorld Transportation
-    3      156   -1e+03      760      1.09        0      741  1.27e+03  OutOfWorld Transportation
-     LXe collection: 3 hits
-
----> Begin of event: 99
-
-     Primary Energy: 296.5382561345889 keV
-<pmtCollection> is not found.
-
-*********************************************************************************************************
-* G4Track Information:   Particle = neutron,   Track ID = 1,   Parent ID = 0
-*********************************************************************************************************
-
-Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
-    0        0        0        0     0.297        0        0         0     physSD2 initStep
-    1      -15     9.02    0.156     0.297        0     17.5      17.5       physS Transportation
-    2     -515      310     5.36     0.297        0      583       601   physWorld Transportation
-    3   -1e+03      601     10.4     0.297        0      566  1.17e+03  OutOfWorld Transportation
+    0      400        0   -1e+03       100        0        0         0   physWorld initStep
+    1      400        0     -515       100        0      485       485       physS Transportation
+    2      400        0      240       100        0      755  1.24e+03   physWorld Transportation
+    3      400        0    1e+03       100        0      760     2e+03  OutOfWorld Transportation
      LXe collection: 3 hits
  Run terminated.
 Run Summary
-  Number of events processed : 100
-  User=0.010000s Real=0.012194s Sys=0.000000s [Cpu=82.0%]
+  Number of events processed : 40
+  User=0.010000s Real=0.007020s Sys=0.000000s [Cpu=142.5%]
 ... write file : Data.root - done
 ... close file : Data.root - done
-There are 12 h1 histograms
-There are 2 h2 histograms
-  0 with      0 entries: PMT Hit Pattern
-  1 with      0 entries: 1st event PMT Hit Pattern
-List them with "/analysis/list".
-View them with "/vis/plot" or "/vis/reviewPlots".
-
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : Analysis_W001
-      issued by : G4TFileManager<FT>::GetTFile
-Failed to get file Data.root
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
+Graphics systems deleted.
+Visualization Manager deleting...
+================== Deleting memory pools ===================
+Number of memory pools allocated: 14; of which, static: 0
+Dynamic pools deleted: 14 / Total memory freed: 0.021 MB
+============================================================

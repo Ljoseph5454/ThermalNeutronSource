@@ -67,8 +67,8 @@ DMXRunAction::DMXRunAction()
   aMan->CreateNtupleDColumn("x");
   aMan->CreateNtupleDColumn("y");
   aMan->CreateNtupleDColumn("z");
-  aMan->CreateNtupleDColumn("KEescape");
   aMan->CreateNtupleDColumn("KEinitial");
+  aMan->CreateNtupleDColumn("KEescape");
   aMan->FinishNtuple();  
 
   savehitsFile = "hits.out";

@@ -143,7 +143,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
 
   // Envelope parameters
   //
-  G4double S_l = 10*cm, S_w=5*cm, V_l = 3*cm, P_w = 50*cm, P_l = 10*cm, P_p = 30*cm;
+  G4double S_l = 7.5*cm, S_w=5*cm, V_l = 3*cm, P_w = 50*cm, P_l = 10*cm, P_p = (S_l+P_l)+10*cm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -185,12 +185,12 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   G4RotationMatrix rot = G4RotationMatrix(0.,0.,0.);
   G4Transform3D transform = G4Transform3D(rot,trans);
   G4VSolid* solidS = new G4SubtractionSolid("solidS" ,solidPoly, vacuumNotch, transform);
-  logicS = new G4LogicalVolume(solidS, HDPENCrystal_mat, "logicS"); //HDPE_mat                   
+  logicS = new G4LogicalVolume(solidS, HDPENCrystal_mat, "logicS"); //HDPENCrystal_mat                  
   physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.5*(P_p-P_w)), logicS, "physS", logicWorld, false, 0);  
  
   // Sapphire Window
   G4Box* solidSap = new G4Box("solidSap", 0.5*S_w, 0.5*S_w, 0.5*S_l); 
-  logicSap = new G4LogicalVolume(solidSap, sapphireNCrystal_mat, "logicSap");  //sapphire_mat                  
+  logicSap = new G4LogicalVolume(solidSap, sapphireNCrystal_mat, "logicSap");  //sapphireNCrystal_mat                
   physSap = new G4PVPlacement(0, G4ThreeVector(0.,0.,(0.5*(V_l+S_l)+P_l)-0.5*(P_p-P_w)), logicSap, "physSap", logicS, false, 0);  
 
   // SD before
