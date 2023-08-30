@@ -115,7 +115,7 @@ void DMXSteppingAction::UserSteppingAction(const G4Step* fStep)
       G4double partEnergy = fStep->GetPreStepPoint()->GetKineticEnergy();
       G4ParticleDefinition* particleType = fStep->GetTrack()->GetDefinition();
      
-      G4AnalysisManager* man = G4AnalysisManager::Instance();
+      /*G4AnalysisManager* man = G4AnalysisManager::Instance();
       if (particleType == G4Gamma::Definition())
 	man->FillH1(8,partEnergy);
       else if (particleType == G4Neutron::Definition())
@@ -125,7 +125,7 @@ void DMXSteppingAction::UserSteppingAction(const G4Step* fStep)
       else if (particleType == G4Positron::Definition())
 	man->FillH1(11,partEnergy);
       else
-	man->FillH1(12,partEnergy);
+	man->FillH1(12,partEnergy);*/
     }
 
 

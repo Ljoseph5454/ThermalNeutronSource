@@ -185,12 +185,12 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   G4RotationMatrix rot = G4RotationMatrix(0.,0.,0.);
   G4Transform3D transform = G4Transform3D(rot,trans);
   G4VSolid* solidS = new G4SubtractionSolid("solidS" ,solidPoly, vacuumNotch, transform);
-  logicS = new G4LogicalVolume(solidS, vacuum_mat, "logicS"); //HDPE_mat                   
+  logicS = new G4LogicalVolume(solidS, HDPENCrystal_mat, "logicS"); //HDPE_mat                   
   physS = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.5*(P_p-P_w)), logicS, "physS", logicWorld, false, 0);  
  
   // Sapphire Window
   G4Box* solidSap = new G4Box("solidSap", 0.5*S_w, 0.5*S_w, 0.5*S_l); 
-  logicSap = new G4LogicalVolume(solidSap, vacuum_mat, "logicSap");  //sapphire_mat                  
+  logicSap = new G4LogicalVolume(solidSap, sapphireNCrystal_mat, "logicSap");  //sapphire_mat                  
   physSap = new G4PVPlacement(0, G4ThreeVector(0.,0.,(0.5*(V_l+S_l)+P_l)-0.5*(P_p-P_w)), logicSap, "physSap", logicS, false, 0);  
 
   // SD before
@@ -200,7 +200,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   
   // Empty Inside
   G4Box* solidSD2 = new G4Box("solidSD2", 0.5*V_l, 0.5*V_l, 0.5*V_l); 
-  logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
+  logicSD2 = new G4LogicalVolume(solidSD2, vacuumNCrystal_mat, "logicSD2");                    
   physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,-0.5*(P_p-P_w)), logicSD2, "physSD2", logicS, false, 0);  //0.5*(P_l+S_l-P_w)
 
  /* // Sapphire Window

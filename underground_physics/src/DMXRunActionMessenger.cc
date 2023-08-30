@@ -55,6 +55,7 @@
 DMXRunActionMessenger::DMXRunActionMessenger(DMXRunAction* run)
 :DMXRun(run)
 { 
+/*
   SaveHitsCmd = new G4UIcmdWithAString("/dmx/hitsfile",this);
   SaveHitsCmd->SetGuidance("output file for hits collection (txt)");
   SaveHitsCmd->SetGuidance("Default = hits.out");
@@ -73,7 +74,7 @@ DMXRunActionMessenger::DMXRunActionMessenger(DMXRunAction* run)
   //  SaveHistFileCmd->SetParameterName("savehistFile", false);
   SaveHistFileCmd->SetParameterName("histFile", false);
   SaveHistFileCmd->SetDefaultValue("dmx.his");
-
+*/
 
   //  FileCmd->AvailableForStates(G4State_Idle);
 }
@@ -82,15 +83,17 @@ DMXRunActionMessenger::DMXRunActionMessenger(DMXRunAction* run)
 
 DMXRunActionMessenger::~DMXRunActionMessenger()
 {
-  delete SaveHitsCmd;  
+ /* delete SaveHitsCmd;  
   delete SavePmtCmd;  
   delete SaveHistFileCmd;  
+*/
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 void DMXRunActionMessenger::SetNewValue(G4UIcommand * command,G4String newValue)
-{ 
+{
+/* 
   if(command == SaveHitsCmd)
     DMXRun->SetsavehitsFile(newValue);
 
@@ -99,7 +102,7 @@ void DMXRunActionMessenger::SetNewValue(G4UIcommand * command,G4String newValue)
 
   if(command == SaveHistFileCmd)
     DMXRun->SetsavehistFile(newValue);
-
+*/
 
 }
 

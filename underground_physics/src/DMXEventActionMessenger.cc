@@ -55,7 +55,7 @@
 
 DMXEventActionMessenger::DMXEventActionMessenger(DMXEventAction* EvAct)
 :eventAction(EvAct){
-
+ /*
   // saving event information
   dmxDirectory = new G4UIdirectory("/dmx/");
   dmxDirectory->SetGuidance("DM Example commands.");
@@ -101,28 +101,28 @@ DMXEventActionMessenger::DMXEventActionMessenger(DMXEventAction* EvAct)
   PrintCmd->SetGuidance("Print events modulo n");
   PrintCmd->SetParameterName("EventNb",false);
   PrintCmd->SetRange("EventNb>0");
-  PrintCmd->AvailableForStates(G4State_Idle);     
+  PrintCmd->AvailableForStates(G4State_Idle);   */
 
 }
 
 
 DMXEventActionMessenger::~DMXEventActionMessenger() {
 
-  delete SavePmtCmd;  
+ /* delete SavePmtCmd;  
   delete SaveHitsCmd;  
   delete dmxDirectory;
   delete DrawColsCmd;
   delete DrawTrksCmd;
   delete DrawHitsCmd;  
   delete drawDirectory;
-  delete PrintCmd;
+  delete PrintCmd;*/
 
 }
 
 void DMXEventActionMessenger::SetNewValue
    (G4UIcommand* command, G4String newValue) { 
 
-  if(command == DrawColsCmd)
+  /*if(command == DrawColsCmd)
     eventAction->SetDrawColsFlag(newValue);
 
   if(command == DrawTrksCmd)
@@ -153,7 +153,7 @@ void DMXEventActionMessenger::SetNewValue
   }
 
   if(command == PrintCmd)
-    {eventAction->SetPrintModulo(PrintCmd->GetNewIntValue(newValue));}
+    {eventAction->SetPrintModulo(PrintCmd->GetNewIntValue(newValue));} */
 
 
 }

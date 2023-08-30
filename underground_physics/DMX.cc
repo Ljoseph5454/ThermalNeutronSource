@@ -111,9 +111,9 @@ int main(int argc,char** argv) {
 
   //Close-out analysis:
   // Save histograms
-  G4AnalysisManager* man = G4AnalysisManager::Instance();
+  /*G4AnalysisManager* man = G4AnalysisManager::Instance();
   man->Write();
-  man->CloseFile();
+  man->CloseFile();*/
 
   //Logan Added (NCrystal)
   G4NCrystal::Manager::cleanup();

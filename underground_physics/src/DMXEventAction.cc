@@ -169,7 +169,7 @@ void DMXEventAction::EndOfEventAction(const G4Event* evt) {
   // check that both hits collections have been defined
   if(scintillatorCollID<0||pmtCollID<0) return;
 
-  G4AnalysisManager* man = G4AnalysisManager::Instance();
+  /*G4AnalysisManager* man = G4AnalysisManager::Instance();
 
   // address hits collections
   DMXScintHitsCollection* SHC = NULL;
@@ -284,15 +284,15 @@ void DMXEventAction::EndOfEventAction(const G4Event* evt) {
 
   // write out event summary
   if(saveHitsFlag) 
-    writeScintHitsToFile();
+    writeScintHitsToFile(); */
   
   // draw trajectories
   if(drawColsFlag=="standard" && drawTrksFlag!="none")
     drawTracks(evt);
 
   // hits in PMT
-  if(drawHitsFlag && PHC) 
-    PHC->DrawAllHits();
+ /* if(drawHitsFlag && PHC) 
+    PHC->DrawAllHits(); */
 
   // print this event by event (modulo n)  	
   if (event_id%printModulo == 0) 
@@ -305,7 +305,7 @@ void DMXEventAction::EndOfEventAction(const G4Event* evt) {
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 void DMXEventAction::writeScintHitsToFile() 
 {
-
+ /*
   G4String filename="hits.out";
   if (runAct)
     filename=runAct->GetsavehitsFile();
@@ -409,14 +409,14 @@ void DMXEventAction::writeScintHitsToFile()
     man->AddNtupleRow(2);
     
   }
-
+ */
 }
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 void DMXEventAction::writePmtHitsToFile(const DMXPmtHitsCollection* hits) 
 { 
-  G4String filename="pmt.out";
+ /* G4String filename="pmt.out";
   if (runAct)
     filename=runAct->GetsavepmtFile();
   
@@ -474,7 +474,7 @@ void DMXEventAction::writePmtHitsToFile(const DMXPmtHitsCollection* hits)
     if (event_id%printModulo == 0 && P_hits > 0) 
       G4cout << "     " << P_hits << " PMT hits in " << filename << G4endl;  
   }
-  
+  */
 }
 
 

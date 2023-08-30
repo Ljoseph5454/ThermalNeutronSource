@@ -54,6 +54,8 @@
 #include "G4ios.hh"
 //Logan 
 #include "G4VProcess.hh"
+#include "G4AnalysisManager.hh"
+//#include "G4root.hh"
 //
 
 #include "G4OpticalPhoton.hh"
@@ -197,6 +199,16 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   if(HCID<0)
     HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCname);
   HCE->AddHitsCollection(HCID,scintillatorCollection);
+
+
+
+  //ROOT
+  auto aMan = G4AnalysisManager::Instance();
+  aMan->FillNtupleDColumn(0,HasHit);
+  aMan->FillNtupleDColumn(1,Position.getX());
+  aMan->FillNtupleDColumn(2,Position.getY());
+  aMan->FillNtupleDColumn(3,Position.getZ());
+  aMan->AddNtupleRow();
 
 
   if(n==0){

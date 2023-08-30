@@ -57,6 +57,20 @@
 DMXRunAction::DMXRunAction()
 {
   runMessenger = new DMXRunActionMessenger(this);
+
+  // Logan ROOT
+  auto aMan = G4AnalysisManager::Instance(); 
+  aMan->SetVerboseLevel( 1 );
+  //aMan>SetNtupleMerging( 1 );    
+  aMan->CreateNtuple("tree", "tree");
+  aMan->CreateNtupleDColumn("Hit");
+  aMan->CreateNtupleDColumn("x");
+  aMan->CreateNtupleDColumn("y");
+  aMan->CreateNtupleDColumn("z");
+  aMan->CreateNtupleDColumn("KEescape");
+  aMan->CreateNtupleDColumn("KEinitial");
+  aMan->FinishNtuple();  
+
   savehitsFile = "hits.out";
   savepmtFile  = "pmt.out";
   savehistFile = "dmx";
@@ -75,6 +89,11 @@ DMXRunAction::~DMXRunAction()
 
 void DMXRunAction::BeginOfRunAction(const G4Run* aRun)
 {
+  
+  // Logan ROOT
+  auto aMan = G4AnalysisManager::Instance();
+  aMan->OpenFile( "Data.root" );
+  
   //Master mode or sequential
   if (IsMaster())    
     G4cout << "### Run " << aRun->GetRunID() << " starts (master)." << G4endl;
@@ -89,13 +108,19 @@ void DMXRunAction::BeginOfRunAction(const G4Run* aRun)
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 void DMXRunAction::EndOfRunAction(const G4Run*)
-{;}
+{
+  // Logan ROOT
+  auto aMan = G4AnalysisManager::Instance();
+  aMan->Write();
+  aMan->CloseFile();
+
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 void DMXRunAction::Book()
 {  
-  // Get/create analysis manager
+  /*// Get/create analysis manager
   G4AnalysisManager* man = G4AnalysisManager::Instance();
   man->SetDefaultFileType("root");
   
@@ -160,7 +185,7 @@ void DMXRunAction::Book()
   man->CreateH2("hh1","PMT Hit Pattern", 
 		300 ,-30.,30.,300,-30.,30.);
   man->CreateH2("hh2","1st event PMT Hit Pattern", 
-		300 ,-30.,30.,300,-30.,30.);
+		300 ,-30.,30.,300,-30.,30.);*/
 
   return;
 
