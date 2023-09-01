@@ -140,6 +140,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   G4Material* sapphireNCrystal_mat = G4NCrystal::createMaterial("Al2O3_sg167_Corundum.ncmat;bragg=0"); 
   G4Material* HDPENCrystal_mat = G4NCrystal::createMaterial("Polyethylene_CH2.ncmat;density=0.96gcm3");
   G4Material* vacuumNCrystal_mat = G4NCrystal::createMaterial("void.ncmat");
+  G4Material* leadNCrystal_mat = G4NCrystal::createMaterial("Pb_sg225.ncmat");
 
   // Envelope parameters
   //
