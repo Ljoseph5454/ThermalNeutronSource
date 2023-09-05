@@ -119,6 +119,8 @@ private:
   G4VPhysicalVolume* physSD2;
   G4LogicalVolume*   logicSap;
   G4VPhysicalVolume* physSap;
+  G4LogicalVolume*   logicAr;
+  G4VPhysicalVolume* physAr;
 
   G4LogicalVolume*   Vacuum_vessel_log;
   G4VPhysicalVolume* Vacuum_vessel_phys;
