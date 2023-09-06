@@ -73,6 +73,7 @@ int HasHit=0;
 G4double eki = 0;
 G4double eke = 0;
 G4ThreeVector Position(0.,0.,0.);
+G4String desiredParticle = "gamma";
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -162,14 +163,14 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   if(posx == 0 && posy == 0 && posz == 0 && n>0){
   eki=ek;}
 
-  if(particleName == "neutron" && Volume == "physWorld"){
+  if(particleName == desiredParticle && Volume == "physWorld"){
   HasHit = HasHit+1;
   eke = ek;
   Position.setX(posx);
   Position.setY(posy); 
   Position.setZ(posz);
   }
-  if(particleName == "neutron" && Volume == "physS"){ //In case a neutron escapes the sapphire and hits the poly again
+  if(particleName == desiredParticle && Volume == "physS"){ //In case a neutron escapes the sapphire and hits the poly again
   HasHit = 0;
   eke = 0;
   Position.setX(0);

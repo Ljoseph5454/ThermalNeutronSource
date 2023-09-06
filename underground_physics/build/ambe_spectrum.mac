@@ -59,14 +59,14 @@
 #/gps/maxphi 6.283185
 #
 #
-/gps/ene/type User
+/gps/ene/type Arb
 #/gps/histname arb
 #
 /gps/particle neutron
 #
 # estimated neutron spectrum from Jaime's paper:
 # - first bin is in MeV:
-/gps/hist/type energy
+/gps/hist/type arb
 /gps/hist/point 0.0 10000
 /gps/hist/point 0.2 11000
 /gps/hist/point 0.4 12000
@@ -118,11 +118,7 @@
 /gps/hist/point 9.6 1100
 /gps/hist/point 9.8 1000
 /gps/hist/point 10.0 800
-#
-#
-#
-#
-#/gps/hist/inter Lin
+/gps/hist/inter Lin
 #/random/setDirectoryName ./seeds
 #/random/setSavingFlag
 #/dmx/hitsfile ambe_spectrum.out

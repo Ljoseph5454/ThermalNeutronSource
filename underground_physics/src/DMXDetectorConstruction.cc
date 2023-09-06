@@ -144,7 +144,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
 
   // Envelope parameters
   //
-  G4double V_l = 5*cm, L_t = 5*cm+V_l;
+  G4double V_l = 5*cm, L_t = 10*cm+V_l;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -229,8 +229,7 @@ void DMXDetectorConstruction::ConstructSDandField()
   if(logicS){
       SetSensitiveDetector(logicS,LXeSD.Get());
       SetSensitiveDetector(logicSD2,LXeSD.Get());
-      SetSensitiveDetector(logicWorld,LXeSD.Get());
-      SetSensitiveDetector(logicSap,LXeSD.Get());}
+      SetSensitiveDetector(logicWorld,LXeSD.Get());}
   /*if (LXe_log)    
     SetSensitiveDetector(LXe_log,LXeSD.Get());
 
