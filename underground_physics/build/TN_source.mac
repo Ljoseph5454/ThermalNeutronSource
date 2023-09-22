@@ -39,42 +39,24 @@
 #/gps/pos/shape Sphere
 #/gps/pos/radius 1.0 cm
 #/gps/pos/centre 0. 132.0 -302.65 mm
+
 /gps/pos/type Point
 /gps/pos/centre 0 0 0 cm
-/gps/ang/surfnorm 1
-/gps/ang/type iso
-/gps/ang/mintheta 0 deg
-/gps/ang/maxtheta 180 deg
-/gps/ang/minphi 0 deg
-/gps/ang/maxphi 360 deg
-#/gps/ang/mintheta 49.9 deg
-#/gps/ang/maxtheta 130.1 deg
-#/gps/ang/minphi 49.9 deg
-#/gps/ang/maxphi 130.1 deg
-#/gps/angtype iso
-#/gps/surfnorm 1
-#/gps/mintheta 0.
-#/gps/maxtheta 0.30
-#/gps/minphi 0.
-#/gps/maxphi 6.283185
-#
-#
-/gps/ene/type Arb
-#/gps/histname arb
-#
-/gps/particle neutron
-#
-# estimated neutron spectrum from Jaime's paper:
-# - first bin is in MeV:
-/gps/hist/type arb
-/gps/hist/file AmLiMeasuredPNNL.txt
-#AmLiMeasuredPNNL.txt
-#AmLiSimulated.txt
-/gps/hist/inter Lin
-#/random/setDirectoryName ./seeds
-#/random/setSavingFlag
-#/dmx/hitsfile ambe_spectrum.out
-#/dmx/histogramfile ambe_spectrum.his
 
-/run/beamOn 1000000
+/gps/particle neutron
+
+/gps/ang/type user
+/gps/hist/type theta
+/gps/hist/file Sap7.5Poly3Pad10Theta.txt
+/gps/hist/inter Lin
+
+/gps/hist/type phi
+/gps/hist/point 0. 1.
+
+/gps/ene/type User
+/gps/hist/type energy
+/gps/hist/file Sap7.5Poly3Pad10KE.txt
+/gps/hist/inter Lin
+
+/run/beamOn 9794
 

@@ -70,9 +70,11 @@
 int n=1;
 int n1=1;
 int HasHit=0;
+int HasHitAr=0;
 G4double eki = 0;
 G4double eke = 0;
 G4ThreeVector Position(0.,0.,0.);
+G4ThreeVector MomentumDir(0.,0.,0.);
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -133,6 +135,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   G4double posx = aStep->GetPreStepPoint()->GetPosition().x();
   G4double posy = aStep->GetPreStepPoint()->GetPosition().y();
   G4double posz = aStep->GetPreStepPoint()->GetPosition().z();
+  G4double momx = aStep->GetPreStepPoint()->GetMomentumDirection().x();
+  G4double momy = aStep->GetPreStepPoint()->GetMomentumDirection().y();
+  G4double momz = aStep->GetPreStepPoint()->GetMomentumDirection().z();
 
   G4String Volume = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
   G4bool FirstStep = aStep-> IsFirstStepInVolume();
@@ -162,19 +167,30 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   if(posx == 0 && posy == 0 && posz == 0 && n>0){
   eki=ek;}
 
-  if(particleName == "neutron" && Volume == "physWorld"){
+  if(particleName == "neutron" && Volume == "physWorld" && HasHitAr == 0){
   HasHit = HasHit+1;
   eke = ek;
   Position.setX(posx);
   Position.setY(posy); 
   Position.setZ(posz);
+  MomentumDir.setX(momx);
+  MomentumDir.setY(momy); 
+  MomentumDir.setZ(momz);
   }
-  if(particleName == "neutron" && Volume == "physS"){ //In case a neutron escapes the sapphire and hits the poly again
+  
+  if(particleName == "neutron" && Volume == "physAr"){
+  HasHitAr = 1;
+  }
+
+  if(particleName == "neutron" && (Volume == "physS" || Volume == "physSap")){ //In case a neutron escapes the sapphire/poly and hits the poly/sapphire again
   HasHit = 0;
   eke = 0;
   Position.setX(0);
   Position.setY(0); 
   Position.setZ(0);
+  MomentumDir.setX(0);
+  MomentumDir.setY(0); 
+  MomentumDir.setZ(0);
   }
 
   /*if(n1!=n){
@@ -193,7 +209,7 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   zCol = posz;
   }*/
 
-  //Info1 << '\n' << n << "," << HasHit;
+  // Info << '\n' << n << "," << HasHitAr << "," << Volume;
 
   return true;
 }
@@ -220,6 +236,10 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   aMan->FillNtupleDColumn(3,Position.getZ());
   aMan->FillNtupleDColumn(4,eki);
   aMan->FillNtupleDColumn(5,eke);
+  aMan->FillNtupleDColumn(6,MomentumDir.getX());
+  aMan->FillNtupleDColumn(7,MomentumDir.getY());
+  aMan->FillNtupleDColumn(8,MomentumDir.getZ());
+  aMan->FillNtupleDColumn(9,HasHitAr);
   aMan->AddNtupleRow();
 
 
@@ -244,10 +264,14 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
 
 
   HasHit = 0;
+  HasHitAr = 0;
   eke = 0;
   Position.setX(0);
   Position.setY(0); 
   Position.setZ(0);
+  MomentumDir.setX(0);
+  MomentumDir.setY(0);
+  MomentumDir.setZ(0);
 
 }
 

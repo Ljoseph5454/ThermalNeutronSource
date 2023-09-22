@@ -143,7 +143,7 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
 
   // Envelope parameters
   //
-  G4double S_l = 7.5*cm, S_w=5*cm, V_l = 3*cm, P_w = 25*cm, P_l = 10*cm, P_p = (S_l+P_l)+7.5*cm;
+  G4double S_l = 7.5*cm, S_w=5*cm, V_l = 3*cm, P_w = 25*cm, P_l = 3*cm, P_p = (S_l+P_l)+10*cm, A_l = 30.48*cm;
   //G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
    
   // Option to switch on/off checking of volumes overlaps
@@ -153,8 +153,8 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   //     
   // World
   //
-  G4double world_sizeXY = 1*m;
-  G4double world_sizeZ  = 1*m;
+  G4double world_sizeXY = 2.5*m;
+  G4double world_sizeZ  = 2.5*m;
   //G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
   
   G4Box* solidWorld =    
@@ -191,7 +191,12 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct() {
   // Sapphire Window
   G4Box* solidSap = new G4Box("solidSap", 0.5*S_w, 0.5*S_w, 0.5*S_l); 
   logicSap = new G4LogicalVolume(solidSap, sapphireNCrystal_mat, "logicSap");  //sapphireNCrystal_mat                
-  physSap = new G4PVPlacement(0, G4ThreeVector(0.,0.,(0.5*(V_l+S_l)+P_l)-0.5*(P_p-P_w)), logicSap, "physSap", logicS, false, 0);  
+  physSap = new G4PVPlacement(0, G4ThreeVector(0.,0.,(0.5*(V_l+S_l)+P_l)-0.5*(P_p-P_w)), logicSap, "physSap", logicS, false, 0); 
+
+  // Test Argon
+  G4Box* solidAr = new G4Box("solidAr", 0.5*A_l, 0.5*A_l, 0.5*A_l); 
+  logicAr = new G4LogicalVolume(solidAr, LAr_mat, "logicAr");  //sapphire_mat                  
+  physAr = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.5*(P_w+V_l+P_p)+0.5*(P_p-P_w)+1*m+0.5*A_l), logicAr, "physAr", logicWorld, false, 0);
 
   // SD before
  // G4Box* solidSD1 = new G4Box("solidSD1", S_l, S_l, 1*mm); 
@@ -234,7 +239,8 @@ void DMXDetectorConstruction::ConstructSDandField()
       SetSensitiveDetector(logicS,LXeSD.Get());
       SetSensitiveDetector(logicSD2,LXeSD.Get());
       SetSensitiveDetector(logicWorld,LXeSD.Get());
-      SetSensitiveDetector(logicSap,LXeSD.Get());}
+      SetSensitiveDetector(logicSap,LXeSD.Get());
+      SetSensitiveDetector(logicAr,LXeSD.Get());}
   /*if (LXe_log)    
     SetSensitiveDetector(LXe_log,LXeSD.Get());
 

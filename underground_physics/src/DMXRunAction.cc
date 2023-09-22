@@ -63,12 +63,16 @@ DMXRunAction::DMXRunAction()
   aMan->SetVerboseLevel( 1 );
   //aMan>SetNtupleMerging( 1 );    
   aMan->CreateNtuple("tree", "tree");
-  aMan->CreateNtupleDColumn("Hit");
-  aMan->CreateNtupleDColumn("x");
-  aMan->CreateNtupleDColumn("y");
-  aMan->CreateNtupleDColumn("z");
-  aMan->CreateNtupleDColumn("KEinitial");
-  aMan->CreateNtupleDColumn("KEescape");
+  aMan->CreateNtupleDColumn("Hit"); //0
+  aMan->CreateNtupleDColumn("x"); //1
+  aMan->CreateNtupleDColumn("y"); //2
+  aMan->CreateNtupleDColumn("z"); //3
+  aMan->CreateNtupleDColumn("KEinitial"); //4
+  aMan->CreateNtupleDColumn("KEescape"); //5
+  aMan->CreateNtupleDColumn("px"); //6
+  aMan->CreateNtupleDColumn("py"); //7
+  aMan->CreateNtupleDColumn("pz"); //8
+  aMan->CreateNtupleDColumn("ArHit"); //9
   aMan->FinishNtuple();  
 
   savehitsFile = "hits.out";

@@ -64,3 +64,4 @@
   //Logan
   G4Material*  sapphire_mat;
   G4Material*      HDPE_mat;
+  G4Material*      LAr_mat;

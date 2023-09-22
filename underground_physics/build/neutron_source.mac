@@ -8,7 +8,7 @@
 # verbosities
 /control/verbose 0
 /run/verbose 1
-/tracking/verbose 1
+/tracking/verbose 0
 /hits/verbose 1
 #turn off the scintillation
 
@@ -35,7 +35,7 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0.4 0 -1 m 
+/gps/pos/centre 0 0 0 m 
 
 /gps/direction 0 0 1
 
@@ -55,7 +55,7 @@
 
 /gps/ene/type Mono
 
-/gps/ene/mono 100 MeV
+/gps/ene/mono 1 MeV
 
 /gps/particle neutron
 
@@ -67,6 +67,5 @@
 
 #/run/beamOn 10000000
 #/run/beamOn 100000
-/run/beamOn 40
-
+/run/beamOn 100000
 
