@@ -74,7 +74,8 @@ int HasHitAr=0;
 G4double eki = 0;
 G4double eke = 0;
 G4ThreeVector Position(0.,0.,0.);
-G4ThreeVector MomentumDir(0.,0.,0.);
+G4ThreeVector MomentumDire(0.,0.,0.);
+G4ThreeVector MomentumDiri(0.,0.,0.);
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -165,7 +166,11 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   HitID = scintillatorCollection->insert(newHit);
 
   if(posx == 0 && posy == 0 && posz == 0 && n>0){
-  eki=ek;}
+  eki=ek;
+  MomentumDiri.setX(momx);
+  MomentumDiri.setY(momy); 
+  MomentumDiri.setZ(momz);
+  }
 
   if(particleName == "neutron" && Volume == "physWorld" && HasHitAr == 0){
   HasHit = HasHit+1;
@@ -173,9 +178,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   Position.setX(posx);
   Position.setY(posy); 
   Position.setZ(posz);
-  MomentumDir.setX(momx);
-  MomentumDir.setY(momy); 
-  MomentumDir.setZ(momz);
+  MomentumDire.setX(momx);
+  MomentumDire.setY(momy); 
+  MomentumDire.setZ(momz);
   }
   
   if(particleName == "neutron" && Volume == "physAr"){
@@ -188,9 +193,9 @@ G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
   Position.setX(0);
   Position.setY(0); 
   Position.setZ(0);
-  MomentumDir.setX(0);
-  MomentumDir.setY(0); 
-  MomentumDir.setZ(0);
+  MomentumDire.setX(0);
+  MomentumDire.setY(0); 
+  MomentumDire.setZ(0);
   }
 
   /*if(n1!=n){
@@ -236,10 +241,13 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   aMan->FillNtupleDColumn(3,Position.getZ());
   aMan->FillNtupleDColumn(4,eki);
   aMan->FillNtupleDColumn(5,eke);
-  aMan->FillNtupleDColumn(6,MomentumDir.getX());
-  aMan->FillNtupleDColumn(7,MomentumDir.getY());
-  aMan->FillNtupleDColumn(8,MomentumDir.getZ());
+  aMan->FillNtupleDColumn(6,MomentumDire.getX());
+  aMan->FillNtupleDColumn(7,MomentumDire.getY());
+  aMan->FillNtupleDColumn(8,MomentumDire.getZ());
   aMan->FillNtupleDColumn(9,HasHitAr);
+  aMan->FillNtupleDColumn(10,MomentumDiri.getX());
+  aMan->FillNtupleDColumn(11,MomentumDiri.getY());
+  aMan->FillNtupleDColumn(12,MomentumDiri.getZ());
   aMan->AddNtupleRow();
 
 
@@ -269,9 +277,12 @@ void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
   Position.setX(0);
   Position.setY(0); 
   Position.setZ(0);
-  MomentumDir.setX(0);
-  MomentumDir.setY(0);
-  MomentumDir.setZ(0);
+  MomentumDire.setX(0);
+  MomentumDire.setY(0);
+  MomentumDire.setZ(0);
+  MomentumDiri.setX(0);
+  MomentumDiri.setY(0); 
+  MomentumDiri.setZ(0);
 
 }
 

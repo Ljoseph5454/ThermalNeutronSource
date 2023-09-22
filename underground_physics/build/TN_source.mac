@@ -1,62 +1,38 @@
-###############################################################################
-#                                                                             #
-# neutron.mac                                                                 #
-# 1 neutron fired in the room                                                 #
-#                                                                             #
-###############################################################################
-# contains the angle distribution and written in gps
-# output log-file name
-#/run/filename n_phantom_100000.log
-#
-# verbosities
+
 /control/verbose 0
 /run/verbose 1
 /tracking/verbose 0
 /hits/verbose 1
-#
-# draw flags
-#/dmx/draw/drawColours custom
-#/dmx/draw/gammaColour green
-##/dmx/draw/drawTracks noscint
-#/dmx/draw/drawTracks all
-#/dmx/draw/drawHits 0
-#
-# file output
-#/dmx/savePmt  0
-#/dmx/saveHits 1
-#
-# kill gammas in lab wall
-#/dmx/KillGammasInConcrete 0
-#
-# radioactive decay module
-#/grdm/analogueMC 1
-#/grdm/verbose 0
-#/grdm/allVolumes
-#
-#
-# using GPS for ambe_spectrum:
-#/gps/pos/type Surface
-#/gps/pos/shape Sphere
-#/gps/pos/radius 1.0 cm
-#/gps/pos/centre 0. 132.0 -302.65 mm
 
 /gps/pos/type Point
 /gps/pos/centre 0 0 0 cm
+#/gps/ang/surfnorm 1
+#/gps/ang/type iso
+#/gps/ang/mintheta 0 deg
+#/gps/ang/maxtheta 180 deg
+#/gps/ang/minphi 0 deg
+#/gps/ang/maxphi 360 deg
 
 /gps/particle neutron
 
 /gps/ang/type user
 /gps/hist/type theta
-/gps/hist/file Sap7.5Poly3Pad10Theta.txt
-/gps/hist/inter Lin
+#/gps/hist/file Sap7.5Poly3Pad10Theta.txt
+/control/execute Sap7.5Poly3Pad10Theta.dat
 
-/gps/hist/type phi
-/gps/hist/point 0. 1.
+#/gps/hist/type phi
+#/gps/hist/point 0. 1.
+#/gps/hist/point 6.28318530718 1.
 
 /gps/ene/type User
+#/gps/ene/emspec 0
 /gps/hist/type energy
-/gps/hist/file Sap7.5Poly3Pad10KE.txt
-/gps/hist/inter Lin
+#/gps/hist/file Sap7.5Poly3Pad10KE.txt
+/control/execute Sap7.5Poly3Pad10KE.dat
+#/gps/hist/point 0. 1.
+#/gps/hist/point 6.28318530718 1.
+#Sap7.5Poly3Pad10KE.txt
+#/gps/hist/inter Lin
 
 /run/beamOn 9794
-
+#9794

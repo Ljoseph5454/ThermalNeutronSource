@@ -73,6 +73,9 @@ DMXRunAction::DMXRunAction()
   aMan->CreateNtupleDColumn("py"); //7
   aMan->CreateNtupleDColumn("pz"); //8
   aMan->CreateNtupleDColumn("ArHit"); //9
+  aMan->CreateNtupleDColumn("pxi"); //10
+  aMan->CreateNtupleDColumn("pyi"); //11
+  aMan->CreateNtupleDColumn("pzi"); //12
   aMan->FinishNtuple();  
 
   savehitsFile = "hits.out";

@@ -59,10 +59,11 @@
 #/gps/maxphi 6.283185
 #
 #
+/gps/particle neutron
 /gps/ene/type Arb
 #/gps/histname arb
 #
-/gps/particle neutron
+
 #
 # estimated neutron spectrum from Jaime's paper:
 # - first bin is in MeV:
