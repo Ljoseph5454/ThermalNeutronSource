@@ -41,7 +41,7 @@
 #/gps/pos/halfx 0.15 m
 #/gps/pos/halfy 0.15 m
 
-/gps/pos/centre 0.4 0 -1 m
+/gps/pos/centre 0 0 -1 m
 #/gps/ang/type iso
 /gps/direction 0 0 1
 

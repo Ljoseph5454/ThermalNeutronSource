@@ -204,6 +204,11 @@ G4VPhysicalVolume* DMXDetectorConstruction::Construct()
   logicSD2 = new G4LogicalVolume(solidSD2, vacuum_mat, "logicSD2");                    
   physSD2 = new G4PVPlacement(0, G4ThreeVector(0.,0.,-0.5*(P_p-P_w)), logicSD2, "physSD2", logicS, false, 0);  //0.5*(P_l+S_l-P_w)
 
+  // Test Sphere
+  /*G4Sphere* solidSphere = new G4Sphere("solidSphere", 0.0*cm, 10.0*cm, 0.0 * deg, 360.0 *deg, 0.0 * deg, 180 *deg); 
+  logicSphere = new G4LogicalVolume(solidSphere, vacuum_mat, "logicSphere");  //sapphire_mat                  
+  physSphere = new G4PVPlacement(0, G4ThreeVector(50*cm,0.,0.), logicSphere, "physSphere", logicWorld, false, 0); */ 
+ 
  /* // Sapphire Window
   G4Box* solidWindow = new G4Box("solidWindow", 0.25*(S_l-V_l), 0.5*V_l, 0.5*V_l); 
   logicWindow = new G4LogicalVolume(solidWindow, vacuum_mat, "logicWindow");                    
