@@ -13,7 +13,7 @@
 /run/verbose 1
 /tracking/verbose 0
 /hits/verbose 1
-#
+#test
 # draw flags
 #/dmx/draw/drawColours custom
 #/dmx/draw/gammaColour green
