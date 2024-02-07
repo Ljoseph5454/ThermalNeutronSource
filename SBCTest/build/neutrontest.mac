@@ -1,0 +1,63 @@
+
+
+###############################################################################
+#                                                                             #
+# gamma_1000.mac                                                              #
+# Gamma spectrum from internal calibrator                                     #
+# output in file hits.out                                                     #
+#                                                                             #
+###############################################################################
+#
+# verbosities
+/control/verbose 1
+/run/verbose 1
+/tracking/verbose 1
+#/hits/verbose 1
+/dmx/printModulo 10
+#
+# draw flags
+/dmx/draw/drawColours standard
+/dmx/draw/drawTracks none
+/dmx/draw/drawHits 0
+#
+# file output
+/dmx/savePmt  0
+/dmx/saveHits 0
+#
+# gun: particle
+/gps/verbose 0
+/gps/particle neutron
+/gps/ene/type Mono
+/gps/ene/mono 1 MeV
+#9.7 eV is scintillation light
+#
+# gun: isotropic
+/gps/ang/type iso
+#
+# OR gun: shoot down
+#/gps/ang/type direction 
+#/gps/direction -1 0 0
+
+#OR gun: cosine distribution
+#/gps/ang/type cos
+#/gps/ang/mintheta 90 deg
+#/gps/ang/maxtheta 180 deg
+#/gps/ang/minphi 270 deg
+#/gps/ang/maxphi 360 deg
+#
+# gun: source
+/gps/pos/type Point
+#/gps/pos/shape Cylinder
+#/gps/pos/radius 1.5 cm
+#/gps/pos/halfz 3 mm
+#sipm 0 direction px=1, source position =(120,-2,544)mm
+#sipm 1 direction px=1, source position =(120,-2,490)mm
+/gps/pos/centre 0 0 0 mm
+/gps/pos/confine physEnv
+#
+/dmx/hitsfile gamma_1000.out
+/dmx/pmtfile gamma_1000_pmt.out
+/dmx/histogramfile gamma_1000
+
+/run/beamOn 10
+

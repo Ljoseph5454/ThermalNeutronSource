@@ -1,0 +1,279 @@
+//
+// ********************************************************************
+// * License and Disclaimer                                           *
+// *                                                                  *
+// * The  Geant4 software  is  copyright of the Copyright Holders  of *
+// * the Geant4 Collaboration.  It is provided  under  the terms  and *
+// * conditions of the Geant4 Software License,  included in the file *
+// * LICENSE and available at  http://cern.ch/geant4/license .  These *
+// * include a list of copyright holders.                             *
+// *                                                                  *
+// * Neither the authors of this software system, nor their employing *
+// * institutesls,nor the agencies providing financial support for this *
+// * work  make  any representation or  warranty, express or implied, *
+// * regarding  this  software system or assume any liability for its *
+// * use.  Please see the license in the file  LICENSE  and URL above *
+// * for the full disclaimer and the limitation of liability.         *
+// *                                                                  *
+// * This  code  implementation is the result of  the  scientific and *
+// * technical work of the GEANT4 collaboration.                      *
+// * By using,  copying,  modifying or  distributing the software (or *
+// * any work based  on the software)  you  agree  to acknowledge its *
+// * use  in  resulting  scientific  publications,  and indicate your *
+// * acceptance of all terms of the Geant4 Software license.          *
+// ********************************************************************
+//
+//
+// --------------------------------------------------------------
+//   GEANT 4 - Underground Dark Matter Detector Advanced Example
+//
+//      For information related to this code contact: Alex Howard
+//      e-mail: alexander.howard@cern.ch
+// --------------------------------------------------------------
+// Comments
+//
+//                  Underground Advanced
+//               by A. Howard and H. Araujo 
+//                    (27th November 2001)
+//
+// ScintSD (scintillator sensitive detector definition) program
+// --------------------------------------------------------------
+
+#include "DMXScintSD.hh"
+
+#include "DMXScintHit.hh"
+#include "DMXDetectorConstruction.hh"
+
+#include "G4VPhysicalVolume.hh"
+#include "G4HCofThisEvent.hh"
+#include "G4Step.hh"
+#include "G4SDManager.hh"
+#include "G4ParticleDefinition.hh"
+#include "G4ParticleTypes.hh"
+#include "G4Ions.hh"
+#include "G4ios.hh"
+#include "G4VProcess.hh"//
+
+#include "G4OpticalPhoton.hh"
+
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include "G4UnitsTable.hh"
+
+
+
+
+
+int n=1;
+int n1=1;
+int HasHit=0;
+int step = 0;
+G4double eki = 0;
+G4double eke = 0;
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+DMXScintSD::DMXScintSD(G4String name) 
+  :G4VSensitiveDetector(name)
+{
+  G4String HCname="scintillatorCollection";
+  collectionName.insert(HCname);
+
+  Info.open("Informacion.csv");
+  Info1.open("General.csv");
+  Info << "Event,"<<"Hit,"<<"KE_i,"<<"KE_e";
+  Info1 << "Evento," << "KE," << "px," << "py," << "pz," << "x," << "y," << "z";
+
+
+
+
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+DMXScintSD::~DMXScintSD(){ Info.close();  Info1.close();}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void DMXScintSD::Initialize(G4HCofThisEvent*)
+{
+  scintillatorCollection = new DMXScintHitsCollection
+    (SensitiveDetectorName,collectionName[0]);
+
+  HitID = -1;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+G4bool DMXScintSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
+{
+
+  //need to know if this is an optical photon and exclude it:
+  if(aStep->GetTrack()->GetDefinition()
+    == G4OpticalPhoton::OpticalPhotonDefinition()) return false;
+  if(aStep->GetTrack()->GetDefinition() == G4Electron::ElectronDefinition()){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}
+  if(aStep->GetTrack()->GetDefinition() == G4Proton::ProtonDefinition()){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}
+  if(aStep->GetTrack()->GetDefinition() != G4Neutron::NeutronDefinition()){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    return false;}
+  /*if (aStep->GetTrack()->GetTrackID() != 1){
+    aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);
+    }*/
+
+  
+  G4double edep = aStep->GetTotalEnergyDeposit();
+  G4double ek = aStep->GetPostStepPoint()->GetKineticEnergy();
+  G4ParticleDefinition* particleType = aStep->GetTrack()->GetDefinition();
+  G4String particleName = particleType->GetParticleName();
+
+  G4double posx = aStep->GetPreStepPoint()->GetPosition().x();
+  G4double posy = aStep->GetPreStepPoint()->GetPosition().y();
+  G4double posz = aStep->GetPreStepPoint()->GetPosition().z();
+
+  G4String Volume = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
+  G4bool FirstStep = aStep-> IsFirstStepInVolume();
+  G4bool LastStep = aStep-> IsLastStepInVolume();
+  G4double StepLength = aStep->GetStepLength();
+  G4ThreeVector MomentumDirection = aStep->GetPreStepPoint()->GetMomentumDirection();
+  G4ThreeVector Position(0.,0.,0.);
+  G4bool hit = false;
+  
+  if(particleName == "proton"){
+  aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);}
+  if(particleName == "C12"){
+  aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);}
+  if(particleName == "deuteron"){
+  aStep->GetTrack()->SetTrackStatus(fKillTrackAndSecondaries);}
+
+  char Ar36 [10]="Ar36";
+  char Ar38 [10]="Ar38";
+  char Ar40 [10]="Ar40";
+
+  G4double stepl = 0.;
+  if (particleType->GetPDGCharge() != 0.)
+    stepl = aStep->GetStepLength();
+
+  
+  
+  //if ((edep==0.)&&(stepl==0.)) return false;      
+
+
+  // fill in hit
+  DMXScintHit* newHit = new DMXScintHit();
+  newHit->SetEdep(edep);
+  newHit->SetPos(aStep->GetPostStepPoint()->GetPosition());
+  newHit->SetTime(aStep->GetPreStepPoint()->GetGlobalTime());
+  newHit->SetParticle(particleName);
+  newHit->SetParticleEnergy(aStep->GetPreStepPoint()->GetKineticEnergy() );
+
+  HitID = scintillatorCollection->insert(newHit);
+
+ //if(strcmp(particleName,"proton") == 0 || strcmp(particleName,"e-") == 0 || strcmp(particleName,Ar40) == 0)
+ //if (FirstStep == true || LastStep ==true)
+//if (FirstStep == true)
+ 
+  if(posx == 0 && posy == 0 && posz == 0 && n>0){
+  eki=ek;}
+
+
+  if(Volume == "physWorld"){
+  HasHit = HasHit+1;
+  eke = ek;}
+
+  if (Volume == "physWorld"){
+    Position.setX(posx) ;
+    Position.setY(posy) ; 
+    Position.setZ(posz) ;}
+
+  if(n1!=n){
+  HasHit =0;
+  eke =0;
+  n1=n;}
+
+/*  if(Volume == "physS" && LastStep == true){
+  Info << n <<",";}
+  if(Volume == "OutOfWorld" && hit == true){
+  Info << "1" <<'\n' ;}
+  if(Volume =="OutOfWorld" && hit == false){
+  Info << "0" <<'\n' ;}*/
+ 
+ /* if(particleName == "neutron" && HasHit > 0){
+  Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << Position << "," << HasHit <<"," << "1";}
+  if(ek == 0 && particleName == "neutron"){
+  Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";}
+  //if(Volume == "physS" && LastStep == true){
+  //Info << '\n' << n <<"," << ek;}
+  //if(Volume == "physS" && HasHit == 1){
+  //Info << "1" ;}*/
+   
+
+  /*if(particleName == "neutron" && HasHit > 0){
+  Info << '\n' << n <<"," << "1";
+  //Info1 << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection.getX()<<","<< MomentumDirection.getY()<<","<< MomentumDirection.getZ() <<"," << Position.getX()<<"," << Position.getY()<<"," << Position.getZ() << ',';}
+  if(ek == 0 && particleName == "neutron"){
+  Info << '\n' << n <<"," << "0"; 
+  //Info << '\n' << n <<"," << 1000000*ek <<","<< MomentumDirection <<"," << HasHit <<"," << "0";
+  }*/
+ 
+  step++;
+
+  return true;
+}
+
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void DMXScintSD::EndOfEvent(G4HCofThisEvent* HCE)
+{
+
+  G4String HCname = collectionName[0];
+  static G4int HCID = -1;
+  if(HCID<0)
+    HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCname);
+  HCE->AddHitsCollection(HCID,scintillatorCollection);
+  
+  if(n==0){
+  Info << n <<"," << HasHit <<"," << eki <<"," << eke;
+  }
+  if(n>0){
+  Info << '\n' << n <<"," << HasHit <<"," << eki <<"," << eke;
+  }
+
+  G4int nHits = scintillatorCollection->entries();
+  if (verboseLevel>=1){
+
+    G4cout << "     LXe collection: " <<  nHits << " hits" << G4endl;
+    //Info1 << n<<","<<nHits <<"\n";
+    n++;
+
+  }
+  if (verboseLevel>=2)
+    scintillatorCollection->PrintAllHits();
+
+
+
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void DMXScintSD::clear()
+{} 
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void DMXScintSD::DrawAll()
+{} 
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void DMXScintSD::PrintAll()
+{} 
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+
